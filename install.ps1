@@ -1,15 +1,18 @@
 "Cloning azure-rest-api-specs..."
+Remove-Item azure-rest-api-specs -Recurse -Force
 git clone -q https://github.com/Azure/azure-rest-api-specs azure-rest-api-specs
 
 "Cloning azure-sdk-for-net..."
+Remove-Item _ -Recurse -Force
 git clone -q --branch=sergey-new-autorest-fixes-tests2 https://github.com/sergey-shandar/azure-sdk-for-net _
 
 "Installing..."
 
 .\common.ps1
 
-"Installing .Net Core..."
 mkdir $env:TEST_COMMON
+
+"Installing .Net Core..."
 $dotnetUrl = "https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-win-x64.1.0.4.zip"
 .\lib\download-and-unzip.ps1 -url $dotnetUrl -zip "dotnet.zip" -dest $env:TEST_DOTNET_FOLDER
 
