@@ -6,5 +6,5 @@ $zip = Join-Path $env:TEST_COMMON $zip
 $client = new-object System.Net.WebClient
 $client.DownloadFile($url, $zip)
 
-"Expanding $zip to $output"
+"Expanding $zip to $dest"
 Expand-Archive $zip -DestinationPath $dest
