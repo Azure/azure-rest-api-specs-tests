@@ -6,19 +6,27 @@ The scripts use [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net)
 
 ## Build Definitions
 
-- [VSTS](https://devdiv.visualstudio.com/NodeRepos/_build/index?definitionId=6392&_a=completed).
+- [VSTS](https://devdiv.visualstudio.com/NodeRepos/_build/index?definitionId=6392&_a=completed)
+- [Azure SDK CI](http://azuresdkci.cloudapp.net/job/azure-rest-api-specs-tests/)
 
 ### Creating a Personal Build Definition
 
 #### Requirements
 
+- Windows 10
 - PowerShell
 
 #### Enviroment Variables
 
-- `TEST_PROJECT` is a name of folder from the [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net/tree/vs17Dev/src/SDKs). For example `RedisCache`.
+- `TEST_PROJECT` is a folder name from the [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net/tree/vs17Dev/src/SDKs). For example `RedisCache`.
 - `TEST_LANG` is a Azure SDK progamming language. For example `go`.
 - `TEST_CSM_ORGID_AUTHENTICATION` is a connection string.
+
+#### Build Stages
+
+- [install.ps1](install.ps1)
+- [build.ps1](build.ps1)
+- [test.ps1](test.ps1)
 
 ## Contributing
 
@@ -28,6 +36,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 1. Create a new folder for the language, for example [go](go).
 1. Create the PowerShell scripts in this folder:
-   - `install.ps1`, for example [go/install.ps1](go/install.ps1)
-   - `build.ps1`, for example [go/build.ps1](go/build.ps1)
-   - `test.ps1`, for example [go/test.ps1](go/test.ps1)
+   - `install.ps1`, install all required software to the `x` folder, for example [go/install.ps1](go/install.ps1)
+   - `build.ps1`, build a `JSON-RPC` server for the Azure REST API specifications, for example [go/build.ps1](go/build.ps1)
+   - `test.ps1`, set the `SDK_REMOTE_SERVER` environment variable to a path on the created `JSON-RPC` server, for example [go/test.ps1](go/test.ps1)
