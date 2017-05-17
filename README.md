@@ -20,7 +20,7 @@ The scripts use [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net)
 
 - `TEST_PROJECT` is a folder name from the [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net/tree/vs17Dev/src/SDKs). For example `RedisCache`.
 - `TEST_LANG` is a Azure SDK progamming language. For example `go`.
-- `TEST_CSM_ORGID_AUTHENTICATION` is a connection string.
+- `TEST_CSM_ORGID_AUTHENTICATION` is a connection string, in a format `SubscriptionId=...;ServicePrincipal=...;ServicePrincipalSecret=...;AADTenant=...;`
 
 #### Build Stages
 
