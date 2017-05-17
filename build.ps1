@@ -1,4 +1,11 @@
+param([string]$TEST_PROJECT)
+
 "Building..."
+
+if ($TEST_PROJECT) 
+{
+    $env:TEST_PROJECT = $TEST_PROJECT
+}
 
 .\common.ps1
 
