@@ -8,25 +8,14 @@ git clone -q --branch=sergey-new-autorest-fixes-tests2 https://github.com/sergey
 
 .\common.ps1
 
+"Installing .Net Core..."
 mkdir $env:TEST_COMMON
-
-"Downloading .Net Core ..."
-$dotnetZip = "dotnet.zip"
 $dotnetUrl = "https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-win-x64.1.0.4.zip"
-$client = new-object System.Net.WebClient
-$client.DownloadFile($dotnetUrl, $dotnetZip)
+.\lib\download-and-unzip.ps1 -url $dotnetUrl -zip "dotnet.zip" -dest $env:TEST_DOTNET_FOLDER
 
-"Expanding .Net Core ..."
-Expand-Archive $dotnetZip -DestinationPath $env:TEST_DOTNET_FOLDER
-
-"Downloading Node..."
-$nodeZip = Join-Path ($env:TEST_COMMON) "node.zip"
+"Installing Node..."
 $nodeUrl = "https://nodejs.org/dist/" + $env:TEST_NODE_VER + "/" + $env:TEST_NODE + ".zip"
-$client = new-object System.Net.WebClient
-$client.DownloadFile($nodeUrl, $nodeZip)
-
-"Expanding Node..."
-Expand-Archive $nodeZip -DestinationPath $env:TEST_COMMON
+.\lib\download-and-unzip.ps1 -url $nodeUrl -zip "node.zip" -dest $env:TEST_COMMON
 
 "Installing AutoRest..."
 npm install -g --silent autorest
