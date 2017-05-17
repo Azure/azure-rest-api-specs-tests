@@ -9,7 +9,7 @@ git clone -q --branch=sergey-new-autorest-fixes-tests2 https://github.com/sergey
 "Installing..."
 
 .\common.ps1
-
+Remove-Item $env:TEST_COMMON -Recurse -Force
 mkdir $env:TEST_COMMON
 
 "Installing .Net Core..."
