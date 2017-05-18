@@ -26,7 +26,7 @@ mkdir $env:TEST_COMMON
 
 "Installing .Net Core SDK..."
 $dotnetSdkUrl = "https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-win-x64.1.0.4.zip"
-.\lib\download-and-unzip.ps1 -url $dotneSdkUrl -zip "dotnetsdk.zip" -dest $env:TEST_DOTNET_FOLDER
+.\lib\download-and-unzip.ps1 -url $dotnetSdkUrl -zip "dotnetsdk.zip" -dest $env:TEST_DOTNET_FOLDER
 
 "Installing Node..."
 $nodeUrl = "https://nodejs.org/dist/" + $env:TEST_NODE_VER + "/" + $env:TEST_NODE + ".zip"
