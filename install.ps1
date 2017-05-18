@@ -1,5 +1,5 @@
 "Cloning azure-rest-api-specs..."
-Remove-Item azure-rest-api-specs -Recurse -Force
+.\lib\remove.ps1 -path azure-rest-api-specs
 if (!$env:TEST_FORK)
 {
     $env:TEST_FORK = "Azure"
@@ -15,13 +15,13 @@ $testRep = "https://github.com/$env:TEST_FORK/azure-rest-api-specs"
 git clone -q --branch=$env:TEST_BRANCH $testRep azure-rest-api-specs
 
 "Cloning azure-sdk-for-net..."
-Remove-Item _ -Recurse -Force
+.\lib\remove.ps1 -path _
 git clone -q --branch=sergey-new-autorest-fixes-tests2 https://github.com/sergey-shandar/azure-sdk-for-net _
 
 "Installing..."
 
 .\common.ps1
-Remove-Item $env:TEST_COMMON -Recurse -Force
+.\lib\remove.ps1 -path $env:TEST_COMMON
 mkdir $env:TEST_COMMON
 
 "Installing .Net Core..."
