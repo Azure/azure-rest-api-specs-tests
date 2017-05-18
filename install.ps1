@@ -4,10 +4,15 @@ if (!$env:TEST_FORK)
 {
     $env:TEST_FORK = "Azure"
 }
+if (!$env:TEST_BRANCH)
+{
+    $env:TEST_BRANCH = "master"
+}
 $testRep = "https://github.com/$env:TEST_FORK/azure-rest-api-specs"
 "Azure REST API Specs repository: $testRep"
+"Azure REST API Specs branch: $env:TEST_BRANCH"
 
-git clone -q $testRep azure-rest-api-specs
+git clone -q --branch=$env:TEST_BRANCH $testRep azure-rest-api-specs
 
 "Cloning azure-sdk-for-net..."
 Remove-Item _ -Recurse -Force
