@@ -12,6 +12,8 @@ $testFolder = Join-Path (Join-Path (pwd) "_\src\SDKs") $env:TEST_PROJECT
 
 "TestFolder = $testFolder"
 
+$env:TEST_PROJECT = $env:TEST_PROJECT.Replace('_', '\')
+
 $env:TEST_PROJECT_FOLDER = (Get-ChildItem -Path $testFolder -Filter "generate.cmd" -Recurse).Directory.FullName
 "env:TEST_PROJECT_FOLDER = $env:TEST_PROJECT_FOLDER"
 $env:TEST_PROJECT_TEST = (Get-ChildItem -Path $testFolder -Filter "*.Tests.csproj" -Recurse).FullName
