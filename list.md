@@ -13,4 +13,4 @@
 - [ContainerRegistry](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747657&_a=summary)
 - [CustomerInsights](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747704&_a=summary)
 - [DataLake.Analytics](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747710&_a=summary)
-- [DataLake.Store]()
+- [DataLake.Store](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747918&_a=summary)
