@@ -1,6 +1,13 @@
 "Cloning azure-rest-api-specs..."
 Remove-Item azure-rest-api-specs -Recurse -Force
-git clone -q https://github.com/Azure/azure-rest-api-specs azure-rest-api-specs
+if (!$env:TEST_FORK)
+{
+    $env:TEST_FORK = "Azure/azure-rest-api-specs"
+}
+$testRep = "https://github.com/$env:TEST_FORK"
+"Azure REST API Specs repository: $testRep"
+
+git clone -q $testRep azure-rest-api-specs
 
 "Cloning azure-sdk-for-net..."
 Remove-Item _ -Recurse -Force
