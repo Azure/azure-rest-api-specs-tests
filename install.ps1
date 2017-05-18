@@ -2,9 +2,9 @@
 Remove-Item azure-rest-api-specs -Recurse -Force
 if (!$env:TEST_FORK)
 {
-    $env:TEST_FORK = "Azure/azure-rest-api-specs"
+    $env:TEST_FORK = "Azure"
 }
-$testRep = "https://github.com/$env:TEST_FORK"
+$testRep = "https://github.com/$env:TEST_FORK/azure-rest-api-specs"
 "Azure REST API Specs repository: $testRep"
 
 git clone -q $testRep azure-rest-api-specs
