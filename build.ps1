@@ -6,7 +6,7 @@ if ($TEST_PROJECT)
 {
     $env:TEST_PROJECT = $TEST_PROJECT
 }
-
+ 
 .\common.ps1
 
 $current = pwd
