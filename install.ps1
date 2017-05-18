@@ -36,7 +36,7 @@ $nodeUrl = "https://nodejs.org/dist/" + $env:TEST_NODE_VER + "/" + $env:TEST_NOD
 npm install -g --silent autorest
 
 "Updating AutoRest..."
-autorest --reset --feed=jhendrixMSFT
+autorest --reset --feed=sergey-shandar
 
 "Language = $env:TEST_LANG"
 "Project = $env:TEST_PROJECT"
