@@ -35,7 +35,7 @@ For example
                 "clientId": "...",
                 "secret": "..."
             }
-        }
+        },
         "a": "Hello world!",
         "b": 42
     }
