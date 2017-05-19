@@ -30,4 +30,3 @@ cd $env:GOSERVERFOLDER
 go build
 cd $current
 
-$env:CODEGEN = "Azure.JsonRpcClient"

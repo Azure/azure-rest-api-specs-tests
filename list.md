@@ -14,5 +14,11 @@
 - [CustomerInsights](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747704&_a=summary)
 - [DataLake.Analytics](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747710&_a=summary)
 - [DataLake.Store](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747918&_a=summary)
+- [DevTestLabs](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748625&_a=summary)
+- [Dns](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748726&_a=summary)
+- [EventHub](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748769&_a=summary)
+- [Gallery](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=749401&_a=summary) - failed. No `generate.cmd` file.
+- [Graph.RBAC](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=750892&_a=summary) - failed. A relative path bug.
+- [Insights](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=751070&_a=summary)
 
 - [PowerBIEmbedded](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748168&_a=summary)
