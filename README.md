@@ -41,3 +41,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
    - `install.ps1`, install all required software to the `x` folder, for example [go/install.ps1](go/install.ps1)
    - `build.ps1`, build a `JSON-RPC` server for the Azure REST API specifications, for example [go/build.ps1](go/build.ps1)
    - `test.ps1`, set the `SDK_REMOTE_SERVER` environment variable to a path on the created `JSON-RPC` server, for example [go/test.ps1](go/test.ps1)
+
+See also [Creating JSON-RPC server](json-rpc-server.md).
+
+
