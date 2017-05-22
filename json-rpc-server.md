@@ -35,7 +35,7 @@ For example
                 "clientId": "...",
                 "secret": "..."
             }
-        }
+        },
         "a": "Hello world!",
         "b": 42
     }
@@ -45,6 +45,7 @@ For example
 ### 2.3. Result
 
 The result structure should contain three fields
+
 - **statusCode**
 - **headers**
 - **response**
