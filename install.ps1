@@ -36,7 +36,7 @@ $nodeUrl = "https://nodejs.org/dist/" + $env:TEST_NODE_VER + "/" + $env:TEST_NOD
 npm install -g --silent autorest
 
 "Updating AutoRest..."
-autorest --reset --feed=sergey-shandar
+(autorest --reset --feed=sergey-shandar) 2> $null
 
 "Fixing AutoRest..."
 $dnUrl = "https://download.microsoft.com/download/2/4/A/24A06858-E8AC-469B-8AE6-D0CEC9BA982A/dotnet-win-x64.1.0.5.zip"
