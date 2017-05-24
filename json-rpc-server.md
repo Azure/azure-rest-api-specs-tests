@@ -45,6 +45,7 @@ For example
 ### 2.3. Result
 
 The result structure should contain three fields
+
 - **statusCode**
 - **headers**
 - **response**
