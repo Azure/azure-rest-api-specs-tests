@@ -16,7 +16,7 @@ git clone -q --branch=$env:TEST_BRANCH $testRep azure-rest-api-specs
 
 "Cloning azure-sdk-for-net..."
 .\lib\remove.ps1 -path _
-git clone -q --branch=sergey-new-autorest-fixes-tests2 https://github.com/sergey-shandar/azure-sdk-for-net _
+git clone -q --branch=sergey-isolation https://github.com/sergey-shandar/azure-sdk-for-net _
 
 "Installing..."
 
