@@ -37,6 +37,7 @@ npm install -g --silent autorest
 
 "Updating AutoRest..."
 (autorest --reset --feed=sergey-shandar) 2> $null
+$LASTEXITCODE = 0
 
 "Fixing AutoRest..."
 $dnUrl = "https://download.microsoft.com/download/2/4/A/24A06858-E8AC-469B-8AE6-D0CEC9BA982A/dotnet-win-x64.1.0.5.zip"
