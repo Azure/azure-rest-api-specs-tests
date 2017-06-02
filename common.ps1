@@ -26,20 +26,23 @@ if (-Not $info)
 
 $info | Add-Member -type NoteProperty -name isArm -value $info.name.StartsWith("arm-")
 
-$sdk = If ($info.isArm) { $info.name.SubString(4) } Else { $info.name }
-$sdkArray = $sdk.Split("-") | % {$_.SubString(0, 1).ToUpper() + $_.SubString(1)}
-$sdk = [string]::Join(".", $sdkArray)
+If (-Not $info.dotNetFolder)
+{
+    $dotNetFolder = If ($info.isArm) { $info.name.SubString(4) } Else { $info.name }
+    $dotNetFolderArray = $dotNetFolder.Split("-") | % {$_.SubString(0, 1).ToUpper() + $_.SubString(1)}
+    $info | Add-Member -type NoteProperty -name dotNetFolder -value ([string]::Join(".", $dotNetFolderArray))
+}
 
 if (-Not $info.output)
 {    
     $prefix = If ($info.isArm) { "Management." } Else { "dataPlane\Microsoft.Azure." }
-    $info | Add-Member -type NoteProperty -name output -value "$sdk\$prefix$sdk\Generated"
+    $info | Add-Member -type NoteProperty -name output -value "$prefix$($info.dotNetFolder)\Generated"
 }
 
 if (-Not $info.test)
 {
-    $test = "$sdk.Tests"
-    $info | Add-Member -type NoteProperty -name test -value "$sdk\$test\$test.csproj"
+    $test = "$($info.dotNetFolder).Tests"
+    $info | Add-Member -type NoteProperty -name test -value "$test\$test.csproj"
 }
 
 if (-Not $info.modeler)
@@ -51,7 +54,7 @@ if (-Not $info.modeler)
 if (-Not $info.namespace)
 {
     $prefix = If ($info.isArm) { "Management." } Else { "" }
-    $info | Add-Member -type NoteProperty -name namespace -value "Microsoft.Azure.$prefix$sdk"
+    $info | Add-Member -type NoteProperty -name namespace -value "Microsoft.Azure.$prefix$($info.dotnetFolder)"
 }
 
 $info
@@ -66,14 +69,14 @@ If ($info.source)
 }
 $env:TEST_PROJECT_NAMESPACE = $info.namespace
 
-$env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($info.output)"
+$env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($info.dotnetFolder)\$($info.output)"
 if(-Not (Test-Path $env:TEST_PROJECT_FOLDER))
 {
     Write-Error "error: the path dosn't exist $env:TEST_PROJECT_FOLDER"
     exit -1
 }
 
-$env:TEST_PROJECT_TEST = Join-Path $current "_\src\SDKs\$($info.test)"
+$env:TEST_PROJECT_TEST = Join-Path $current "_\src\SDKs\$($info.dotnetFolder)\$($info.test)"
 if(-Not (Test-Path $env:TEST_PROJECT_TEST))
 {
     Write-Error "error: the path dosn't exist $env:TEST_PROJECT_TEST"

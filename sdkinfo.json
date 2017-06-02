@@ -3,7 +3,7 @@
         "name": "arm-analysisservices",
         "source": "2016-05-16/swagger/analysisservices.json",
         "namespace": "Microsoft.Azure.Management.Analysis",
-        "output": "AnalysisServices/Management.Analysis/Generated"
+        "output": "Management.Analysis/Generated"
     },
     {
         "name": "arm-authorization",
@@ -16,13 +16,13 @@
     {
         "name": "batch",
         "source": "2017-05-01.5.0/swagger/BatchService.json",
-        "output": "batch/dataPlane/Azure.batch/Generated"
+        "output": "dataPlane/Azure.batch/Generated"
     },
     {
         "name": "arm-batch",
         "source": "2017-05-01/swagger/BatchManagement.json",
-        "output": "Batch/Management/Management.Batch/Generated",
-        "test": "Batch/Management/Management.Batch.Tests/Management.Batch.Tests.csproj"
+        "output": "Management/Management.Batch/Generated",
+        "test": "Management/Management.Batch.Tests/Management.Batch.Tests.csproj"
     },
     {
         "name": "arm-billing",
@@ -34,7 +34,7 @@
     },
     {
         "name": "arm-cognitiveservices",
-        "namespace": "Microsoft.Azure.Management.CognitiveServices",
+        "dotNetFolder": "CognitiveServices",
         "source": "2016-02-01-preview/swagger/cognitiveservices.json"
     },
     {
@@ -47,15 +47,13 @@
     },
     {
         "name": "arm-containerregistry",
-        "namespace": "Microsoft.Azure.Management.ContainerRegistry",
+        "dotNetFolder": "ContainerRegistry",
         "source": "2017-03-01/swagger/containerregistry.json"
     },
     {
         "name": "arm-customer-insights",
         "source": "2017-01-01/swagger/customer-insights.json",
-        "namespace": "Microsoft.Azure.Management.CustomerInsights",
-        "output": "CustomerInsights/Management.CustomerInsights/Generated",
-        "test": "CustomerInsights/CustomerInsights.Tests/CustomerInsights.Tests.csproj"
+        "dotNetFolder": "CustomerInsights"
     },
     {
         "name": "arm-datalake-analytics/account",
