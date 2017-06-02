@@ -47,26 +47,54 @@
     },
     {
         "name": "arm-containerregistry",
+        "namespace": "Microsoft.Azure.Management.ContainerRegistry",
         "source": "2017-03-01/swagger/containerregistry.json"
     },
     {
         "name": "arm-customer-insights",
         "source": "2017-01-01/swagger/customer-insights.json",
+        "namespace": "Microsoft.Azure.Management.CustomerInsights",
         "output": "CustomerInsights/Management.CustomerInsights/Generated",
         "test": "CustomerInsights/CustomerInsights.Tests/CustomerInsights.Tests.csproj"
     },
     {
-        "name": "arm-datalake-analytics",
-        "source": "account/2016-11-01/swagger/account.json",
+        "name": "arm-datalake-analytics/account",
+        "source": "2016-11-01/swagger/account.json",
+        "namespace": "Microsoft.Azure.Management.DataLake.Analytics",
+        "output": "DataLake.Analytics/Management.DataLake.Analytics/Generated",
         "test": "DataLake.Analytics/DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"
     },
     {
-        "name": "arm-datalake-store",
-        "source": "account/2016-11-01/swagger/account.json",
+        "name": "arm-datalake-analytics/job",
+        "source": "2016-11-01/swagger/job.json",
+        "namespace": "Microsoft.Azure.Management.DataLake.Analytics",
+        "output": "DataLake.Analytics/Management.DataLake.Analytics/Generated",
+        "test": "DataLake.Analytics/DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"        
+    },
+    {
+        "name": "arm-datalake-analytics/catalog",
+        "source": "2016-11-01/swagger/catalog.json",
+        "namespace": "Microsoft.Azure.Management.DataLake.Analytics",
+        "output": "DataLake.Analytics/Management.DataLake.Analytics/Generated",
+        "test": "DataLake.Analytics/DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"        
+    },
+    {
+        "name": "arm-datalake-store/account",
+        "source": "2016-11-01/swagger/account.json",
+        "namespace": "Microsoft.Azure.Management.DataLake.Store",
+        "output": "DataLake.Store/Management.DataLake.Store/Generated",
         "test": "DataLake.Store/DataLakeStore.Tests/DataLakeStore.Tests.csproj"
     },
     {
+        "name": "arm-datalake-store/filesystem",
+        "source": "2016-11-01/swagger/filesystem.json",
+        "namespace": "Microsoft.Azure.Management.DataLake.Store",
+        "output": "DataLake.Store/Management.DataLake.Store/Generated",
+        "test": "DataLake.Store/DataLakeStore.Tests/DataLakeStore.Tests.csproj"
+    },    
+    {
         "name": "arm-devtestlabs",
+        "namespace": "Microsoft.Azure.Management.DevTestLabs",
         "source": "2016-05-15/swagger/DTL.json"
     },
     {
@@ -75,18 +103,25 @@
     },
     {
         "name": "arm-eventhub",
+        "namespace": "Microsoft.Azure.Management.EventHub",
         "source": "2015-08-01/swagger/EventHub.json"
     },
     {
         "name": "arm-graphrbac",
         "source": "compositeGraphRbacManagementClient.json",
         "output": "Graph.RBAC/Graph.RBAC/Generated",
+        "namespace": "Microsoft.Azure.Graph.RBAC",
         "test": "Graph.RBAC/Graph.RBAC.Tests/Graph.RBAC.Tests.csproj"
+    },
+    {
+        "name": "insights",
+        "source": "compositeInsightsClient.json",
+        "output": "Insights/Microsoft.Azure.Insights/Generated/Insights"
     },
     {
         "name": "arm-insights",
         "source": "compositeInsightsManagementClient.json",
-        "output": "Insights/Microsoft.Azure.Insights/Generated"
+        "output": "Insights/Microsoft.Azure.Insights/Generated/Management/Insights"
     },
     {
         "name": "arm-intune",
@@ -95,6 +130,7 @@
     },
     {
         "name": "arm-iothub",
+        "namespace": "Microsoft.Azure.Management.IotHub",
         "source": "2016-02-03/swagger/iothub.json"
     },
     {
@@ -104,6 +140,7 @@
     {
         "name": "arm-keyvault",
         "source": "2015-06-01/swagger/keyvault.json",
+        "namespace": "Microsoft.Azure.Management.KeyVault",
         "output": "KeyVault/Management/Management.KeyVault/Generated",
         "test": "KeyVault/Management/KeyVaultManagement.Tests/KeyVaultManagement.Tests.csproj"
     },
@@ -112,23 +149,36 @@
         "source": "2016-06-01/swagger/logic.json"
     },
     {
-        "name": "arm-machinelearning",
-        "source": "2017-01-01/swagger/webservices.json"
+        "name": "arm-machinelearning/2017-01-01/swagger/webservices.json",
+        "source": "",
+        "namespace": "Microsoft.Azure.Management.MachineLearning.WebServices",
+        "output": "MachineLearning/Management.MachineLearning/Generated/WebServices",
+        "test": "MachineLearning/MachineLearning.Tests/MachineLearning.Tests.csproj"
     },
+    {
+        "name": "arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json",
+        "source": "",
+        "namespace": "Microsoft.Azure.Management.MachineLearning.CommitmentPlans",
+        "output": "MachineLearning/Management.MachineLearning/Generated/CommitmentPlans",
+        "test": "MachineLearning/MachineLearning.Tests/MachineLearning.Tests.csproj"
+    },    
     {
         "name": "arm-mediaservices",
         "source": "2015-10-01/swagger/media.json",
+        "namespace": "Microsoft.Azure.Management.Media",
         "output": "Media/Management.Media/Generated",
         "test": "Media/Media.Tests/Media.Tests.csproj"
     },
     {
         "name": "monitor",
         "source": "compositeMonitorClient.json",
+        "namespace": "Microsoft.Azure.Management.Monitor",
         "output": "Monitor/Management.Monitor/Generated/Monitor"
     },    
     {
         "name": "arm-monitor",
         "source": "compositeMonitorManagementClient.json",
+        "namespace": "Microsoft.Azure.Management.Monitor.Management",
         "output": "Monitor/Management.Monitor/Generated/Management/Monitor"
     },
     {
@@ -137,24 +187,29 @@
     },
     {
         "name": "arm-notificationhubs",
+        "namespace": "Microsoft.Azure.Management.NotificationHubs",
         "source": "2017-04-01/swagger/notificationhubs.json"
     },
     {
         "name": "arm-operationalinsights",
         "source": "compositeOperationalInsights.json",
+        "namespace": "Microsoft.Azure.Management.OperationalInsights",
         "test": "OperationalInsights/OperationalInsights.Test/OperationalInsights.Test.csproj"
     },
     {
         "name": "arm-powerbiembedded",
+        "namespace": "Microsoft.Azure.Management.PowerBIEmbedded",
         "source": "2016-01-29/swagger/powerbiembedded.json"
     },
     {
         "name": "arm-recoveryservices",
+        "namespace": "Microsoft.Azure.Management.RecoveryServices",
         "source": "compositeRecoveryServicesClient.json"
     },
     {
         "name": "arm-recoveryservicesbackup",
         "source": "2016-12-01/swagger/backupManagement.json",
+        "namespace": "Microsoft.Azure.Management.RecoveryServices.Backup",
         "output": "RecoveryServices.Backup/Management.RecoveryServices.Backup/Generated",
         "test": "RecoveryServices.Backup/RecoveryServices.Backup.Tests/RecoveryServices.Backup.Tests.csproj"
     },

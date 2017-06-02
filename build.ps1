@@ -20,3 +20,5 @@ autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:
 
 "Restoring test project NuGet packages..."
 dotnet restore $env:TEST_PROJECT_TEST
+
+dotnet build $env:TEST_PROJECT_TEST

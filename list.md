@@ -1,24 +1,41 @@
 # A List of Services
 
-- [AnalysisServices](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=746607&_a=summary)
-- [Authorization](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=746648&_a=summary)
-- [Automation](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=746868&_a=summary)
-- [Batch_Management](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747106&_a=summary)
-- [Batch_dataPlane](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747112&_a=summary)
-- [Billing](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747125&_a=summary)
-- [Cdn](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747126&_a=summary)
-- [CognitiveServices](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747241&_a=summary)
-- [Compute](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747267&_a=summary)
-- [Consumption](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747646&_a=summary)
-- [ContainerRegistry](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747657&_a=summary)
-- [CustomerInsights](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747704&_a=summary)
-- [DataLake.Analytics](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747710&_a=summary)
-- [DataLake.Store](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=747918&_a=summary)
-- [DevTestLabs](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748625&_a=summary)
-- [Dns](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748726&_a=summary)
-- [EventHub](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748769&_a=summary)
-- [Gallery](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=749401&_a=summary) - failed. No `generate.cmd` file.
-- [Graph.RBAC](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=750892&_a=summary) - failed. A relative path bug.
-- [Insights](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=751070&_a=summary)
+- **arm-analysisservices**
+- **arm-authorization**
+- **arm-automation**
+- **arm-batch**, compilation errors
+- **arm-billing**
+- **arm-cdn**, compilation errors
+- **arm-cognitiveservices**
+- **arm-compute**, compilation errors
+- **arm-consumption**
+- **arm-containerregistry** compilation errors
+- **arm-customer-insights**
+- **arm-datalake-analytics/account**
+- **arm-datalake-analytics/job**
+- **arm-datalake-analytics/catalog**
+- **arm-datalake-store/account**
+- **arm-datalake-store/filesystem**
+- **arm-devtestlabs**
+- **arm-eventhub**
+- **arm-graphrbac**
+- **insights**
+- **arm-insights**
+- **arm-intune** broken
+- **arm-iothub** compilation errors
+- **arm-keyvault** compilation errors
+- **arm-logic**
+- **arm-machinelearning/2017-01-01/swagger/webservices.json**
+- **arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json**
+- **arm-mediaservices** compilation error
+- **monitor**
+- **arm-monitor**
+- **arm-network**
+- **arm-notificationhubs**
+- **arm-operationalinsights**
+- **arm-powerbiembedded**
+- **arm-recoveryservices**
+- **arm-recoveryservicesbackup**
+- **arm-redis**
+- **arm-relay**
 
-- [PowerBIEmbedded](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=748168&_a=summary)

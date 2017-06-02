@@ -27,8 +27,8 @@ if (-Not $info)
 $info | Add-Member -type NoteProperty -name isArm -value $info.name.StartsWith("arm-")
 
 $sdk = If ($info.isArm) { $info.name.SubString(4) } Else { $info.name }
-$sdk = $sdk.Replace("-", ".")
-$sdk = $sdk.SubString(0, 1).ToUpper() + $sdk.SubString(1)
+$sdkArray = $sdk.Split("-") | % {$_.SubString(0, 1).ToUpper() + $_.SubString(1)}
+$sdk = [string]::Join(".", $sdkArray)
 
 if (-Not $info.output)
 {    
@@ -59,7 +59,11 @@ $info
 $current = pwd
 
 $env:TEST_MODELER = $info.modeler
-$env:TEST_INPUT = Join-Path (Join-Path $current "azure-rest-api-specs\$($info.name)") $info.source
+$env:TEST_INPUT = Join-Path $current "azure-rest-api-specs\$($info.name)"
+If ($info.source)
+{
+    $env:TEST_INPUT = Join-Path $env:TEST_INPUT $info.source
+}
 $env:TEST_PROJECT_NAMESPACE = $info.namespace
 
 $env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($info.output)"
