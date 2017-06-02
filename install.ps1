@@ -15,8 +15,16 @@ $testRep = "https://github.com/$env:TEST_FORK/azure-rest-api-specs"
 git clone -q --branch=$env:TEST_BRANCH $testRep azure-rest-api-specs
 
 "Cloning azure-sdk-for-net..."
+if(-Not $env:TEST_DOTNETSDK_FORK)
+{
+    $env:TEST_DOTNETSDK_FORK = "Azure"
+}
+if(-Not $env:TEST_DOTNETSDK_BRANCH)
+{
+    $env:TEST_DOTNETSDK_BRANCH = "vs17Dev"
+}
 .\lib\remove.ps1 -path _
-git clone -q --branch=sergey-new-autorest-fixes-tests2 https://github.com/sergey-shandar/azure-sdk-for-net _
+git clone -q --branch=$env:TEST_DOTNETSDK_BRANCH "https://github.com/$env:TEST_DOTNETSDK_FORK/azure-sdk-for-net" _
 
 "Installing..."
 
