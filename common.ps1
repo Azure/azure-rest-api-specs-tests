@@ -28,6 +28,7 @@ $info | Add-Member -type NoteProperty -name isArm -value $info.name.StartsWith("
 
 $sdk = If ($info.isArm) { $info.name.SubString(4) } Else { $info.name }
 $sdk = $sdk.Replace("-", ".")
+$sdk = $sdk.SubString(0, 1).ToUpper() + $sdk.SubString(1)
 
 if (-Not $info.output)
 {    
@@ -49,7 +50,7 @@ if (-Not $info.modeler)
 
 if (-Not $info.namespace)
 {
-    $prefix = If (info.isArm) { "Management." } Else { "" }
+    $prefix = If ($info.isArm) { "Management." } Else { "" }
     $info | Add-Member -type NoteProperty -name namespace -value "Microsoft.Azure.$prefix$sdk"
 }
 
