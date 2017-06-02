@@ -43,5 +43,3 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
    - `test.ps1`, set the `SDK_REMOTE_SERVER` environment variable to a path on the created `JSON-RPC` server, for example [go/test.ps1](go/test.ps1)
 
 See also [Creating JSON-RPC server](json-rpc-server.md).
-
-

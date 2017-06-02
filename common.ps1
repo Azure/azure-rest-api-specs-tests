@@ -26,38 +26,53 @@ if (-Not $info)
 
 $info | Add-Member -type NoteProperty -name isArm -value $info.name.StartsWith("arm-")
 
-If (-Not $info.dotNetFolder)
-{
-    $dotNetFolder = If ($info.isArm) { $info.name.SubString(4) } Else { $info.name }
-    $dotNetFolderArray = $dotNetFolder.Split("-") | % {$_.SubString(0, 1).ToUpper() + $_.SubString(1)}
-    $info | Add-Member -type NoteProperty -name dotNetFolder -value ([string]::Join(".", $dotNetFolderArray))
-}
-
-if (-Not $info.output)
-{    
-    $prefix = If ($info.isArm) { "Management." } Else { "dataPlane\Microsoft.Azure." }
-    $info | Add-Member -type NoteProperty -name output -value "$prefix$($info.dotNetFolder)\Generated"
-}
-
-if (-Not $info.test)
-{
-    $test = "$($info.dotNetFolder).Tests"
-    $info | Add-Member -type NoteProperty -name test -value "$test\$test.csproj"
-}
-
 if (-Not $info.modeler)
 {
     $modeler = If ($info.source.StartsWith("composite")) { "CompositeSwagger" } Else { "Swagger" }
     $info | Add-Member -type NoteProperty -name modeler -value $modeler
 }
 
-if (-Not $info.namespace)
+If (-Not $info.dotNet)
+{
+    $dotNet = New-Object -TypeName PSObject
+    $info | Add-Member -type NoteProperty -name dotNet -value $dotNet
+}
+
+$dotNet = $info.dotNet
+
+If (-Not $dotNet.name)
+{
+    $dotNetName = $info.name.Split("/")[0]
+    $dotNetName = If ($info.isArm) { $dotNetName.SubString(4) } Else { $dotNetName }
+    $dotNetNameArray = $dotNetName.Split("-") | % {$_.SubString(0, 1).ToUpper() + $_.SubString(1)}
+    $dotNet | Add-Member -type NoteProperty -name name -value ([string]::Join(".", $dotNetNameArray))
+}
+
+If (-Not $dotNet.folder)
+{
+    $dotNet | Add-Member -type NoteProperty -name folder -value $dotNet.name
+}
+
+if (-Not $dotNet.output)
+{    
+    $prefix = If ($info.isArm) { "Management." } Else { "dataPlane\Microsoft.Azure." }
+    $dotNet | Add-Member -type NoteProperty -name output -value "$prefix$($dotNet.name)\Generated"
+}
+
+if (-Not $dotNet.test)
+{
+    $test = "$($dotNet.name).Tests"
+    $dotNet | Add-Member -type NoteProperty -name test -value "$test\$test.csproj"
+}
+
+if (-Not $dotNet.namespace)
 {
     $prefix = If ($info.isArm) { "Management." } Else { "" }
-    $info | Add-Member -type NoteProperty -name namespace -value "Microsoft.Azure.$prefix$($info.dotnetFolder)"
+    $dotNet | Add-Member -type NoteProperty -name namespace -value "Microsoft.Azure.$prefix$($dotNet.name)"
 }
 
 $info
+$dotNet
 
 $current = pwd
 
@@ -67,16 +82,16 @@ If ($info.source)
 {
     $env:TEST_INPUT = Join-Path $env:TEST_INPUT $info.source
 }
-$env:TEST_PROJECT_NAMESPACE = $info.namespace
+$env:TEST_PROJECT_NAMESPACE = $dotNet.namespace
 
-$env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($info.dotnetFolder)\$($info.output)"
+$env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.output)"
 if(-Not (Test-Path $env:TEST_PROJECT_FOLDER))
 {
     Write-Error "error: the path dosn't exist $env:TEST_PROJECT_FOLDER"
     exit -1
 }
 
-$env:TEST_PROJECT_TEST = Join-Path $current "_\src\SDKs\$($info.dotnetFolder)\$($info.test)"
+$env:TEST_PROJECT_TEST = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.test)"
 if(-Not (Test-Path $env:TEST_PROJECT_TEST))
 {
     Write-Error "error: the path dosn't exist $env:TEST_PROJECT_TEST"
