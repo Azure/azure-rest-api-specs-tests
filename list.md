@@ -38,4 +38,20 @@
 - **arm-recoveryservicesbackup**
 - **arm-redis**
 - **arm-relay**
-
+- **arm-resources/resources**
+- **arm-resources/locks**
+- **arm-resources/features**
+- **arm-resources/subscriptions**
+- **arm-resources/policy**
+- **arm-resources/links**
+- **arm-scheduler**
+- **search/2016-09-01/swagger/searchindex.json** compilation errors
+- **search/2016-09-01/swagger/searchservice.json** compilation errors
+- **arm-search** compilation errors
+- **arm-servermanagement** compilation errors
+- **arm-servicebus**
+- **arm-servicefabric**
+- **arm-sql** compilation errors
+- **arm-storage** compilation errors
+- **arm-trafficmanager**
+- **arm-web** compilation errors
