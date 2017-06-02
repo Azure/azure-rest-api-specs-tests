@@ -2,6 +2,7 @@
     {
         "name": "arm-analysisservices",
         "source": "2016-05-16/swagger/analysisservices.json",
+        "namespace": "Microsoft.Azure.Management.Analysis",
         "output": "AnalysisServices/Management.Analysis/Generated"
     },
     {

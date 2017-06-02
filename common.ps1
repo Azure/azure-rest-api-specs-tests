@@ -47,12 +47,19 @@ if (-Not $info.modeler)
     $info | Add-Member -type NoteProperty -name modeler -value $modeler
 }
 
+if (-Not $info.namespace)
+{
+    $prefix = If (info.isArm) { "Management." } Else { "" }
+    $info | Add-Member -type NoteProperty -name namespace -value "Microsoft.Azure.$prefix$sdk"
+}
+
 $info
 
 $current = pwd
 
 $env:TEST_MODELER = $info.modeler
 $env:TEST_INPUT = Join-Path (Join-Path $current "azure-rest-api-specs\$($info.name)") $info.source
+$env:TEST_PROJECT_NAMESPACE = $info.namespace
 
 $env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($info.output)"
 if(-Not (Test-Path $env:TEST_PROJECT_FOLDER))
