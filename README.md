@@ -18,7 +18,7 @@ The scripts use [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net)
 
 #### Enviroment Variables
 
-- `TEST_PROJECT` is a folder name from the [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net/tree/vs17Dev/src/SDKs). For example `RedisCache`.
+- `TEST_PROJECT` is a REST API specification name from [azure-rest-api-specs](https://github.com/Azure/azure-rest-api-specs). See [sdkinfo.json](sdkinfo.json) for available names. For example `arm-redis`.
 - `TEST_LANG` is a Azure SDK progamming language. For example `go`.
 - `TEST_CSM_ORGID_AUTHENTICATION` is a connection string, in a format `SubscriptionId=...;ServicePrincipal=...;ServicePrincipalSecret=...;AADTenant=...;`
 - `TEST_FORK` is a GitHub fork name of the [azure-rest-api-specs](https://github.com/Azure/azure-rest-api-specs).

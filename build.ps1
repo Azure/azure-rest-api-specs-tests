@@ -8,15 +8,15 @@ if ($TEST_PROJECT)
 }
  
 .\common.ps1
-
-$current = pwd
+if (-Not $?)
+{
+    exit $LASTEXITCODE
+}
 
 .\lang.ps1 -script "build"
 
 "Generating SDK..."
-cd $env:TEST_PROJECT_FOLDER
-.\generate.cmd
-cd $current
+autorest -Modeler $env:TEST_MODELER -CodeGenerator Azure.JsonRpcClient -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER
 
 "Restoring test project NuGet packages..."
 dotnet restore $env:TEST_PROJECT_TEST
