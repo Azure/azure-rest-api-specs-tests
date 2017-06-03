@@ -22,3 +22,8 @@ autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:
 dotnet restore $env:TEST_PROJECT_TEST
 
 dotnet build $env:TEST_PROJECT_TEST
+if (-Not $?)
+{
+    Write-Error "build errors"
+    exit $LASTEXITCODE
+}
