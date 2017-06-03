@@ -1,13 +1,11 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 environment:
-  matrix:
-  - TEST_PROJECT: arm-batch
-  
+  matrix:  
   - TEST_PROJECT: arm-analysisservices
   - TEST_PROJECT: arm-authorization
   - TEST_PROJECT: arm-automation
-
+  - TEST_PROJECT: arm-batch
   - TEST_PROJECT: arm-billing
   - TEST_PROJECT: arm-cdn
   - TEST_PROJECT: arm-cognitiveservices
