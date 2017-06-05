@@ -1,0 +1,66 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+environment:
+  TEST_LANG: go
+  matrix:  
+  - TEST_PROJECT: arm-analysisservices
+  - TEST_PROJECT: arm-authorization
+  - TEST_PROJECT: arm-automation
+  - TEST_PROJECT: arm-batch
+  - TEST_PROJECT: arm-billing
+  - TEST_PROJECT: arm-cdn
+  - TEST_PROJECT: arm-cognitiveservices
+  - TEST_PROJECT: arm-compute
+  - TEST_PROJECT: arm-consumption
+  - TEST_PROJECT: arm-containerregistry
+  - TEST_PROJECT: arm-customer-insights
+  - TEST_PROJECT: arm-datalake-analytics/account
+  - TEST_PROJECT: arm-datalake-analytics/job
+  - TEST_PROJECT: arm-datalake-analytics/catalog
+  - TEST_PROJECT: arm-datalake-store/account
+  - TEST_PROJECT: arm-datalake-store/filesystem
+  - TEST_PROJECT: arm-devtestlabs
+  - TEST_PROJECT: arm-eventhub
+  - TEST_PROJECT: arm-graphrbac
+  - TEST_PROJECT: insights
+  - TEST_PROJECT: arm-insights
+  - TEST_PROJECT: arm-intune
+  - TEST_PROJECT: arm-iothub
+  - TEST_PROJECT: arm-keyvault
+  - TEST_PROJECT: arm-logic
+  - TEST_PROJECT: arm-machinelearning/2017-01-01/swagger/webservices.json
+  - TEST_PROJECT: arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json
+  - TEST_PROJECT: arm-mediaservices
+  - TEST_PROJECT: monitor
+  - TEST_PROJECT: arm-monitor
+  - TEST_PROJECT: arm-network
+  - TEST_PROJECT: arm-notificationhubs  
+  - TEST_PROJECT: arm-operationalinsights
+  - TEST_PROJECT: arm-powerbiembedded
+  - TEST_PROJECT: arm-recoveryservices
+  - TEST_PROJECT: arm-recoveryservicesbackup
+  - TEST_PROJECT: arm-redis
+  - TEST_PROJECT: arm-relay
+  - TEST_PROJECT: arm-resources/resources
+  - TEST_PROJECT: arm-resources/locks
+  - TEST_PROJECT: arm-resources/features
+  - TEST_PROJECT: arm-resources/subscriptions
+  - TEST_PROJECT: arm-resources/policy
+  - TEST_PROJECT: arm-resources/links
+  - TEST_PROJECT: arm-scheduler
+  - TEST_PROJECT: search/2016-09-01/swagger/searchindex.json
+  - TEST_PROJECT: search/2016-09-01/swagger/searchservice.json
+  - TEST_PROJECT: arm-search
+  - TEST_PROJECT: arm-servermanagement
+  - TEST_PROJECT: arm-servicebus
+  - TEST_PROJECT: arm-servicefabric
+  - TEST_PROJECT: arm-sql
+  - TEST_PROJECT: arm-storage
+  - TEST_PROJECT: arm-trafficmanager
+  - TEST_PROJECT: arm-web
+install:
+- ps: .\install.ps1
+build_script:
+- ps: .\build.ps1
+test_script:
+- ps: .\Test.ps1
