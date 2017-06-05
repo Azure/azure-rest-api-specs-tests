@@ -1,0 +1,413 @@
+[
+    {
+        "name": "arm-analysisservices",
+        "source": "2016-05-16/swagger/analysisservices.json",
+        "dotNet": {
+            "name": "Analysis",
+            "folder": "AnalysisServices",
+            "test": "AnalysisServices.Tests/AnalysisServices.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-authorization",
+        "source": "2015-07-01/swagger/authorization.json"
+    },
+    {
+        "name": "arm-automation",
+        "source": "compositeAutomation.json"
+    },
+    {
+        "name": "batch",
+        "source": "2017-05-01.5.0/swagger/BatchService.json",
+        "dotNet": {
+            "output": "dataPlane/Azure.batch/Generated"
+        }
+    },
+    {
+        "name": "arm-batch",
+        "source": "2017-05-01/swagger/BatchManagement.json",
+        "dotnet": {
+            "folder": "Batch/Management",
+            "test": "Management.Batch.Tests/Management.Batch.Tests.csproj"
+        }        
+    },
+    {
+        "name": "arm-billing",
+        "source": "2017-04-24-preview/swagger/billing.json"
+    },
+    {
+        "name": "arm-cdn",
+        "source": "2016-10-02/swagger/cdn.json"
+    },
+    {
+        "name": "arm-cognitiveservices",
+        "dotNet": {
+            "name": "CognitiveServices"
+        },
+        "source": "2016-02-01-preview/swagger/cognitiveservices.json"
+    },
+    {
+        "name": "arm-compute",
+        "source": "compositeComputeClient.json"
+    },
+    {
+        "name": "arm-consumption",
+        "source": "2017-04-24-preview/swagger/consumption.json"
+    },
+    {
+        "name": "arm-containerregistry",
+        "dotNet": {
+            "name": "ContainerRegistry"
+        },
+        "source": "2017-03-01/swagger/containerregistry.json"
+    },
+    {
+        "name": "arm-customer-insights",
+        "source": "2017-01-01/swagger/customer-insights.json",
+        "dotNet": {
+            "name": "CustomerInsights"
+        }
+    },
+    {
+        "name": "arm-datalake-analytics/account",
+        "source": "2016-11-01/swagger/account.json",
+        "dotNet": { 
+            "name": "DataLake.Analytics",
+            "test": "DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-datalake-analytics/job",
+        "source": "2016-11-01/swagger/job.json",
+        "dotNet": {
+            "name": "DataLake.Analytics",
+            "test": "DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-datalake-analytics/catalog",
+        "source": "2016-11-01/swagger/catalog.json",
+        "dotNet": {
+            "name": "DataLake.Analytics",
+            "test": "DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"
+        }        
+    },
+    {
+        "name": "arm-datalake-store/account",
+        "source": "2016-11-01/swagger/account.json",
+        "dotNet": {
+            "name": "DataLake.Store",
+            "test": "DataLakeStore.Tests/DataLakeStore.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-datalake-store/filesystem",
+        "source": "2016-11-01/swagger/filesystem.json",
+        "dotNet": {
+            "name": "DataLake.Store",
+            "test": "DataLakeStore.Tests/DataLakeStore.Tests.csproj"
+        }        
+    },    
+    {
+        "name": "arm-devtestlabs",
+        "dotNet": {
+            "name": "DevTestLabs"
+        },
+        "source": "2016-05-15/swagger/DTL.json"
+    },
+    {
+        "name": "arm-dns",
+        "source": "2016-04-01/swagger/dns.json"
+    },
+    {
+        "name": "arm-eventhub",
+        "dotNet": {
+            "name": "EventHub"
+        },
+        "source": "2015-08-01/swagger/EventHub.json"
+    },
+    {
+        "name": "arm-graphrbac",
+        "source": "compositeGraphRbacManagementClient.json",
+        "dotNet": {
+            "name": "Graph.RBAC",
+            "namespace": "Microsoft.Azure.Graph.RBAC",
+            "output": "Graph.RBAC/Generated"
+        }                
+    },
+    {
+        "name": "insights",
+        "source": "compositeInsightsClient.json",
+        "dotNet": {
+            "output": "Microsoft.Azure.Insights/Generated/Insights"
+        }
+    },
+    {
+        "name": "arm-insights",
+        "source": "compositeInsightsManagementClient.json",
+        "dotNet": {
+            "output": "Microsoft.Azure.Insights/Generated/Management/Insights"
+        }
+    },
+    {
+        "name": "arm-intune",
+        "source": "2015-01-14-preview/swagger/intune.json",
+        "dotNet": {
+            "output": "Intune/Generated"
+        }
+    },
+    {
+        "name": "arm-iothub",
+        "dotNet": {
+            "name": "IotHub"
+        },
+        "source": "2016-02-03/swagger/iothub.json"
+    },
+    {
+        "name": "keyvault",
+        "source": "2016-10-01/swagger/keyvault.json"
+    },
+    {
+        "name": "arm-keyvault",
+        "source": "2015-06-01/swagger/keyvault.json",
+        "dotNet": 
+        {
+            "name": "KeyVault",
+            "folder": "KeyVault/Management",
+            "test": "KeyVaultManagement.Tests/KeyVaultManagement.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-logic",
+        "source": "2016-06-01/swagger/logic.json"
+    },
+    {
+        "name": "arm-machinelearning/2017-01-01/swagger/webservices.json",
+        "source": "",
+        "dotNet": {
+            "name": "MachineLearning",    
+            "namespace": "Microsoft.Azure.Management.MachineLearning.WebServices",
+            "output": "Management.MachineLearning/Generated/WebServices"
+        }
+    },
+    {
+        "name": "arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json",
+        "source": "",
+        "dotNet": {
+            "name": "MachineLearning",    
+            "namespace": "Microsoft.Azure.Management.MachineLearning.CommitmentPlans",
+            "output": "Management.MachineLearning/Generated/CommitmentPlans"
+        }
+    },    
+    {
+        "name": "arm-mediaservices",
+        "source": "2015-10-01/swagger/media.json",
+        "dotNet": {
+            "name": "Media"
+        }
+    },
+    {
+        "name": "monitor",
+        "source": "compositeMonitorClient.json",
+        "dotNet": {
+            "namespace": "Microsoft.Azure.Management.Monitor",
+            "output": "Management.Monitor/Generated/Monitor"
+        }
+    },    
+    {
+        "name": "arm-monitor",
+        "source": "compositeMonitorManagementClient.json",
+        "dotNet": {
+            "namespace": "Microsoft.Azure.Management.Monitor.Management",
+            "output": "Management.Monitor/Generated/Management/Monitor"
+        }
+    },
+    {
+        "name": "arm-network",
+        "source": "compositeNetworkClient.json"
+    },
+    {
+        "name": "arm-notificationhubs",
+        "dotNet": {
+            "name": "NotificationHubs"
+        },
+        "source": "2017-04-01/swagger/notificationhubs.json"
+    },
+    {
+        "name": "arm-operationalinsights",
+        "source": "compositeOperationalInsights.json",
+        "dotNet": {
+            "name": "OperationalInsights",
+            "test": "OperationalInsights.Test/OperationalInsights.Test.csproj"
+        }
+    },
+    {
+        "name": "arm-powerbiembedded",
+        "dotNet": {
+            "name": "PowerBIEmbedded"
+        },
+        "source": "2016-01-29/swagger/powerbiembedded.json"
+    },
+    {
+        "name": "arm-recoveryservices",
+        "dotNet": {
+            "name": "RecoveryServices"
+        },
+        "source": "compositeRecoveryServicesClient.json"
+    },
+    {
+        "name": "arm-recoveryservicesbackup",
+        "source": "2016-12-01/swagger/backupManagement.json",
+        "dotNet": {
+            "name": "RecoveryServices.Backup"
+        }
+    },
+    {
+        "name": "arm-redis",
+        "source": "2016-04-01/swagger/redis.json",
+        "dotNet": {
+            "name": "Redis",
+            "folder": "RedisCache",
+            "test": "RedisCache.Tests/RedisCache.Tests.csproj"
+        }        
+    },
+    {
+        "name": "arm-relay",
+        "source": "2016-07-01/swagger/relay.json"
+    },
+    {
+        "name": "arm-resources/resources",
+        "source": "2017-05-10/swagger/resources.json",
+        "dotNet": {
+            "name": "ResourceManager",
+            "folder": "Resource",
+            "test": "Resource.Tests/Resource.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-resources/locks",
+        "source": "2016-09-01/swagger/locks.json",
+        "dotNet": {
+            "name": "ResourceManager",
+            "folder": "Resource",
+            "test": "Resource.Tests/Resource.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-resources/features",
+        "source": "2015-12-01/swagger/features.json",
+        "dotNet": {
+            "name": "ResourceManager",
+            "folder": "Resource",
+            "test": "Resource.Tests/Resource.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-resources/subscriptions",
+        "source": "2016-06-01/swagger/subscriptions.json",
+        "dotNet": {
+            "name": "ResourceManager",
+            "folder": "Resource",
+            "test": "Resource.Tests/Resource.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-resources/policy",
+        "source": "2016-04-01/swagger/policy.json",
+        "dotNet": {
+            "name": "ResourceManager",
+            "folder": "Resource",
+            "test": "Resource.Tests/Resource.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-resources/links",
+        "source": "2016-09-01/swagger/links.json",
+        "dotNet": {
+            "name": "ResourceManager",
+            "folder": "Resource",
+            "test": "Resource.Tests/Resource.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-scheduler",
+        "source": "2016-03-01/swagger/scheduler.json",
+        "dotNet": {
+            "test": "Scheduler.Test/Scheduler.Test.csproj"
+        }
+    },
+    {
+        "name": "search/2016-09-01/swagger/searchindex.json",
+        "source": "",
+        "dotNet": {
+            "name": "Search",
+            "folder": "Search/DataPlane",
+            "output": "Microsoft.Azure.Search/GeneratedSearchIndex"
+        }
+    },
+    {
+        "name": "search/2016-09-01/swagger/searchservice.json",
+        "source": "",
+        "dotNet": {
+            "name": "Search",
+            "folder": "Search/DataPlane",
+            "output": "Microsoft.Azure.Search/GeneratedSearchService"
+        }
+    },
+    {
+        "name": "arm-search",
+        "source": "2015-08-19/swagger/search.json",
+        "dotNet": {
+            "name": "Search",            
+            "folder": "Search/Management",
+            "test": "Search.Management.Tests/Search.Management.Tests.csproj"
+        }
+    },
+    {
+        "name": "arm-servermanagement",
+        "source": "2015-07-01-preview/swagger/servermanagement.json",
+        "dotNet": {
+            "name": "ServerManagement"
+        }
+    },
+    {
+        "name": "arm-servicebus",
+        "source": "2015-08-01/swagger/servicebus.json",
+        "dotNet": {
+            "name": "ServiceBus"
+        }
+    },
+    {
+        "name": "arm-servicefabric",
+        "source": "2016-09-01/swagger/servicefabric.json",
+        "dotNet": {
+            "name": "ServiceFabric",
+            "test": "ServiceFabric.Test/ServiceFabric.Test.csproj"
+        }        
+    },
+    {
+        "name": "arm-sql",
+        "source": "compositeSql.json",
+        "dotNet": {
+            "folder": "SqlManagement"
+        }
+    },
+    {
+        "name": "arm-storage",
+        "source": "2016-12-01/swagger/storage.json"
+    },
+    {
+        "name": "arm-trafficmanager",
+        "source": "2017-03-01/swagger/trafficmanager.json",
+        "dotNet": {
+            "name": "TrafficManager"
+        }
+    },
+    {
+        "name": "arm-web",
+        "source": "compositeWebAppClient.json",
+        "dotNet": {
+            "name": "WebSites"
+        }
+    }
+]

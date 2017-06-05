@@ -6,9 +6,17 @@ param([string]$TEST_CSM_ORGID_AUTHENTICATION)
 
 "Testing SDK..."
 
-$env:AZURE_TEST_MODE = "Record"
 if ($TEST_CSM_ORGID_AUTHENTICATION) 
 {
     $env:TEST_CSM_ORGID_AUTHENTICATION = $TEST_CSM_ORGID_AUTHENTICATION
 }
+If ($env:TEST_CSM_ORGID_AUTHENTICATION)
+{
+    $env:AZURE_TEST_MODE = "Record"
+}
 dotnet test -l trx $env:TEST_PROJECT_TEST
+if (-Not $?)
+{
+    Write-Error "test errors"
+    exit $LASTEXITCODE
+}
