@@ -18,7 +18,7 @@ git clone -q --branch=$env:TEST_BRANCH $testRep azure-rest-api-specs
 if(-Not $env:TEST_DOTNETSDK_FORK)
 {
     # $env:TEST_DOTNETSDK_FORK = "Azure"
-    $env:TEST_DOTNETSDK_FORK = sergey-shandar
+    $env:TEST_DOTNETSDK_FORK = "sergey-shandar"
 }
 if(-Not $env:TEST_DOTNETSDK_BRANCH)
 {
