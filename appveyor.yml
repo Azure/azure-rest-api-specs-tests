@@ -2,8 +2,6 @@ version: 1.0.{build}
 image: Visual Studio 2017
 environment:
   TEST_LANG: go
-  TEST_DOTNETSDK_FORK: sergey-shandar
-  TEST_DOTNETSDK_BRANCH: sergey-new-autorest-fixes-tests2
   matrix:  
   - TEST_PROJECT: arm-analysisservices
   - TEST_PROJECT: arm-authorization
