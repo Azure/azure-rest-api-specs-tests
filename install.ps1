@@ -24,7 +24,10 @@ if(-Not $env:TEST_DOTNETSDK_BRANCH)
     $env:TEST_DOTNETSDK_BRANCH = "vs17Dev"
 }
 .\lib\remove.ps1 -path _
-git clone -q --branch=$env:TEST_DOTNETSDK_BRANCH "https://github.com/$env:TEST_DOTNETSDK_FORK/azure-sdk-for-net" _
+$sdkRep = "https://github.com/$env:TEST_DOTNETSDK_FORK/azure-sdk-for-net"
+"Azure SDK for .Net repository: $testRep"
+"Azure SDK for .Net branch: $env:TEST_DOTNETSDK_BRANCH"
+git clone -q --branch=$env:TEST_DOTNETSDK_BRANCH $sdkRep _
 
 "Installing..."
 

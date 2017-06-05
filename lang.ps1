@@ -11,3 +11,4 @@ if ($env:TEST_LANG -eq "go")
 } else {
     $env:CODEGEN = "Azure.CSharp"    
 }
+"Codegen: $env:CODEGEN"
