@@ -23,7 +23,7 @@ if(-Not $env:TEST_DOTNETSDK_FORK)
 if(-Not $env:TEST_DOTNETSDK_BRANCH)
 {
     # $env:TEST_DOTNETSDK_BRANCH = "vs17Dev"
-    sergey-new-autorest-fixes-tests2
+    $env:TEST_DOTNETSDK_BRANCH = "sergey-new-autorest-fixes-tests2"
 }
 .\lib\remove.ps1 -path _
 $sdkRep = "https://github.com/$env:TEST_DOTNETSDK_FORK/azure-sdk-for-net"
