@@ -46,7 +46,7 @@ $xml.Save($xmlFile)
 autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER
 
 "Restoring test project NuGet packages..."
-dotnet restore $env:TEST_PROJECT_TEST -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt"
+dotnet restore $env:TEST_PROJECT_TEST -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt" -s "https://api.nuget.org/v3/index.json"
 
 dotnet build $env:TEST_PROJECT_TEST
 if (-Not $?)
