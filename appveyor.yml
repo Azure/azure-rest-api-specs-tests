@@ -1,7 +1,8 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 environment:
-  matrix:  
+  TEST_LANG: cs
+  matrix:
   - TEST_PROJECT: arm-analysisservices
   - TEST_PROJECT: arm-authorization
   - TEST_PROJECT: arm-automation
