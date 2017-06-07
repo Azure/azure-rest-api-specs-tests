@@ -17,13 +17,13 @@ git clone -q --branch=$env:TEST_BRANCH $testRep azure-rest-api-specs
 "Cloning azure-sdk-for-net..."
 if(-Not $env:TEST_DOTNETSDK_FORK)
 {
-    # $env:TEST_DOTNETSDK_FORK = "Azure"
-    $env:TEST_DOTNETSDK_FORK = "sergey-shandar"
+    $env:TEST_DOTNETSDK_FORK = "Azure"
+    # $env:TEST_DOTNETSDK_FORK = "sergey-shandar"
 }
 if(-Not $env:TEST_DOTNETSDK_BRANCH)
 {
-    # $env:TEST_DOTNETSDK_BRANCH = "vs17Dev"
-    $env:TEST_DOTNETSDK_BRANCH = "sergey-isolation"
+    $env:TEST_DOTNETSDK_BRANCH = "vs17Dev"
+    # $env:TEST_DOTNETSDK_BRANCH = "sergey-isolation"
 }
 .\lib\remove.ps1 -path _
 $sdkRep = "https://github.com/$env:TEST_DOTNETSDK_FORK/azure-sdk-for-net"
