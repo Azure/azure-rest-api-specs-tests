@@ -1,4 +1,9 @@
-param([string]$TEST_PROJECT, [string]$TEST_CSM_ORGID_AUTHENTICATION)
+param([string]$TEST_PROJECT, [string]$TEST_LANG, [string]$TEST_CSM_ORGID_AUTHENTICATION)
+
+if ($TEST_LANG)
+{
+    $env:TEST_LANG = $TEST_LANG
+}
 
 if ($TEST_PROJECT) 
 {

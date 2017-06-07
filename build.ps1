@@ -1,8 +1,13 @@
-param([string]$TEST_PROJECT)
+param([string]$TEST_PROJECT, [string]$TEST_LANG)
 
 $current = (pwd)
 
 "Building..."
+
+if ($TEST_LANG)
+{
+    $env:TEST_LANG = $TEST_LANG
+}
 
 if ($TEST_PROJECT) 
 {
@@ -38,7 +43,7 @@ If (-Not $projectReference)
     $itemGroup.AppendChild($projectReference)
 }
 
-$projectReference.SetAttribute("Version", "1.0.200.172")
+$projectReference.SetAttribute("Version", "1.0.200.176")
 
 $xml.Save($xmlFile)
 
