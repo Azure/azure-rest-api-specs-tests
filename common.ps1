@@ -35,19 +35,6 @@ if (-Not $info.modeler)
     $info | Add-Member -type NoteProperty -name modeler -value $modeler
 }
 
-If (-Not $info.autorest)
-{
-    $autorest = New-Object -TypeName PSObject
-    $info | Add-Member -type NoteProperty -name autorest -value $autorest
-}
-
-$autorest = $info.autorest
-
-if (-Not $info.autorest.ft)
-{
-    $autorest | Add-Member -type NoteProperty -name ft -value 0
-}
-
 If (-Not $info.dotNet)
 {
     $dotNet = New-Object -TypeName PSObject
@@ -55,6 +42,11 @@ If (-Not $info.dotNet)
 }
 
 $dotNet = $info.dotNet
+
+if (-Not $dotNet.ft)
+{
+    $autorest | Add-Member -type NoteProperty -name ft -value 0
+}
 
 If (-Not $dotNet.name)
 {
@@ -94,7 +86,7 @@ $autorest
 $current = pwd
 
 $env:TEST_COMMIT = $info.commit
-$env:TEST_AUTOREST_FT = $info.autorest.ft
+$env:TEST_DOTNET_FT = $dotNet.ft
 
 $env:TEST_MODELER = $info.modeler
 $env:TEST_INPUT = Join-Path $current "azure-rest-api-specs\$($info.name)"

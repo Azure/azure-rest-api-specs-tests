@@ -26,12 +26,10 @@
     {
         "name": "arm-batch",
         "source": "2017-05-01/swagger/BatchManagement.json",
-        "autorest": {
-            "ft": 1
-        },
-        "dotnet": {
+        "dotNet": {
             "folder": "Batch/Management",
-            "test": "Management.Batch.Tests/Management.Batch.Tests.csproj"
+            "test": "Management.Batch.Tests/Management.Batch.Tests.csproj",
+            "ft": 1
         }        
     },
     {
@@ -40,10 +38,10 @@
     },
     {
         "name": "arm-cdn",
-        "autorest":{
+        "source": "2016-10-02/swagger/cdn.json",
+        "dotNet":{
             "ft": 2
-        },
-        "source": "2016-10-02/swagger/cdn.json"
+        }
     },
     {
         "name": "arm-cognitiveservices",
@@ -54,7 +52,10 @@
     },
     {
         "name": "arm-compute",
-        "source": "compositeComputeClient.json"
+        "source": "compositeComputeClient.json",
+        "dotNet":{
+            "ft": 1   
+        }
     },
     {
         "name": "arm-consumption",
@@ -62,10 +63,11 @@
     },
     {
         "name": "arm-containerregistry",
+        "source": "2017-03-01/swagger/containerregistry.json",
         "dotNet": {
-            "name": "ContainerRegistry"
-        },
-        "source": "2017-03-01/swagger/containerregistry.json"
+            "name": "ContainerRegistry",
+            "ft": 2
+        }
     },
     {
         "name": "arm-customer-insights",
