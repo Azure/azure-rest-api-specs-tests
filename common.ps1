@@ -45,7 +45,7 @@ $dotNet = $info.dotNet
 
 if (-Not $dotNet.ft)
 {
-    $autorest | Add-Member -type NoteProperty -name ft -value 0
+    $dotNet | Add-Member -type NoteProperty -name ft -value 0
 }
 
 If (-Not $dotNet.name)
