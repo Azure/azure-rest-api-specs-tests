@@ -26,7 +26,9 @@
     {
         "name": "arm-batch",
         "source": "2017-05-01/swagger/BatchManagement.json",
-        "options": "-ft 1",
+        "autorest": {
+            "ft": 1
+        },
         "dotnet": {
             "folder": "Batch/Management",
             "test": "Management.Batch.Tests/Management.Batch.Tests.csproj"
@@ -38,6 +40,9 @@
     },
     {
         "name": "arm-cdn",
+        "autorest":{
+            "ft": 2
+        },
         "source": "2016-10-02/swagger/cdn.json"
     },
     {
