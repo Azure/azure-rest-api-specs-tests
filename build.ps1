@@ -48,7 +48,8 @@ $projectReference.SetAttribute("Version", "1.0.200.180")
 $xml.Save($xmlFile)
 
 "Generating SDK..."
-autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER
+"autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER $env:TEST_OPTIONS"
+autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER $env:TEST_OPTIONS.Split(' ')
 
 "Restoring test project NuGet packages..."
 dotnet restore $env:TEST_PROJECT_TEST

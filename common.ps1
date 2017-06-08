@@ -79,6 +79,9 @@ $dotNet
 
 $current = pwd
 
+$env:TEST_COMMIT = $info.commit
+$env:TEST_OPTIONS = $info.options
+
 $env:TEST_MODELER = $info.modeler
 $env:TEST_INPUT = Join-Path $current "azure-rest-api-specs\$($info.name)"
 If ($info.source)

@@ -26,6 +26,7 @@
     {
         "name": "arm-batch",
         "source": "2017-05-01/swagger/BatchManagement.json",
+        "options": "-ft 1",
         "dotnet": {
             "folder": "Batch/Management",
             "test": "Management.Batch.Tests/Management.Batch.Tests.csproj"
