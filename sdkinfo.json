@@ -177,7 +177,7 @@
     },
     {
         "name": "arm-keyvault",
-        "source": "2015-06-01/swagger/keyvault.json",
+        "source": "2016-10-01/swagger/keyvault.json",
         "dotNet": 
         {
             "name": "KeyVault",
