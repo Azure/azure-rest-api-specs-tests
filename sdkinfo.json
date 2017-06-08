@@ -166,10 +166,10 @@
     },
     {
         "name": "arm-iothub",
+        "source": "2017-01-19/swagger/iothub.json",
         "dotNet": {
             "name": "IotHub"
-        },
-        "source": "2016-02-03/swagger/iothub.json"
+        }        
     },
     {
         "name": "keyvault",

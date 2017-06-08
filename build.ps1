@@ -47,6 +47,14 @@ $projectReference.SetAttribute("Version", "1.0.200.180")
 
 $xml.Save($xmlFile)
 
+If ($env:TEST_COMMIT)
+{
+    "Commit: $env:TEST_COMMIT"
+    cd azure-rest-api-specs
+    git checkout $env:TEST_COMMIT    
+    cd ..
+}
+
 "Generating SDK..."
 "autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT"
 autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT

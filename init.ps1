@@ -5,8 +5,6 @@ if ($TEST_PROJECT)
     $env:TEST_PROJECT = $TEST_PROJECT
 }
 
-.\common.ps1
-
 "Cloning azure-rest-api-specs..."
 .\lib\remove.ps1 -path azure-rest-api-specs
 
@@ -33,14 +31,6 @@ $testRep = "https://github.com/$env:TEST_FORK/azure-rest-api-specs"
 "Azure REST API Specs branch: $env:TEST_BRANCH"
 git clone -q --branch=$env:TEST_BRANCH $testRep azure-rest-api-specs
 
-If ($env:TEST_COMMIT)
-{
-    "Commit: $env:TEST_COMMIT"
-    cd azure-rest-api-specs
-    git checkout $env:TEST_COMMIT    
-    cd ..
-}
-
 "Cloning azure-sdk-for-net..."
 if(-Not $env:TEST_DOTNETSDK_FORK)
 {
@@ -57,3 +47,4 @@ $sdkRep = "https://github.com/$env:TEST_DOTNETSDK_FORK/azure-sdk-for-net"
 "Azure SDK for .Net repository: $sdkRep"
 "Azure SDK for .Net branch: $env:TEST_DOTNETSDK_BRANCH"
 git clone -q --branch=$env:TEST_DOTNETSDK_BRANCH $sdkRep _
+
