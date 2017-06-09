@@ -26,11 +26,11 @@
     {
         "name": "arm-batch",
         "source": "2017-05-01/swagger/BatchManagement.json",
-        "commit": "19f63015ea5a8a0fc64b9d7e2cdfeac447d93eaf",
         "dotNet": {
             "folder": "Batch/Management",
             "test": "Management.Batch.Tests/Management.Batch.Tests.csproj",
             "ft": 1,
+            "commit": "19f63015ea5a8a0fc64b9d7e2cdfeac447d93eaf",            
             "autorest": "AutoRest.1.0.0-Nightly20170129" 
         }        
     },
@@ -40,7 +40,6 @@
     },
     {
         "name": "arm-cdn",
-        "commit": "master",
         "source": "2016-10-02/swagger/cdn.json",
         "dotNet":{
             "ft": 2,
@@ -55,11 +54,11 @@
         }        
     },
     {
-        "name": "arm-compute",
-        "commit": "99b77b4ff1ecbfb41cf33fc2b8e1d6e957312214",
+        "name": "arm-compute",        
         "source": "compositeComputeClient.json",
         "dotNet":{
-            "ft": 1,
+            "ft": 1,            
+            "commit": "99b77b4ff1ecbfb41cf33fc2b8e1d6e957312214",
             "autorest": "AutoRest.1.0.0-Nightly20170126"   
         }
     },
@@ -70,10 +69,10 @@
     {
         "name": "arm-containerregistry",
         "source": "2017-03-01/swagger/containerregistry.json",
-        "commit": "3b0b26b4b6e3bc5e7cf3610b0866d310abb5b814",
         "dotNet": {
             "name": "ContainerRegistry",
             "ft": 2,
+            "commit": "3b0b26b4b6e3bc5e7cf3610b0866d310abb5b814",
             "autorest": "AutoRest.1.0.0-Nightly20170212"
         }
     },
@@ -258,11 +257,11 @@
     {
         "name": "arm-operationalinsights",
         "source": "compositeOperationalInsights.json",
-        "commit": "a2afb19c0d17535c1d0c3ebf05258e25375fc5a3",
         "dotNet": {
             "name": "OperationalInsights",
             "test": "OperationalInsights.Test/OperationalInsights.Test.csproj",
             "ft": 1,
+            "commit": "a2afb19c0d17535c1d0c3ebf05258e25375fc5a3",
             "autorest": "AutoRest.1.0.0-Nightly20170126"
         }
     },
@@ -414,17 +413,17 @@
     {
         "name": "arm-sql",
         "source": "compositeSql.json",
-        "commit": "b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe",
         "dotNet": {
-            "folder": "SqlManagement"
+            "folder": "SqlManagement",
+            "commit": "b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe"
         }
     },
     {
         "name": "arm-storage",
         "source": "2017-06-01/swagger/storage.json",
-        "commit": "65ffebd25af1fc66db69a2355c38bf87dcb2e3f3",
         "dotNet":{
             "ft": 2,
+            "commit": "65ffebd25af1fc66db69a2355c38bf87dcb2e3f3",            
             "autorest": "AutoRest.1.0.0-Nightly20161212"
         }
     },

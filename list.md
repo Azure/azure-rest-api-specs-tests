@@ -1,15 +1,13 @@
 # A List of Services
 
+## Build Passed
+
 - **arm-analysisservices**
 - **arm-authorization**
 - **arm-automation**
-- **arm-batch**
 - **arm-billing**
-- **arm-cdn**, compilation errors
 - **arm-cognitiveservices**
-- **arm-compute**, compilation errors, can be compiled only with old autorest
 - **arm-consumption**
-- **arm-containerregistry** compilation errors, can be compiled only with old autorest
 - **arm-customer-insights**
 - **arm-datalake-analytics/account**
 - **arm-datalake-analytics/job**
@@ -20,21 +18,17 @@
 - **arm-eventhub**
 - **arm-graphrbac**
 - **arm-insights**
-- **arm-intune** broken
 - **arm-iothub**
 - **arm-keyvault**
 - **arm-logic**
 - **arm-machinelearning/2017-01-01/swagger/webservices.json**
 - **arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json**
-- **arm-mediaservices** compilation error, no idea how to build it
 - **arm-monitor**
 - **arm-network**
 - **arm-notificationhubs**
-- **arm-operationalinsights**
 - **arm-powerbiembedded**
 - **arm-recoveryservices**
 - **arm-recoveryservicesbackup**
-- **arm-redis**
 - **arm-relay**
 - **arm-resources/resources**
 - **arm-resources/locks**
@@ -43,11 +37,38 @@
 - **arm-resources/policy**
 - **arm-resources/links**
 - **arm-scheduler**
-- **arm-search** compilation errors
-- **arm-servermanagement** compilation errors
+- **arm-search**
+- **arm-servermanagement**
 - **arm-servicebus**
 - **arm-servicefabric**
-- **arm-sql** compilation errors
-- **arm-storage** compilation errors
 - **arm-trafficmanager**
-- **arm-web** compilation errors
+
+### Build Passed But With Specific Version Of AutoRest
+
+For these services, we can't use a JSON-RPC client without modifications in .Net tests.
+
+- **arm-batch**
+- **arm-compute**
+- **arm-containerregistry**
+- **arm-redis**
+- **arm-storage**
+
+## Build Errors
+
+- **arm-operationalinsights**
+    - a commit is a2afb19c0d17535c1d0c3ebf05258e25375fc5a3
+    - a specific version of AutoRest
+- **arm-cdn**
+    - a commit id is unknown
+    - a specific AutoRest version
+- **arm-mediaservices**
+    - a commit id is unknown
+    - a specific AutoRest version
+- **arm-sql**
+    - a commit is b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe
+    - AutoRest version is unknown
+- **arm-web**
+    - a commit id is unknown
+    - a specific AutoRest version
+- **arm-intune**
+    - a project file is broken

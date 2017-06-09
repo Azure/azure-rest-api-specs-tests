@@ -85,8 +85,8 @@ $autorest
 
 $current = pwd
 
-$env:TEST_COMMIT = $info.commit
 $env:TEST_DOTNET_FT = $dotNet.ft
+$env:TEST_DOTNET_COMMIT = $dotnet.commit
 $env:TEST_DOTNET_AUTOREST = $dotnet.autorest
 
 $env:TEST_MODELER = $info.modeler
