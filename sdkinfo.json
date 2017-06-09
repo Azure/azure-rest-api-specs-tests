@@ -125,7 +125,10 @@
     },
     {
         "name": "arm-dns",
-        "source": "2016-04-01/swagger/dns.json"
+        "source": "2016-04-01/swagger/dns.json",
+        "dotNet": {
+            "ft": 2
+        }
     },
     {
         "name": "arm-eventhub",
