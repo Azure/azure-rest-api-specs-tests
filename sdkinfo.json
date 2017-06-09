@@ -224,7 +224,8 @@
         "source": "2015-10-01/swagger/media.json",
         "dotNet": {
             "name": "Media",
-            "ft": 2
+            "ft": 2,
+            "autorest": "autorest.0.16.0-Nightly20160413"
         }
     },
     {
