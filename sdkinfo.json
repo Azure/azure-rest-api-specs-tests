@@ -403,21 +403,20 @@
     {
         "name": "arm-sql",
         "source": "compositeSql.json",
-        "commit": "b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe",
         "dotNet": {
             "folder": "SqlManagement"
         }
     },
     {
         "name": "arm-storage",
-        "source": "2016-12-01/swagger/storage.json",
+        "source": "2017-06-01/swagger/storage.json",
         "dotNet":{
             "ft": 2
         }
     },
     {
         "name": "arm-trafficmanager",
-        "source": "2017-03-01/swagger/trafficmanager.json",
+        "source": "2017-05-01/swagger/trafficmanager.json",
         "dotNet": {
             "name": "TrafficManager"
         }
