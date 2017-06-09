@@ -216,7 +216,8 @@
         "name": "arm-mediaservices",
         "source": "2015-10-01/swagger/media.json",
         "dotNet": {
-            "name": "Media"
+            "name": "Media",
+            "ft": 2
         }
     },
     {
