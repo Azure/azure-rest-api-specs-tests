@@ -49,10 +49,10 @@
     },
     {
         "name": "arm-cognitiveservices",
+        "source": "2017-04-18/swagger/cognitiveservices.json",
         "dotNet": {
             "name": "CognitiveServices"
-        },
-        "source": "2017-04-18/swagger/cognitiveservices.json"
+        }        
     },
     {
         "name": "arm-compute",
@@ -70,9 +70,11 @@
     {
         "name": "arm-containerregistry",
         "source": "2017-03-01/swagger/containerregistry.json",
+        "commit": "3b0b26b4b6e3bc5e7cf3610b0866d310abb5b814",
         "dotNet": {
             "name": "ContainerRegistry",
-            "ft": 2
+            "ft": 2,
+            "autorest": "AutoRest.1.0.0-Nightly20170212"
         }
     },
     {
