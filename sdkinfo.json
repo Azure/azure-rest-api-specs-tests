@@ -418,7 +418,8 @@
         "name": "arm-trafficmanager",
         "source": "2017-05-01/swagger/trafficmanager.json",
         "dotNet": {
-            "name": "TrafficManager"
+            "name": "TrafficManager",
+            "ft": 2
         }
     },
     {
