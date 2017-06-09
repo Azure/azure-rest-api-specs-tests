@@ -158,7 +158,8 @@
         "name": "arm-insights",
         "source": "compositeInsightsManagementClient.json",
         "dotNet": {
-            "output": "Microsoft.Azure.Insights/Generated/Management/Insights"
+            "output": "Microsoft.Azure.Insights/Generated/Management/Insights",
+            "ft": 1
         }
     },
     {
