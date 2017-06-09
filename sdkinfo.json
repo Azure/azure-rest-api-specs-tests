@@ -293,8 +293,9 @@
         "dotNet": {
             "name": "Redis",
             "folder": "RedisCache",
-            "test": "RedisCache.Tests/RedisCache.Tests.csproj"
-        }        
+            "test": "RedisCache.Tests/RedisCache.Tests.csproj",
+            "autorest": "autorest.0.17.0-Nightly20161012"
+        }       
     },
     {
         "name": "arm-relay",
