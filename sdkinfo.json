@@ -404,7 +404,10 @@
     },
     {
         "name": "arm-storage",
-        "source": "2016-12-01/swagger/storage.json"
+        "source": "2016-12-01/swagger/storage.json",
+        "dotNet":{
+            "ft": 2
+        }
     },
     {
         "name": "arm-trafficmanager",
