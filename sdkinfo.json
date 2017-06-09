@@ -246,7 +246,8 @@
         "source": "compositeOperationalInsights.json",
         "dotNet": {
             "name": "OperationalInsights",
-            "test": "OperationalInsights.Test/OperationalInsights.Test.csproj"
+            "test": "OperationalInsights.Test/OperationalInsights.Test.csproj",
+            "ft": 1
         }
     },
     {
@@ -373,7 +374,7 @@
     },
     {
         "name": "arm-servermanagement",
-        "source": "2015-07-01-preview/swagger/servermanagement.json",
+        "source": "2016-07-01-preview/swagger/servermanagement.json",
         "dotNet": {
             "name": "ServerManagement"
         }
