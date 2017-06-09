@@ -258,10 +258,12 @@
     {
         "name": "arm-operationalinsights",
         "source": "compositeOperationalInsights.json",
+        "commit": "a2afb19c0d17535c1d0c3ebf05258e25375fc5a3",
         "dotNet": {
             "name": "OperationalInsights",
             "test": "OperationalInsights.Test/OperationalInsights.Test.csproj",
-            "ft": 1
+            "ft": 1,
+            "autorest": "AutoRest.1.0.0-Nightly20170126"
         }
     },
     {
