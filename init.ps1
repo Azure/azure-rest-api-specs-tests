@@ -39,7 +39,7 @@ if(-Not $env:TEST_DOTNETSDK_FORK)
 }
 if(-Not $env:TEST_DOTNETSDK_BRANCH)
 {
-    $env:TEST_DOTNETSDK_BRANCH = "vs17Dev"
+    $env:TEST_DOTNETSDK_BRANCH = "psSdkJson6"
     # $env:TEST_DOTNETSDK_BRANCH = "sergey-isolation"
 }
 .\lib\remove.ps1 -path _
