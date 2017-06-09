@@ -48,7 +48,7 @@
         "dotNet": {
             "name": "CognitiveServices"
         },
-        "source": "2016-02-01-preview/swagger/cognitiveservices.json"
+        "source": "2017-04-18/swagger/cognitiveservices.json"
     },
     {
         "name": "arm-compute",
