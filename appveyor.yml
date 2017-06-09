@@ -20,9 +20,9 @@ environment:
   - TEST_PROJECT: arm-datalake-store/account
   - TEST_PROJECT: arm-datalake-store/filesystem
   - TEST_PROJECT: arm-devtestlabs
+  - TEST_PROJECT: arm-dns
   - TEST_PROJECT: arm-eventhub
   - TEST_PROJECT: arm-graphrbac
-  - TEST_PROJECT: insights
   - TEST_PROJECT: arm-insights
   - TEST_PROJECT: arm-intune
   - TEST_PROJECT: arm-iothub
@@ -31,7 +31,6 @@ environment:
   - TEST_PROJECT: arm-machinelearning/2017-01-01/swagger/webservices.json
   - TEST_PROJECT: arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json
   - TEST_PROJECT: arm-mediaservices
-  - TEST_PROJECT: monitor
   - TEST_PROJECT: arm-monitor
   - TEST_PROJECT: arm-network
   - TEST_PROJECT: arm-notificationhubs  
@@ -48,8 +47,6 @@ environment:
   - TEST_PROJECT: arm-resources/policy
   - TEST_PROJECT: arm-resources/links
   - TEST_PROJECT: arm-scheduler
-  - TEST_PROJECT: search/2016-09-01/swagger/searchindex.json
-  - TEST_PROJECT: search/2016-09-01/swagger/searchservice.json
   - TEST_PROJECT: arm-search
   - TEST_PROJECT: arm-servermanagement
   - TEST_PROJECT: arm-servicebus
