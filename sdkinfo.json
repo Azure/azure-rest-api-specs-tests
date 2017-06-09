@@ -52,6 +52,7 @@
     },
     {
         "name": "arm-compute",
+        "commit": "99b77b4ff1ecbfb41cf33fc2b8e1d6e957312214",
         "source": "compositeComputeClient.json",
         "dotNet":{
             "ft": 1   
