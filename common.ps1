@@ -87,6 +87,7 @@ $current = pwd
 
 $env:TEST_COMMIT = $info.commit
 $env:TEST_DOTNET_FT = $dotNet.ft
+$env:TEST_DOTNET_AUTOREST = $dotnet.autorest
 
 $env:TEST_MODELER = $info.modeler
 $env:TEST_INPUT = Join-Path $current "azure-rest-api-specs\$($info.name)"

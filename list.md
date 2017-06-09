@@ -3,13 +3,13 @@
 - **arm-analysisservices**
 - **arm-authorization**
 - **arm-automation**
-- **arm-batch**, compilation errors
+- **arm-batch**
 - **arm-billing**
 - **arm-cdn**, compilation errors
 - **arm-cognitiveservices**
-- **arm-compute**, compilation errors
+- **arm-compute**, compilation errors, can be compiled only with old autorest
 - **arm-consumption**
-- **arm-containerregistry** compilation errors
+- **arm-containerregistry** compilation errors, can be compiled only with old autorest
 - **arm-customer-insights**
 - **arm-datalake-analytics/account**
 - **arm-datalake-analytics/job**
@@ -19,16 +19,14 @@
 - **arm-devtestlabs**
 - **arm-eventhub**
 - **arm-graphrbac**
-- **insights**
 - **arm-insights**
 - **arm-intune** broken
-- **arm-iothub** compilation errors
-- **arm-keyvault** compilation errors
+- **arm-iothub**
+- **arm-keyvault**
 - **arm-logic**
 - **arm-machinelearning/2017-01-01/swagger/webservices.json**
 - **arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json**
-- **arm-mediaservices** compilation error
-- **monitor**
+- **arm-mediaservices** compilation error, no idea how to build it
 - **arm-monitor**
 - **arm-network**
 - **arm-notificationhubs**
@@ -45,8 +43,6 @@
 - **arm-resources/policy**
 - **arm-resources/links**
 - **arm-scheduler**
-- **search/2016-09-01/swagger/searchindex.json** compilation errors
-- **search/2016-09-01/swagger/searchservice.json** compilation errors
 - **arm-search** compilation errors
 - **arm-servermanagement** compilation errors
 - **arm-servicebus**
@@ -55,4 +51,3 @@
 - **arm-storage** compilation errors
 - **arm-trafficmanager**
 - **arm-web** compilation errors
-

@@ -56,8 +56,29 @@ If ($env:TEST_COMMIT)
 }
 
 "Generating SDK..."
-"autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT"
-autorest -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT
+
+"AutoRest: $env:TEST_DOTNET_AUTOREST"
+if ($env:TEST_DOTNET_AUTOREST) {
+    $index = $env:TEST_DOTNET_AUTOREST.IndexOf('.')
+    $package = $env:TEST_DOTNET_AUTOREST.SubString(0, $index)
+    $version = $env:TEST_DOTNET_AUTOREST.SubString($index + 1)
+    $autoRestExe = ".\_\packages\$env:TEST_DOTNET_AUTOREST\tools\AutoRest.exe"
+    & .\_\tools\nuget.exe install $package -Source "https://www.myget.org/F/autorest/api/v2" -Version $version -o "_\packages\"
+}
+else {
+    $autoRestExe = "autorest"
+}
+
+"$autoRestExe -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT"
+& $autoRestExe -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT
+
+If ($env:TEST_COMMIT)
+{
+    "Revert Commit"
+    cd azure-rest-api-specs
+    git checkout master    
+    cd ..
+}
 
 "Restoring test project NuGet packages..."
 dotnet restore $env:TEST_PROJECT_TEST

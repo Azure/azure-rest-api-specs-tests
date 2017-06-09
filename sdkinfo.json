@@ -26,10 +26,12 @@
     {
         "name": "arm-batch",
         "source": "2017-05-01/swagger/BatchManagement.json",
+        "commit": "19f63015ea5a8a0fc64b9d7e2cdfeac447d93eaf",
         "dotNet": {
             "folder": "Batch/Management",
             "test": "Management.Batch.Tests/Management.Batch.Tests.csproj",
-            "ft": 1
+            "ft": 1,
+            "autorest": "AutoRest.1.0.0-Nightly20170129" 
         }        
     },
     {
@@ -38,9 +40,11 @@
     },
     {
         "name": "arm-cdn",
+        "commit": "master",
         "source": "2016-10-02/swagger/cdn.json",
         "dotNet":{
-            "ft": 2
+            "ft": 2,
+            "autorest": "AutoRest.1.0.0-Nightly20170212"
         }
     },
     {
