@@ -440,7 +440,8 @@
         "name": "arm-web",
         "source": "compositeWebAppClient.json",
         "dotNet": {
-            "name": "WebSites"
+            "name": "WebSites",
+            "autorest": "AutoRest.1.0.0-Nightly20170124"
         }
     }
 ]
