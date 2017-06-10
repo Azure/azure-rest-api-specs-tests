@@ -42,13 +42,13 @@ The object may also have several optional fields. For example
 
 Optional `dotNet` properties:
 
-|Property          |Description                     |Default value                       |Default value example               |
-|------------------|--------------------------------|------------------------------------|------------------------------------|
-|`dotNet.name`     |a .Net style specification name |generated from a specification name |`"Batch"`                           |
-|`dotNet.folder`   |a .Net solution folder          |a `dotNet.name` value               |`"Batch"`                           |
-|`dotNet.test`     |a C# test project file          |generated from a `dotNet.name` value|`"Batch.Tests/Batch.Tests.csproj"`  |
-|`dotNet.output`   |an output folder for AutoRest   |generated from a `dotNet.name` value|`"Managed.Batch/Generated"`         |
-|`dotNet.namespace`|a .Net namespace                |generated from a `dotNet.name` value|`"Microsoft.Azure.Management.Batch"`|
-|`dotNet.ft`       |an AutoRest flattering parameter|`0`                                 |`0`                                 |
-|`dotNet.commit`   |a specification commit id       |current commit id                   |`undefined`                         |
-|`dotNet.autorest` |an AutoRest package             |current AutoRest                    |`undefined`                         |
+|Property          |Description                     |Default value                                       |Default value example               |
+|------------------|--------------------------------|----------------------------------------------------|------------------------------------|
+|`dotNet.name`     |a .Net style specification name |generated from a specification name                 |`"Batch"`                           |
+|`dotNet.folder`   |a .Net solution folder          |a `dotNet.name` value                               |`"Batch"`                           |
+|`dotNet.test`     |a C# test project file          |generated from a value of the `dotNet.name` property|`"Batch.Tests/Batch.Tests.csproj"`  |
+|`dotNet.output`   |an output folder for AutoRest   |generated from a value of the `dotNet.name` property|`"Managed.Batch/Generated"`         |
+|`dotNet.namespace`|a .Net namespace                |generated from a value of the `dotNet.name` property|`"Microsoft.Azure.Management.Batch"`|
+|`dotNet.ft`       |an AutoRest flattering parameter|`0`                                                 |`0`                                 |
+|`dotNet.commit`   |a specification commit id       |current commit id                                   |`undefined`                         |
+|`dotNet.autorest` |an AutoRest package             |current AutoRest                                    |`undefined`                         |
