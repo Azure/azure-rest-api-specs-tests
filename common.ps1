@@ -1,6 +1,6 @@
 $env:TEST_COMMON = Join-Path (pwd) "x"
 
-$env:TEST_PROJECT = $env:TEST_PROJECT.Replace('_', '\')
+$env:TEST_PROJECT = $env:TEST_PROJECT.Replace('_', '/')
 
 $env:TEST_NODE_VER = "v7.10.0"
 
