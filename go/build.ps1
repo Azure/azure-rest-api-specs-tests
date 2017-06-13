@@ -4,7 +4,8 @@ $current = pwd
 
 "Downloading azure-sdk-for-go..."
 $azureSdkPath = Join-Path $env:GOPATHSRC "github.com\Azure\azure-sdk-for-go"
-git clone -q --branch=testgen https://github.com/jhendrixmsft/azure-sdk-for-go $azureSdkPath
+# git clone -q --branch=testgen https://github.com/jhendrixmsft/azure-sdk-for-go $azureSdkPath
+go get github.com/Azure/azure-sdk-for-go
 
 "Installing azure-sdk-for-go..."
 cd $azureSdkPath
@@ -14,10 +15,14 @@ cd $current
 
 $gen = Join-Path $azureSdkPath "gododir\gen.go"
 
+"---------------"
 "Building SDK..."
+"---------------"
 go run $gen -- --sdk 10.0.0 --sw $current
 
+"-----------------"
 "Building tests..."
+"-----------------"
 go run $gen -- --sdk 10.0.0 --sw $current -t
 
 "Updating go-autorest..."
