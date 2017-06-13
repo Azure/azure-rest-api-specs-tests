@@ -7,9 +7,6 @@
     - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800434&_a=summary&tab=ms.vss-test-web.test-result-details)
 - **arm-monitor**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800721&_a=summary)
-- **arm-servicebus**
-- **arm-servicefabric**
-- **arm-trafficmanager**
 
 ### Build Passed But Live Test Failed
 
@@ -74,6 +71,10 @@
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802076&_a=summary)
 - **arm-servermanagement**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802235&_a=summary)
+- **arm-servicebus**
+    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802287&_a=summary)
+- **arm-servicefabric**
+    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802445&_a=summary)
 
 ### Build Passed But With Specific Version Of AutoRest
 
@@ -87,6 +88,7 @@ For these services, we can't use a JSON-RPC client without modifications in .Net
 
 ## Build Errors
 
+- **arm-trafficmanager**
 - **arm-operationalinsights**
     - a commit is a2afb19c0d17535c1d0c3ebf05258e25375fc5a3
     - a specific version of AutoRest
