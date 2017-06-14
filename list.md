@@ -19,9 +19,10 @@
         - 12 failed
         - 2 skipped
         - 3 passed
-            - `Authorization.Tests.PermissionsTests.GetNonExistentResourceGroupPermissions`
-            - `Authorization.Tests.PermissionsTests.GetNonExistentResourcePermissions`
-            - `Authorization.Tests.PermissionsTests.GetResourceGroupPermissions`
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803666&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 12 failed
+        - 2 skipped
+        - 3 passed
 - **arm-automation**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800000&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 5 failed
