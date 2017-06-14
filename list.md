@@ -4,7 +4,7 @@
 
 - **arm-insights**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800424&_a=summary&tab=ms.vss-test-web.test-result-details)
-    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800434&_a=summary&tab=ms.vss-test-web.test-result-details)
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803126&_a=summary&tab=ms.vss-test-web.test-result-details)
 - **arm-monitor**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800721&_a=summary)
 
