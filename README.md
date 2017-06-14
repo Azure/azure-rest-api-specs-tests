@@ -19,7 +19,7 @@ The scripts use [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net)
 #### Enviroment Variables
 
 - `TEST_PROJECT` is a REST API specification name from [azure-rest-api-specs](https://github.com/Azure/azure-rest-api-specs). See [sdkinfo.json](sdkinfo.json) for available names. For example `arm-redis`.
-- `TEST_LANG` is a Azure SDK progamming language. For example `go`.
+- `TEST_LANG` is a Azure SDK programming language. For example `go`.
 - `TEST_CSM_ORGID_AUTHENTICATION` is a connection string, in a format `SubscriptionId=...;ServicePrincipal=...;ServicePrincipalSecret=...;AADTenant=...;`
 - `TEST_FORK` is a GitHub fork name of the [azure-rest-api-specs](https://github.com/Azure/azure-rest-api-specs).
 - `TEST_BRANCH` is a GitHub fork branch name of the [azure-rest-api-specs](https://github.com/Azure/azure-rest-api-specs).
@@ -43,3 +43,12 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
    - `test.ps1`, set the `SDK_REMOTE_SERVER` environment variable to a path on the created `JSON-RPC` server, for example [go/test.ps1](go/test.ps1)
 
 See also [Creating JSON-RPC server](json-rpc-server.md).
+
+### Running Locally
+
+1. Run [.\init.ps1](init.ps1) to clone the recent [Azure REST API specifications] and [Azure SDK for .Net]
+1. Run [.\built.ps1 {service name}](build.ps1) to build a service project. For example, `.\build.ps1 arm-redis`.
+1. Run [.\test.ps1 {service name}](build.ps1) to test a service project. For example, `.\test.ps1 arm-redis`.
+1. Run [.\main.ps1 {service name}](build.ps1) to test a service project. For example, `.\main.ps1 arm-redis`.
+
+See also [SDK Mapping Documentation](sdkinfo.md).

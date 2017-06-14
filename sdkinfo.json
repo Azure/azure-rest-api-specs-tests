@@ -26,9 +26,12 @@
     {
         "name": "arm-batch",
         "source": "2017-05-01/swagger/BatchManagement.json",
-        "dotnet": {
+        "dotNet": {
             "folder": "Batch/Management",
-            "test": "Management.Batch.Tests/Management.Batch.Tests.csproj"
+            "test": "Management.Batch.Tests/Management.Batch.Tests.csproj",
+            "ft": 1,
+            "commit": "19f63015ea5a8a0fc64b9d7e2cdfeac447d93eaf",            
+            "autorest": "AutoRest.1.0.0-Nightly20170129" 
         }        
     },
     {
@@ -37,18 +40,27 @@
     },
     {
         "name": "arm-cdn",
-        "source": "2016-10-02/swagger/cdn.json"
+        "source": "2016-10-02/swagger/cdn.json",
+        "dotNet":{
+            "ft": 2,
+            "autorest": "AutoRest.1.0.0-Nightly20170212"
+        }
     },
     {
         "name": "arm-cognitiveservices",
+        "source": "2017-04-18/swagger/cognitiveservices.json",
         "dotNet": {
             "name": "CognitiveServices"
-        },
-        "source": "2016-02-01-preview/swagger/cognitiveservices.json"
+        }        
     },
     {
-        "name": "arm-compute",
-        "source": "compositeComputeClient.json"
+        "name": "arm-compute",        
+        "source": "compositeComputeClient.json",
+        "dotNet":{
+            "ft": 1,            
+            "commit": "99b77b4ff1ecbfb41cf33fc2b8e1d6e957312214",
+            "autorest": "AutoRest.1.0.0-Nightly20170126"   
+        }
     },
     {
         "name": "arm-consumption",
@@ -56,10 +68,13 @@
     },
     {
         "name": "arm-containerregistry",
+        "source": "2017-03-01/swagger/containerregistry.json",
         "dotNet": {
-            "name": "ContainerRegistry"
-        },
-        "source": "2017-03-01/swagger/containerregistry.json"
+            "name": "ContainerRegistry",
+            "ft": 2,
+            "commit": "3b0b26b4b6e3bc5e7cf3610b0866d310abb5b814",
+            "autorest": "AutoRest.1.0.0-Nightly20170212"
+        }
     },
     {
         "name": "arm-customer-insights",
@@ -117,7 +132,10 @@
     },
     {
         "name": "arm-dns",
-        "source": "2016-04-01/swagger/dns.json"
+        "source": "2016-04-01/swagger/dns.json",
+        "dotNet": {
+            "ft": 2
+        }
     },
     {
         "name": "arm-eventhub",
@@ -146,7 +164,8 @@
         "name": "arm-insights",
         "source": "compositeInsightsManagementClient.json",
         "dotNet": {
-            "output": "Microsoft.Azure.Insights/Generated/Management/Insights"
+            "output": "Microsoft.Azure.Insights/Generated/Management/Insights",
+            "ft": 1
         }
     },
     {
@@ -158,10 +177,10 @@
     },
     {
         "name": "arm-iothub",
+        "source": "2017-01-19/swagger/iothub.json",
         "dotNet": {
             "name": "IotHub"
-        },
-        "source": "2016-02-03/swagger/iothub.json"
+        }        
     },
     {
         "name": "keyvault",
@@ -169,7 +188,7 @@
     },
     {
         "name": "arm-keyvault",
-        "source": "2015-06-01/swagger/keyvault.json",
+        "source": "2016-10-01/swagger/keyvault.json",
         "dotNet": 
         {
             "name": "KeyVault",
@@ -203,7 +222,9 @@
         "name": "arm-mediaservices",
         "source": "2015-10-01/swagger/media.json",
         "dotNet": {
-            "name": "Media"
+            "name": "Media",
+            "ft": 2,
+            "autorest": "autorest.0.16.0-Nightly20160413"
         }
     },
     {
@@ -238,7 +259,10 @@
         "source": "compositeOperationalInsights.json",
         "dotNet": {
             "name": "OperationalInsights",
-            "test": "OperationalInsights.Test/OperationalInsights.Test.csproj"
+            "test": "OperationalInsights.Test/OperationalInsights.Test.csproj",
+            "ft": 1,
+            "commit": "a2afb19c0d17535c1d0c3ebf05258e25375fc5a3",
+            "autorest": "AutoRest.1.0.0-Nightly20170126"
         }
     },
     {
@@ -268,8 +292,9 @@
         "dotNet": {
             "name": "Redis",
             "folder": "RedisCache",
-            "test": "RedisCache.Tests/RedisCache.Tests.csproj"
-        }        
+            "test": "RedisCache.Tests/RedisCache.Tests.csproj",
+            "autorest": "autorest.0.17.0-Nightly20161012"
+        }       
     },
     {
         "name": "arm-relay",
@@ -365,7 +390,7 @@
     },
     {
         "name": "arm-servermanagement",
-        "source": "2015-07-01-preview/swagger/servermanagement.json",
+        "source": "2016-07-01-preview/swagger/servermanagement.json",
         "dotNet": {
             "name": "ServerManagement"
         }
@@ -389,25 +414,33 @@
         "name": "arm-sql",
         "source": "compositeSql.json",
         "dotNet": {
-            "folder": "SqlManagement"
+            "folder": "SqlManagement",
+            "commit": "b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe"
         }
     },
     {
         "name": "arm-storage",
-        "source": "2016-12-01/swagger/storage.json"
+        "source": "2017-06-01/swagger/storage.json",
+        "dotNet":{
+            "ft": 2,
+            "commit": "65ffebd25af1fc66db69a2355c38bf87dcb2e3f3",            
+            "autorest": "AutoRest.1.0.0-Nightly20161212"
+        }
     },
     {
         "name": "arm-trafficmanager",
-        "source": "2017-03-01/swagger/trafficmanager.json",
+        "source": "2017-05-01/swagger/trafficmanager.json",
         "dotNet": {
-            "name": "TrafficManager"
+            "name": "TrafficManager",
+            "ft": 2
         }
     },
     {
         "name": "arm-web",
         "source": "compositeWebAppClient.json",
         "dotNet": {
-            "name": "WebSites"
+            "name": "WebSites",
+            "autorest": "AutoRest.1.0.0-Nightly20170124"
         }
     }
 ]

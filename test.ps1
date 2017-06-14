@@ -1,4 +1,14 @@
-param([string]$TEST_CSM_ORGID_AUTHENTICATION)
+param([string]$TEST_PROJECT, [string]$TEST_LANG, [string]$TEST_CSM_ORGID_AUTHENTICATION)
+
+if ($TEST_LANG)
+{
+    $env:TEST_LANG = $TEST_LANG
+}
+
+if ($TEST_PROJECT) 
+{
+    $env:TEST_PROJECT = $TEST_PROJECT
+}
 
 .\common.ps1
 
@@ -14,6 +24,7 @@ If ($env:TEST_CSM_ORGID_AUTHENTICATION)
 {
     $env:AZURE_TEST_MODE = "Record"
 }
+"Mode: $env:AZURE_TEST_MODE"
 dotnet test -l trx $env:TEST_PROJECT_TEST
 if (-Not $?)
 {

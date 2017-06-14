@@ -1,6 +1,9 @@
 $env:TEST_COMMON = Join-Path (pwd) "x"
 
+$env:TEST_PROJECT = $env:TEST_PROJECT.Replace('_', '/')
+
 $env:TEST_NODE_VER = "v7.10.0"
+
 $env:TEST_NODE = "node-" + $env:TEST_NODE_VER + "-win-x64"
 $env:TEST_NODE_FOLDER = Join-Path $env:TEST_COMMON $env:TEST_NODE
 $env:Path = $env:TEST_NODE_FOLDER + ";" + $env:Path
@@ -40,6 +43,11 @@ If (-Not $info.dotNet)
 
 $dotNet = $info.dotNet
 
+if (-Not $dotNet.ft)
+{
+    $dotNet | Add-Member -type NoteProperty -name ft -value 0
+}
+
 If (-Not $dotNet.name)
 {
     $dotNetName = $info.name.Split("/")[0]
@@ -73,8 +81,13 @@ if (-Not $dotNet.namespace)
 
 $info
 $dotNet
+$autorest
 
 $current = pwd
+
+$env:TEST_DOTNET_FT = $dotNet.ft
+$env:TEST_DOTNET_COMMIT = $dotnet.commit
+$env:TEST_DOTNET_AUTOREST = $dotnet.autorest
 
 $env:TEST_MODELER = $info.modeler
 $env:TEST_INPUT = Join-Path $current "azure-rest-api-specs\$($info.name)"
