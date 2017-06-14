@@ -4,7 +4,7 @@
 
 - **arm-insights**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800424&_a=summary&tab=ms.vss-test-web.test-result-details)
-    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803126&_a=summary&tab=ms.vss-test-web.test-result-details)
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803551&_a=summary&tab=console)
 - **arm-monitor**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800721&_a=summary)
 
@@ -12,52 +12,93 @@
 
 - **arm-analysisservices**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=799962&_a=summary&tab=ms.vss-test-web.test-result-details).
+        - 12 in-memory
+        - 2 failed
 - **arm-authorization**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=799982&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 12 failed
+        - 2 skipped
+        - 3 passed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803666&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 12 failed
+        - 2 skipped
+        - 3 passed
 - **arm-automation**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800000&_a=summary&tab=ms.vss-test-web.test-result-details).
+        - 5 failed
 - **arm-billing**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800014&_a=summary&tab=ms.vss-test-web.test-result-details).
+        - 9 failed
+        - 1 passed
 - **arm-cognitiveservices**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800033&_a=summary&tab=ms.vss-test-web.test-result-details).
+        - 14 failed
+        - 5 passed
 - **arm-consumption**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800138&_a=summary&tab=ms.vss-test-web.test-result-details).
+        - 10 failed
+        - 1 passed
 - **arm-customer-insights**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800160&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 27 failed
 - **arm-datalake-analytics/account**
 - **arm-datalake-analytics/job**
 - **arm-datalake-analytics/catalog**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800186&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 4 failed
+        - 3 passed
 - **arm-datalake-store/account**
 - **arm-datalake-store/filesystem**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800295&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 61 passed
+        - 2 failed
 - **arm-devtestlabs**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800377&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 1 failed
 - **arm-eventhub**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800392&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 5 failed
 - **arm-graphrbac**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800410&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 18 failed
+        - 2 skipped
 - **arm-iothub**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800579&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 2 failed
 - **arm-keyvault**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800583&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 5 failed
 - **arm-logic**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800620&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 146 passed
+        - 20 failed
+        - 48 skipped
 - **arm-machinelearning/2017-01-01/swagger/webservices.json**
 - **arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800629&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 3 passed
+        - 5 failed
 - **arm-network**
     - [Live Test (8.2 h!)](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800727&_a=summary)
+        - 39 passed
+        - 15 failed
+        - 6 skipped
 - **arm-notificationhubs**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801454&_a=summary)
+        - 6 failed
 - **arm-powerbiembedded**
     - [Live Tests](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801466&_a=summary)
+        - 9 failed
 - **arm-recoveryservices**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801492&_a=summary)
+        - 4 failed
 - **arm-recoveryservicesbackup**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801496&_a=summary)
+        - 3 failed
 - **arm-relay**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801664&_a=summary)
+        - 1 passed
+        - 7 failed
 - **arm-resources/resources**
 - **arm-resources/locks**
 - **arm-resources/features**
@@ -65,16 +106,30 @@
 - **arm-resources/policy**
 - **arm-resources/links**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801895&_a=summary)
+        - 103 passed (including in-memory)
+        - 11 failed
+        - 10 skipped
 - **arm-scheduler**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801976&_a=summary)
+        - 23 in-memory passed
+        - 1 passed
+        - 1 in-memory failed
+        - 19 failed
 - **arm-search**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802076&_a=summary)
+        - 28 passed
+        - 9 failed
 - **arm-servermanagement**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802235&_a=summary)
+        - 5 failed
 - **arm-servicebus**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802287&_a=summary)
+        - 1 passed
+        - 6 failed
 - **arm-servicefabric**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=802445&_a=summary)
+        - 4 passed
+        - 3 failed
 
 ### Build Passed But With Specific Version Of AutoRest
 

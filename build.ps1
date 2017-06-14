@@ -43,7 +43,7 @@ If (-Not $projectReference)
     $itemGroup.AppendChild($projectReference)
 }
 
-$projectReference.SetAttribute("Version", "1.0.200.180")
+$projectReference.SetAttribute("Version", "1.0.200.182")
 
 $xml.Save($xmlFile)
 
@@ -69,7 +69,9 @@ else {
     $autoRestExe = "autorest"
 }
 
-"$autoRestExe -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT"
+.\lib\remove.ps1 -path $env:TEST_PROJECT_FOLDER
+mkdir $env:TEST_PROJECT_FOLDER
+"$autoRestExe -LEGACY -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT"
 & $autoRestExe -LEGACY -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT
 
 If ($env:TEST_DOTNET_COMMIT)

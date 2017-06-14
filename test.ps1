@@ -25,7 +25,8 @@ If ($env:TEST_CSM_ORGID_AUTHENTICATION)
     $env:AZURE_TEST_MODE = "Record"
 }
 "Mode: $env:AZURE_TEST_MODE"
-dotnet test -l trx $env:TEST_PROJECT_TEST
+# dotnet test --filter "(TestType!=InMemory)" -l trx $env:TEST_PROJECT_TEST 
+dotnet test -l trx $env:TEST_PROJECT_TEST 
 if (-Not $?)
 {
     Write-Error "test errors"

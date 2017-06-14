@@ -4,8 +4,8 @@ $current = pwd
 
 "Downloading azure-sdk-for-go..."
 $azureSdkPath = Join-Path $env:GOPATHSRC "github.com\Azure\azure-sdk-for-go"
-# git clone -q --branch=testgen https://github.com/jhendrixmsft/azure-sdk-for-go $azureSdkPath
-go get github.com/Azure/azure-sdk-for-go
+git clone -q --branch=master https://github.com/sergey-shandar/azure-sdk-for-go $azureSdkPath
+# go get github.com/Azure/azure-sdk-for-go
 
 "Installing azure-sdk-for-go..."
 cd $azureSdkPath
@@ -34,4 +34,3 @@ go get $env:GOSERVER
 cd $env:GOSERVERFOLDER
 go build
 cd $current
-
