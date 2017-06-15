@@ -43,7 +43,7 @@ If (-Not $projectReference)
     $itemGroup.AppendChild($projectReference)
 }
 
-$projectReference.SetAttribute("Version", "1.0.200.186")
+$projectReference.SetAttribute("Version", "1.0.200.187")
 
 $xml.Save($xmlFile)
 
