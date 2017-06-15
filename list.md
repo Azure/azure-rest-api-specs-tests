@@ -19,7 +19,7 @@
         - 12 failed
         - 2 skipped
         - 3 passed
-    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803666&_a=summary&tab=ms.vss-test-web.test-result-details)
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803686&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 12 failed
         - 2 skipped
         - 3 passed
@@ -30,6 +30,8 @@
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800014&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 9 failed
         - 1 passed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803773&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 10 failed
 - **arm-cognitiveservices**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800033&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 14 failed

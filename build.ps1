@@ -43,7 +43,7 @@ If (-Not $projectReference)
     $itemGroup.AppendChild($projectReference)
 }
 
-$projectReference.SetAttribute("Version", "1.0.200.182")
+$projectReference.SetAttribute("Version", "1.0.200.187")
 
 $xml.Save($xmlFile)
 
@@ -71,8 +71,8 @@ else {
 
 .\lib\remove.ps1 -path $env:TEST_PROJECT_FOLDER
 mkdir $env:TEST_PROJECT_FOLDER
-"$autoRestExe -LEGACY -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT"
-& $autoRestExe -LEGACY -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -Output $env:TEST_PROJECT_FOLDER -ft $env:TEST_DOTNET_FT
+"$autoRestExe -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -outputDirectory $env:TEST_PROJECT_FOLDER  -Header MICROSOFT_MIT -ft $env:TEST_DOTNET_FT"
+& $autoRestExe -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $env:TEST_INPUT -outputDirectory $env:TEST_PROJECT_FOLDER -Header MICROSOFT_MIT -ft $env:TEST_DOTNET_FT
 
 If ($env:TEST_DOTNET_COMMIT)
 {
