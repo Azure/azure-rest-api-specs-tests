@@ -34,7 +34,8 @@ For example
                 "tenantId": "...",
                 "clientId": "...",
                 "secret": "..."
-            }
+            },
+            "httpResponse": true
         },
         "a": "Hello world!",
         "b": 42
@@ -44,25 +45,41 @@ For example
 
 ### 2.3. Result
 
-The result structure should contain three fields
+If `__reserved.httpResponse == true` then the result structure should contain three fields
 
 - **statusCode**
 - **headers**
 - **response**
 
-For example
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": "0",
-    "result": {
-        "statusCode": 200,
-        "headers": { },
-        "response": "somevalue"
-    }
-}
-```
+Examples:
+1. Success
+   ```json
+   {
+       "jsonrpc": "2.0",
+       "id": "0",
+       "result": {
+           "statusCode": 200,
+           "headers": { },
+           "response": "somevalue"
+       }
+   }
+   ```
+2. Error
+   ```json
+   {
+       "jsonrpc": "2.0",
+       "id": "0",
+       "error": {
+           "code": 404,
+           "message": "Not Found",
+           "data": {
+               "statusCode": 404,
+               "headers": { },
+               "response": [ "Error data!" ]
+           }
+       }
+   }
+   ```
 
 ## 3. Implementing Azure SDK Test Service
 
