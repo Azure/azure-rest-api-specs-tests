@@ -4,38 +4,47 @@
 
 - **arm-insights**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800424&_a=summary&tab=ms.vss-test-web.test-result-details)
-    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803551&_a=summary&tab=console)
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803551&_a=summary&tab=console), not implemented
 - **arm-monitor**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800721&_a=summary)
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=806546&_a=summary&tab=ms.vss-test-web.test-result-details), not implemented
 
 ### Build Passed But Live Test Failed
 
 - **arm-analysisservices**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=799962&_a=summary&tab=ms.vss-test-web.test-result-details).
-        - 12 in-memory
+        - 12 in-memory passed
+        - 2 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=806884&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 12 in-memory failed
         - 2 failed
 - **arm-authorization**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=799982&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 12 failed
         - 2 skipped
         - 3 passed
-    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803686&_a=summary&tab=ms.vss-test-web.test-result-details)
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=806922&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 12 failed
         - 2 skipped
         - 3 passed
 - **arm-automation**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800000&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 5 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=806953&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 5 failed
 - **arm-billing**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800014&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 9 failed
         - 1 passed
-    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=803773&_a=summary&tab=ms.vss-test-web.test-result-details)
-        - 10 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=807375&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 9 failed
+        - 1 passed
 - **arm-cognitiveservices**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800033&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 14 failed
         - 5 passed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=807468&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 19 failed
 - **arm-consumption**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800138&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 10 failed
