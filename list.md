@@ -43,15 +43,19 @@
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800033&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 14 failed
         - 5 passed
-    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=807468&_a=summary&tab=ms.vss-test-web.test-result-details)
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=807985&_a=summary)
         - 19 failed
 - **arm-consumption**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800138&_a=summary&tab=ms.vss-test-web.test-result-details).
         - 10 failed
         - 1 passed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=808061&_a=summary&tab=ms.vss-test-web.test-result-details), not implemented
+        - 11 failed
 - **arm-customer-insights**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800160&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 27 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=808151&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 27 failed, not implemented
 - **arm-datalake-analytics/account**
 - **arm-datalake-analytics/job**
 - **arm-datalake-analytics/catalog**
