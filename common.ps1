@@ -31,7 +31,8 @@ $info | Add-Member -type NoteProperty -name isArm -value $info.name.StartsWith("
 
 if (-Not $info.modeler)
 {
-    $modeler = If ($info.source.StartsWith("composite")) { "CompositeSwagger" } Else { "Swagger" }
+    $composite = $info.sources | ? {$_.StartsWith("composite") }
+    $modeler = If ($composite) { "CompositeSwagger" } Else { "Swagger" }
     $info | Add-Member -type NoteProperty -name modeler -value $modeler
 }
 
@@ -90,11 +91,12 @@ $env:TEST_DOTNET_COMMIT = $dotnet.commit
 $env:TEST_DOTNET_AUTOREST = $dotnet.autorest
 
 $env:TEST_MODELER = $info.modeler
-$env:TEST_INPUT = Join-Path $current "azure-rest-api-specs\$($info.name)"
-If ($info.source)
-{
-    $env:TEST_INPUT = Join-Path $env:TEST_INPUT $info.source
-}
+
+$specs = Join-Path $current "azure-rest-api-specs"
+$specs = Join-Path $specs $info.name
+$env:TEST_INPUT = ($info.sources | foreach {Join-Path $specs $_}) -join " "
+$env:TEST_INPUT
+
 $env:TEST_PROJECT_NAMESPACE = $dotNet.namespace
 
 $env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.output)"
