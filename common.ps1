@@ -92,11 +92,6 @@ $env:TEST_DOTNET_AUTOREST = $dotnet.autorest
 
 $env:TEST_MODELER = $info.modeler
 
-# $env:TEST_INPUT = Join-Path $current "azure-rest-api-specs\$($info.name)"
-# If ($info.sources)
-# {
-#     $env:TEST_INPUT = Join-Path $env:TEST_INPUT $info.sources
-# }
 $specs = Join-Path $current "azure-rest-api-specs"
 $specs = Join-Path $specs $info.name
 $env:TEST_INPUT = ($info.sources | foreach {Join-Path $specs $_}) -join " "
