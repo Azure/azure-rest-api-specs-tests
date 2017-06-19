@@ -78,6 +78,8 @@
 - **arm-eventhub**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800392&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 5 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=810225&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 5 failed
 - **arm-graphrbac**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800410&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 18 failed
