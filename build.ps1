@@ -1,5 +1,7 @@
 param([string]$TEST_PROJECT, [string]$TEST_LANG)
 
+Import-Module ".\lib.psm1"
+
 $current = (pwd)
 
 "Building..."
@@ -47,25 +49,31 @@ $projectReference.SetAttribute("Version", "1.0.200.188")
 
 $xml.Save($xmlFile)
 
-If ($env:TEST_DOTNET_COMMIT)
-{
-    "Commit: $env:TEST_DOTNET_COMMIT"
+# Reading SDK Info
+
+$info = Read-SdkInfo
+$info
+
+$dotNet = $info.dotNet
+$dotNet
+
+If ($dotNet.commit) {
+    "Commit: $($dotNet.commit)"
     cd azure-rest-api-specs
-    git checkout $env:TEST_DOTNET_COMMIT    
+    git checkout $dotNet.commit    
     cd ..
 }
 
 "Generating SDK..."
 
-"AutoRest: $env:TEST_DOTNET_AUTOREST"
-if ($env:TEST_DOTNET_AUTOREST) {
-    $index = $env:TEST_DOTNET_AUTOREST.IndexOf('.')
-    $package = $env:TEST_DOTNET_AUTOREST.SubString(0, $index)
-    $version = $env:TEST_DOTNET_AUTOREST.SubString($index + 1)
-    $autoRestExe = ".\_\packages\$env:TEST_DOTNET_AUTOREST\tools\AutoRest.exe"
+"AutoRest: $($dotNet.autorest)"
+if ($dotNet.autorest) {
+    $index = $dotNet.autorest.IndexOf('.')
+    $package = $dotNet.autorest.SubString(0, $index)
+    $version = $dotNet.autorest.SubString($index + 1)
+    $autoRestExe = ".\_\packages\$($dotNet.autorest)\tools\AutoRest.exe"
     & .\_\tools\nuget.exe install $package -Source "https://www.myget.org/F/autorest/api/v2" -Version $version -o "_\packages\"
-}
-else {
+} else {
     $autoRestExe = "autorest"
 }
 
@@ -73,11 +81,11 @@ else {
 mkdir $env:TEST_PROJECT_FOLDER
 $inputs = $env:TEST_INPUT -split " "
 $inputs | foreach {
-    "$autoRestExe -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $_ -outputDirectory $env:TEST_PROJECT_FOLDER  -Header MICROSOFT_MIT -ft $env:TEST_DOTNET_FT"
-    & $autoRestExe -Modeler $env:TEST_MODELER -CodeGenerator $env:CODEGEN -Namespace $env:TEST_PROJECT_NAMESPACE -Input $_ -outputDirectory $env:TEST_PROJECT_FOLDER -Header MICROSOFT_MIT -ft $env:TEST_DOTNET_FT
+    "$autoRestExe -Modeler $($info.modeler) -CodeGenerator $env:CODEGEN -Namespace $($dotNet.namespace) -Input $_ -outputDirectory $env:TEST_PROJECT_FOLDER  -Header MICROSOFT_MIT -ft $($dotNet.ft)"
+    & $autoRestExe -Modeler $info.modeler -CodeGenerator $env:CODEGEN -Namespace $dotNet.namespace -Input $_ -outputDirectory $env:TEST_PROJECT_FOLDER -Header MICROSOFT_MIT -ft $dotNet.ft
 }
 
-If ($env:TEST_DOTNET_COMMIT)
+If ($dotNet.commit)
 {
     "Revert Commit"
     cd azure-rest-api-specs

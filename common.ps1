@@ -13,7 +13,6 @@ $env:Path = $env:TEST_NODE_FOLDER + ";" + $env:Path
 $env:TEST_DOTNET_FOLDER = Join-Path $env:TEST_COMMON "dn"
 $env:Path = $env:TEST_DOTNET_FOLDER + ";" + $env:Path
 
-
 # Project
 
 # A VSTS Build name can't contain '/' so the TEST_PROJECT parameter uses '_' 
@@ -30,18 +29,18 @@ $autorest
 
 $current = pwd
 
-$env:TEST_DOTNET_FT = $dotNet.ft
-$env:TEST_DOTNET_COMMIT = $dotnet.commit
-$env:TEST_DOTNET_AUTOREST = $dotnet.autorest
+# $env:TEST_DOTNET_FT = $dotNet.ft
+# $env:TEST_DOTNET_COMMIT = $dotnet.commit
+# $env:TEST_DOTNET_AUTOREST = $dotnet.autorest
 
-$env:TEST_MODELER = $info.modeler
+# $env:TEST_MODELER = $info.modeler
 
 $specs = Join-Path $current "azure-rest-api-specs"
 $specs = Join-Path $specs $info.name
 $env:TEST_INPUT = ($info.sources | foreach {Join-Path $specs $_}) -join " "
 $env:TEST_INPUT
 
-$env:TEST_PROJECT_NAMESPACE = $dotNet.namespace
+# $env:TEST_PROJECT_NAMESPACE = $dotNet.namespace
 
 $env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.output)"
 if(-Not (Test-Path $env:TEST_PROJECT_FOLDER))

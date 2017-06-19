@@ -1,11 +1,22 @@
-$current = pwd
+$oldCurrent = pwd
 subst t: /D
-subst t: $current
+subst t: $oldCurrent
 cd t:\
 
 .\install.ps1
 .\build.ps1
-.\test.ps1
+if (-Not $?)
+{
+    Write-Error "build errors"
+    exit $LASTEXITCODE
+}
 
-cd $current
+.\test.ps1
+if (-Not $?)
+{
+    Write-Error "test errors"
+    exit $LASTEXITCODE
+}
+
+cd $oldCurrent
 subst t: /D

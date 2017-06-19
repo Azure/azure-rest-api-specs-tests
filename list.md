@@ -95,8 +95,7 @@
         - 146 passed
         - 20 failed
         - 48 skipped
-- **arm-machinelearning/2017-01-01/swagger/webservices.json**
-- **arm-machinelearning/2016-05-01-preview/swagger/commitmentPlans.json**
+- **arm-machinelearning**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800629&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 3 passed
         - 5 failed
