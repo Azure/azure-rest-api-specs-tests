@@ -56,22 +56,29 @@
         - 27 failed
     - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=808151&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 27 failed, not implemented
-- **arm-datalake-analytics/account**
-- **arm-datalake-analytics/job**
-- **arm-datalake-analytics/catalog**
-    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800186&_a=summary&tab=ms.vss-test-web.test-result-details)
+- **arm-datalake-analytics**
+    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=808751&_a=summary)
         - 4 failed
         - 3 passed
-- **arm-datalake-store/account**
-- **arm-datalake-store/filesystem**
-    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800295&_a=summary&tab=ms.vss-test-web.test-result-details)
-        - 61 passed
-        - 2 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=808848&_a=summary&tab=ms.vss-test-web.test-result-details), not implemented
+- **arm-datalake-store**
+    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=809774&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 62 passed
+        - 1 failed
+        - 1 skipped
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=809900&_a=summary&tab=ms.vss-test-web.test-result-details), not implemented
+        - 32 passed
+        - 31 failed
+        - 1 skipped
 - **arm-devtestlabs**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800377&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 1 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=810023&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 1 failed
 - **arm-eventhub**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800392&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 5 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=810225&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 5 failed
 - **arm-graphrbac**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800410&_a=summary&tab=ms.vss-test-web.test-result-details)
