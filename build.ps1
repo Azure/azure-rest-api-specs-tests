@@ -78,11 +78,11 @@ if ($dotNet.autorest) {
 }
 
 $output = Get-DotNetPath -dotNet $dotNet -folder $dotNet.output
-Remove-All -path $output
-mkdir $output
+Clear-Dir -path $output
 
+# Run AutoRest for all sources.
 $inputs = $info.sources
-$inputs | foreach {
+$inputs | ForEach-Object {
     $input = Get-SourcePath -info $info -source $_
     "$autoRestExe -Modeler $($info.modeler) -CodeGenerator $env:CODEGEN -Namespace $($dotNet.namespace) -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $($dotNet.ft)"
     & $autoRestExe -Modeler $info.modeler -CodeGenerator $env:CODEGEN -Namespace $dotNet.namespace -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $dotNet.ft

@@ -1,8 +1,9 @@
+Import-Module ".\lib.psm1"
+
 "Installing..."
 .\common.ps1
 
-.\lib\remove.ps1 -path $env:TEST_COMMON
-mkdir $env:TEST_COMMON
+Clear-Dir -path $env:TEST_COMMON
 
 "Installing .Net Core SDK..."
 $dotnetSdkUrl = "https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-win-x64.1.0.4.zip"

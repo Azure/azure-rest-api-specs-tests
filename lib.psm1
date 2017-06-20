@@ -6,6 +6,19 @@ function Remove-All {
     }
 }
 
+function New-Dir {
+    param([string]$path)
+
+    New-Item -Path $path -ItemType Directory | Out-Null
+} 
+
+function Clear-Dir {
+    param([string]$path)
+
+    Remove-All -path $path
+    New-Dir -path $path
+}
+
 function Set-Default {
     param([psobject] $object, [string] $member, $value)
 
@@ -96,3 +109,5 @@ Export-ModuleMember -Function Read-SdkInfo
 Export-ModuleMember -Function Get-SourcePath
 Export-ModuleMember -Function Get-DotNetPath
 Export-ModuleMember -Function Get-DotNetTest
+Export-ModuleMember -Function New-Dir
+Export-ModuleMember -Function Clear-Dir
