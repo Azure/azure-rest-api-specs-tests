@@ -18,20 +18,3 @@ $env:Path = $env:TEST_DOTNET_FOLDER + ";" + $env:Path
 # A VSTS Build name can't contain '/' so the TEST_PROJECT parameter uses '_' 
 # instead.
 $env:TEST_PROJECT = $env:TEST_PROJECT.Replace('_', '/')
-
-# $info = Read-SdkInfo
-
-# $dotNet = $info.dotNet
-
-# $info
-# $dotNet
-# $autorest
-
-# $current = pwd
-
-# $env:TEST_PROJECT_TEST = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.test)"
-# if(-Not (Test-Path $env:TEST_PROJECT_TEST))
-# {
-#     Write-Error "error: the path dosn't exist $env:TEST_PROJECT_TEST"
-#     exit -1
-# }

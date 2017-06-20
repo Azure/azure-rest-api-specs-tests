@@ -78,8 +78,7 @@ if ($dotNet.autorest) {
 }
 
 $output = Get-DotNetPath -dotNet $dotNet -folder $dotNet.output
-Remove-All -path $output
-New-Dir -path $output
+Clear-Dir -path $output
 
 # Run AutoRest for all sources.
 $inputs = $info.sources
