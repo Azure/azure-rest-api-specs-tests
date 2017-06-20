@@ -1,3 +1,11 @@
+function Remove-All {
+    param([string]$path)
+
+    If (Test-Path $path){
+	    Remove-Item $path -Recurse -Force
+    }
+}
+
 function Set-Default {
     param([psobject] $object, [string] $member, $value)
 
@@ -61,4 +69,30 @@ function Read-SdkInfo {
     return $info
 }
 
-export-modulemember -function Read-SdkInfo
+function Get-SourcePath {
+    param([psobject]$info, [string]$source)
+
+    $current = pwd
+    $specs = Join-Path $current "azure-rest-api-specs"
+    $specs = Join-Path $specs $info.name
+    return Join-Path $specs $source
+}
+
+function Get-DotNetPath {
+    param([psobject]$dotNet, [string]$folder)
+    
+    $current = pwd
+    return Join-Path $current "_\src\SDKs\$($dotNet.folder)\$folder"
+}
+
+function Get-DotNetTest {
+    param([psobject]$dotNet)
+
+    return Get-DotNetPath -dotNet $dotNet -folder $dotNet.test
+}
+
+Export-ModuleMember -Function Remove-All
+Export-ModuleMember -Function Read-SdkInfo
+Export-ModuleMember -Function Get-SourcePath
+Export-ModuleMember -Function Get-DotNetPath
+Export-ModuleMember -Function Get-DotNetTest

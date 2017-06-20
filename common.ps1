@@ -29,25 +29,19 @@ $autorest
 
 $current = pwd
 
-# $env:TEST_DOTNET_FT = $dotNet.ft
-# $env:TEST_DOTNET_COMMIT = $dotnet.commit
-# $env:TEST_DOTNET_AUTOREST = $dotnet.autorest
-
-# $env:TEST_MODELER = $info.modeler
-
-$specs = Join-Path $current "azure-rest-api-specs"
-$specs = Join-Path $specs $info.name
-$env:TEST_INPUT = ($info.sources | foreach {Join-Path $specs $_}) -join " "
-$env:TEST_INPUT
+# $specs = Join-Path $current "azure-rest-api-specs"
+# $specs = Join-Path $specs $info.name
+# $env:TEST_INPUT = ($info.sources | foreach {Join-Path $specs $_}) -join " "
+# $env:TEST_INPUT
 
 # $env:TEST_PROJECT_NAMESPACE = $dotNet.namespace
 
-$env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.output)"
-if(-Not (Test-Path $env:TEST_PROJECT_FOLDER))
-{
-    Write-Error "error: the path dosn't exist $env:TEST_PROJECT_FOLDER"
-    exit -1
-}
+# $env:TEST_PROJECT_FOLDER = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.output)"
+# if(-Not (Test-Path $env:TEST_PROJECT_FOLDER))
+#{
+#    Write-Error "error: the path dosn't exist $env:TEST_PROJECT_FOLDER"
+#    exit -1
+#}
 
 $env:TEST_PROJECT_TEST = Join-Path $current "_\src\SDKs\$($dotNet.folder)\$($dotNet.test)"
 if(-Not (Test-Path $env:TEST_PROJECT_TEST))

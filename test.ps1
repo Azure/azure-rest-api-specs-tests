@@ -1,5 +1,7 @@
 param([string]$TEST_PROJECT, [string]$TEST_LANG, [string]$TEST_CSM_ORGID_AUTHENTICATION)
 
+Import-Module ".\lib.psm1"
+
 if ($TEST_LANG)
 {
     $env:TEST_LANG = $TEST_LANG
@@ -25,8 +27,12 @@ If ($env:TEST_CSM_ORGID_AUTHENTICATION)
     $env:AZURE_TEST_MODE = "Record"
 }
 "Mode: $env:AZURE_TEST_MODE"
+$info = Read-SdkInfo
+$info
+$test = Get-DotNetTest -dotNet $info.dotNet
+$test
 # dotnet test --filter "(TestType!=InMemory)" -l trx $env:TEST_PROJECT_TEST 
-dotnet test -l trx $env:TEST_PROJECT_TEST 
+dotnet test -l trx $test 
 if (-Not $?)
 {
     Write-Error "test errors"

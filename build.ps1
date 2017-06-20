@@ -77,12 +77,15 @@ if ($dotNet.autorest) {
     $autoRestExe = "autorest"
 }
 
-.\lib\remove.ps1 -path $env:TEST_PROJECT_FOLDER
-mkdir $env:TEST_PROJECT_FOLDER
-$inputs = $env:TEST_INPUT -split " "
+$output = Get-DotNetPath -dotNet $dotNet -folder $dotNet.output
+Remove-All -path $output
+mkdir $output
+
+$inputs = $info.sources
 $inputs | foreach {
-    "$autoRestExe -Modeler $($info.modeler) -CodeGenerator $env:CODEGEN -Namespace $($dotNet.namespace) -Input $_ -outputDirectory $env:TEST_PROJECT_FOLDER  -Header MICROSOFT_MIT -ft $($dotNet.ft)"
-    & $autoRestExe -Modeler $info.modeler -CodeGenerator $env:CODEGEN -Namespace $dotNet.namespace -Input $_ -outputDirectory $env:TEST_PROJECT_FOLDER -Header MICROSOFT_MIT -ft $dotNet.ft
+    $input = Get-SourcePath -info $info -source $_
+    "$autoRestExe -Modeler $($info.modeler) -CodeGenerator $env:CODEGEN -Namespace $($dotNet.namespace) -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $($dotNet.ft)"
+    & $autoRestExe -Modeler $info.modeler -CodeGenerator $env:CODEGEN -Namespace $dotNet.namespace -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $dotNet.ft
 }
 
 If ($dotNet.commit)
@@ -94,12 +97,12 @@ If ($dotNet.commit)
 }
 
 "Restoring test project NuGet packages..."
-dotnet restore $env:TEST_PROJECT_TEST
-dotnet restore $env:TEST_PROJECT_TEST -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt"
+$test = Get-DotNetTest $dotNet
+dotnet restore $test
+dotnet restore $test -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt"
 
-dotnet build $env:TEST_PROJECT_TEST
-if (-Not $?)
-{
+dotnet build $test
+if (-Not $?) {
     Write-Error "build errors"
     exit $LASTEXITCODE
 }
