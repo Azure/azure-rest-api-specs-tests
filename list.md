@@ -84,6 +84,9 @@
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800410&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 18 failed
         - 2 skipped
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=814221&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 18 failed
+        - 2 skipped
 - **arm-iothub**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800579&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 2 failed
