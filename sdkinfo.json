@@ -152,13 +152,6 @@
         }
     },
     {
-        "name": "arm-intune",
-        "sources": [ "2015-01-14-preview/swagger/intune.json" ],
-        "dotNet": {
-            "output": "Intune/Generated"
-        }
-    },
-    {
         "name": "arm-iothub",
         "sources": [ "2017-01-19/swagger/iothub.json" ],
         "dotNet": {
