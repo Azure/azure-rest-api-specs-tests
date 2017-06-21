@@ -6,7 +6,7 @@ The scripts use [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net)
 
 ## Build Definitions
 
-- [Azure SDK CI](http://azuresdkci.cloudapp.net/job/azure-rest-api-specs-tests-all/23/)
+- [Azure SDK CI](http://azuresdkci.cloudapp.net/job/azure-rest-api-specs-tests-all/)
 - [VSTS](https://devdiv.visualstudio.com/NodeRepos/_build/index?definitionId=6392&_a=completed)
 
 ### Creating a Personal Build Definition
