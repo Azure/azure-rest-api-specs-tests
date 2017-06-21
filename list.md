@@ -12,7 +12,7 @@
 ### Build Passed But Live Test Failed
 
 - **arm-analysisservices**
-    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=799962&_a=summary&tab=ms.vss-test-web.test-result-details).
+    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=799962&_a=summary&tab=ms.vss-test-web.test-result-details), SDK breaking changes are recently introduced.
         - 12 in-memory passed
         - 2 failed
     - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=806884&_a=summary&tab=ms.vss-test-web.test-result-details)
@@ -90,18 +90,27 @@
 - **arm-iothub**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800579&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 2 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=816538&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 2 failed
 - **arm-keyvault**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800583&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 5 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=816597&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 5 failed
 - **arm-logic**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800620&_a=summary&tab=ms.vss-test-web.test-result-details)
         - 146 passed
         - 20 failed
         - 48 skipped
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=816678&_a=summary&tab=ms.vss-test-web.test-result-details)
+        - 2 passed
+        - 164 failed
+        - 48 skipped
 - **arm-machinelearning**
-    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800629&_a=summary&tab=ms.vss-test-web.test-result-details)
+    - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800629&_a=summary&tab=ms.vss-test-web.test-result-details), SDK breaking changes are recently introduced.
         - 3 passed
         - 5 failed
+    - [Go](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=816767&_a=summary&tab=ms.vss-test-web.test-result-details)
 - **arm-network**
     - [Live Test (8.2 h!)](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=800727&_a=summary)
         - 39 passed
@@ -123,12 +132,7 @@
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801664&_a=summary)
         - 1 passed
         - 7 failed
-- **arm-resources/resources**
-- **arm-resources/locks**
-- **arm-resources/features**
-- **arm-resources/subscriptions**
-- **arm-resources/policy**
-- **arm-resources/links**
+- **arm-resources**
     - [Live Test](https://devdiv.visualstudio.com/NodeRepos/_build/index?buildId=801895&_a=summary)
         - 103 passed (including in-memory)
         - 11 failed

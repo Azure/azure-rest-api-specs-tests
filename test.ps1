@@ -24,7 +24,8 @@ if ($TEST_CSM_ORGID_AUTHENTICATION)
 }
 If ($env:TEST_CSM_ORGID_AUTHENTICATION)
 {
-    $env:AZURE_TEST_MODE = "Record"
+    # Options: None, Record, Playback
+    $env:AZURE_TEST_MODE = "None"
 }
 "Mode: $env:AZURE_TEST_MODE"
 $info = Read-SdkInfo

@@ -6,8 +6,8 @@ The scripts use [Azure SDK for .Net](https://github.com/Azure/azure-sdk-for-net)
 
 ## Build Definitions
 
-- [VSTS](https://devdiv.visualstudio.com/NodeRepos/_build/index?definitionId=6392&_a=completed)
 - [Azure SDK CI](http://azuresdkci.cloudapp.net/job/azure-rest-api-specs-tests-all/)
+- [VSTS](https://devdiv.visualstudio.com/NodeRepos/_build/index?definitionId=6392&_a=completed)
 
 ### Creating a Personal Build Definition
 
@@ -51,4 +51,6 @@ See also [Creating JSON-RPC server](json-rpc-server.md).
 1. Run [.\test.ps1 {service name}](build.ps1) to test a service project. For example, `.\test.ps1 arm-redis`.
 1. Run [.\main.ps1 {service name}](build.ps1) to build and test a service project. For example, `.\main.ps1 arm-redis`.
 
-See also [SDK Mapping Documentation](sdkinfo.md).
+See also
+- [SDK Mapping Documentation](sdkinfo.md).
+- [Creating an Azure Active Directory application and service principal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal).
