@@ -28,19 +28,8 @@ function Set-Default {
     }
 }
 
-function Read-SdkInfo {
-
-    $array = Get-Content 'sdkinfo.json' | Out-String | ConvertFrom-Json
-
-    $array = $array | ? {$_.name -eq $env:TEST_PROJECT}
-
-    if (-Not $array)
-    {
-        Write-Error "unknown project $env:TEST_PROJECT"
-        exit -1
-    }
-
-    $info = $array[0]
+function Update-SdkInfo {
+    param([psobject] $info)
 
     # isArm
     Set-Default -object $info -member isArm -value $info.name.StartsWith("arm-")
@@ -77,7 +66,42 @@ function Read-SdkInfo {
 
     # dotNet.namespace
     $prefix = If ($info.isArm) { "Management." } Else { "" }
-    Set-Default -object $dotNet -member namespace -value "Microsoft.Azure.$prefix$($dotNet.name)"
+    Set-Default -object $dotNet -member namespace -value "Microsoft.Azure.$prefix$($dotNet.name)"    
+}
+
+function Read-SdkInfoList {
+    param([string] $prefix)
+
+    $array = Get-Content 'sdkinfo.json' | Out-String | ConvertFrom-Json
+
+    $array = $array | ? { $_.name.StartsWith($prefix) }
+
+    if (-Not $array)
+    {
+        Write-Error "unknown project $env:TEST_PROJECT"
+        exit -1
+    }
+
+    $array | % { Update-SdkInfo $_ }
+
+    return $array
+}
+
+function Read-SdkInfo {
+
+    $array = Get-Content 'sdkinfo.json' | Out-String | ConvertFrom-Json
+
+    $array = $array | ? {$_.name -eq $env:TEST_PROJECT}
+
+    if (-Not $array)
+    {
+        Write-Error "unknown project $env:TEST_PROJECT"
+        exit -1
+    }
+
+    $info = $array[0]
+
+    Update-SdkInfo -info $info
 
     return $info
 }
@@ -105,9 +129,11 @@ function Get-DotNetTest {
 }
 
 Export-ModuleMember -Function Remove-All
+Export-ModuleMember -Function New-Dir
+Export-ModuleMember -Function Clear-Dir
+
+Export-ModuleMember -Function Read-SdkInfoList
 Export-ModuleMember -Function Read-SdkInfo
 Export-ModuleMember -Function Get-SourcePath
 Export-ModuleMember -Function Get-DotNetPath
 Export-ModuleMember -Function Get-DotNetTest
-Export-ModuleMember -Function New-Dir
-Export-ModuleMember -Function Clear-Dir
