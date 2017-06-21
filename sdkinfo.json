@@ -5,6 +5,7 @@
         "dotNet": {
             "name": "Analysis",
             "folder": "AnalysisServices",
+            "commit": "4936e4e315ff32f6e53c62d17c065c2f38601169",
             "test": "AnalysisServices.Tests/AnalysisServices.Tests.csproj"
         }
     },
@@ -57,8 +58,7 @@
         "name": "arm-compute",        
         "sources": [ "compositeComputeClient.json" ],
         "dotNet":{
-            "ft": 1,            
-            "commit": "99b77b4ff1ecbfb41cf33fc2b8e1d6e957312214",
+            "ft": 1,
             "autorest": "AutoRest.1.0.0-Nightly20170126"   
         }
     },
