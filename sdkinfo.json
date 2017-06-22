@@ -285,15 +285,16 @@
         "sources": [ "2016-07-01/swagger/relay.json" ]
     },
     {
-        "name": "arm-resources/resources",
+        "name": "arm-resources",
         "sources": [
-            "2017-05-10/swagger/resources.json",
-            "2016-09-01/swagger/locks.json",
-            "2015-12-01/swagger/features.json",
-            "2016-06-01/swagger/subscriptions.json",
-            "2016-04-01/swagger/policy.json",
-            "2016-09-01/swagger/links.json"
+            "resources/2017-05-10/swagger/resources.json",
+            "locks/2016-09-01/swagger/locks.json",
+            "features/2015-12-01/swagger/features.json",
+            "subscriptions/2016-06-01/swagger/subscriptions.json",
+            "policy/2016-04-01/swagger/policy.json",
+            "links/2016-09-01/swagger/links.json"
         ],
+        "isLegacy": true,
         "dotNet": {
             "name": "ResourceManager",
             "folder": "Resource",
