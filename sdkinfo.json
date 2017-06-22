@@ -237,8 +237,8 @@
         "dotNet": {
             "name": "OperationalInsights",
             "test": "OperationalInsights.Test/OperationalInsights.Test.csproj",
+            "client": "OperationalInsightsManagementClient",
             "ft": 1,
-            "commit": "a2afb19c0d17535c1d0c3ebf05258e25375fc5a3",
             "autorest": "AutoRest.1.0.0-Nightly20170126"
         }
     },
