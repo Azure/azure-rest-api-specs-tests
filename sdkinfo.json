@@ -201,8 +201,7 @@
         "sources": [ "2015-10-01/swagger/media.json" ],
         "dotNet": {
             "name": "Media",
-            "ft": 2,
-            "autorest": "autorest.0.16.0-Nightly20160413"
+            "commit": "3586e2989d502434c4f607dd38d40e46aabede5c"
         }
     },
     {
