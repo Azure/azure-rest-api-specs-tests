@@ -50,11 +50,12 @@ function Generate-Sdk {
 function Build-Project {
     param([string] $project)
 
+    $p = Join-Path (pwd) "common.targets"
+
     "Restoring test project NuGet packages..."
     dotnet restore $project
-    dotnet restore $project -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt"
-    
-    $p = Join-Path (pwd) "common.targets"
+    dotnet restore $project -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt" /p:CustomAfterMicrosoftCommonTargets=$p
+        
     "& dotnet build $project /p:CustomAfterMicrosoftCommonTargets=$p"
     & dotnet build $project /p:CustomAfterMicrosoftCommonTargets=$p
     if (-Not $?) {
