@@ -86,31 +86,6 @@ if (-Not $?)
 
 .\lang.ps1 -script "build"
 
-"Adding a project reference..."
-$xmlns = "http://schemas.microsoft.com/developer/msbuild/2003"
-$namespace = @{x=$xmlns}
-
-$xmlFile = Join-Path $current "_/src/SDKs/AzSdk.reference.props"
-
-[xml]$xml = Get-Content $xmlFile
-
-$projectReferenceList = Select-Xml -Xml $xml -XPath "//x:Project/x:ItemGroup/x:PackageReference[@Include='Microsoft.Rest.ClientRuntime.Test']" -Namespace $namespace
-$projectReference = $projectReferenceList.Node
-
-If (-Not $projectReference)
-{
-    $projectReference = $xml.CreateElement("PackageReference", $xmlns)
-    $projectReference.SetAttribute("Include", "Microsoft.Rest.ClientRuntime.Test")
-
-    $itemGroupList = Select-Xml -Xml $xml -XPath "//x:Project/x:ItemGroup[not(@*)][1]" -Namespace $namespace
-    $itemGroup = $itemGroupList.Node
-    $itemGroup.AppendChild($projectReference)
-}
-
-$projectReference.SetAttribute("Version", "1.0.200.188")
-
-# $xml.Save($xmlFile)
-
 # Reading SDK Info
 
 $infoList = Read-SdkInfoList -prefix $env:TEST_PROJECT
