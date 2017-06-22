@@ -28,7 +28,7 @@ If ($env:TEST_CSM_ORGID_AUTHENTICATION)
     $env:AZURE_TEST_MODE = "None"
 }
 "Mode: $env:AZURE_TEST_MODE"
-$infoList = Read-SdkInfoList
+$infoList = Read-SdkInfoList -prefix $env:TEST_PROJECT
 $testProjectList = Get-DotNetTestList -infoList $infoList
 
 $testProjectList | % {
