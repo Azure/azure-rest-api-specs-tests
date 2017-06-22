@@ -90,6 +90,7 @@
             "job/2016-11-01/swagger/job.json",
             "catalog/2016-11-01/swagger/catalog.json"
         ],
+        "isLegacy": true,
         "dotNet": { 
             "name": "DataLake.Analytics",
             "test": "DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"
@@ -101,6 +102,7 @@
             "account/2016-11-01/swagger/account.json",
             "filesystem/2016-11-01/swagger/filesystem.json"
         ],
+        "isLegacy": true,
         "dotNet": {
             "name": "DataLake.Store",
             "test": "DataLakeStore.Tests/DataLakeStore.Tests.csproj"

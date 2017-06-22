@@ -34,13 +34,14 @@ function Generate-Sdk {
         $autoRestExe = "autorest"
     }
 
-    if ($dotNet.autorest -or $info.isComposite) {
+    if ($dotNet.autorest -or $info.isComposite -or $info.isLegacy) {
         # Run AutoRest for all sources.
         $info.sources | % {
+            $modeler = If ($info.isComposite) { "CompositeSwagger" } Else { "Swagger" }
             $input = Get-SourcePath -info $info -source $_
             $r = @(
                 "-Modeler",
-                $info.modeler,
+                $modeler,
                 "-CodeGenerator",
                 $env:CODEGEN,
                 "-Namespace",
@@ -60,6 +61,10 @@ function Generate-Sdk {
             }
             $r
             & $autoRestExe $r
+            if (-Not $?) {
+                Write-Error "generation errors"
+                exit $LASTEXITCODE
+            }
         }                     
     } else {
         $autoRestExe = "autorest"
@@ -79,6 +84,10 @@ function Generate-Sdk {
         }
         $r
         & $autoRestExe $r
+        if (-Not $?) {
+            Write-Error "generation errors"
+            exit $LASTEXITCODE
+        }        
     }
 
     If ($dotNet.commit)

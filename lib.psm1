@@ -38,10 +38,6 @@ function Update-SdkInfo {
     $isComposite = $info.sources | ? {$_.StartsWith("composite") }
     Set-Default -object $info -member isComposite -value $isComposite
 
-    # modeler
-    $modeler = If ($info.isComposite) { "CompositeSwagger" } Else { "Swagger" }
-    Set-Default -object $info -member modeler -value $modeler
-
     # dotNet
     $dotNet = New-Object -TypeName PSObject
     Set-Default -object $info -member dotNet -value $dotNet
