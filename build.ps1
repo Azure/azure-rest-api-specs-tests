@@ -2,11 +2,12 @@ param([string]$TEST_PROJECT, [string]$TEST_LANG)
 
 Import-Module ".\lib.psm1"
 
-function Build-Sdk {
+function Generate-Sdk {
     param([psobject] $info)
 
     $dotNet = $info.dotNet
-    $dotNet
+
+    "Generating SDK..."
 
     If ($dotNet.commit) {
         "Commit: $($dotNet.commit)"
@@ -14,8 +15,6 @@ function Build-Sdk {
         git checkout $dotNet.commit    
         cd ..
     }
-
-    "Generating SDK..."
 
     "AutoRest: $($dotNet.autorest)"
     if ($dotNet.autorest) {
@@ -45,21 +44,24 @@ function Build-Sdk {
         cd azure-rest-api-specs
         git checkout master    
         cd ..
-    }
+    }    
+}
+
+function Build-Project {
+    param([string] $project)
 
     "Restoring test project NuGet packages..."
-    $test = Get-DotNetTest $dotNet
-    dotnet restore $test
-    dotnet restore $test -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt"
-
-    $legacy = if ($dotnet.autorest) { "/p:DefineConstants=""PORTABLE""" } else { "" }
-    dotnet build $test $legacy
+    dotnet restore $project
+    dotnet restore $project -s "https://ci.appveyor.com/nuget/rest-client-runtime-test-net-p-lft6230b45rt"
+    
+    $p = Join-Path (pwd) "common.targets"
+    "& dotnet build $project /p:CustomAfterMicrosoftCommonTargets=$p"
+    & dotnet build $project /p:CustomAfterMicrosoftCommonTargets=$p
     if (-Not $?) {
         Write-Error "build errors"
         exit $LASTEXITCODE
     }
 }
-
 
 $current = (pwd)
 
@@ -106,10 +108,14 @@ If (-Not $projectReference)
 
 $projectReference.SetAttribute("Version", "1.0.200.188")
 
-$xml.Save($xmlFile)
+# $xml.Save($xmlFile)
 
 # Reading SDK Info
 
 $infoList = Read-SdkInfoList -prefix $env:TEST_PROJECT
 
-$infoList | % { Build-Sdk -info $_ }
+$infoList | % { Generate-Sdk -info $_ }
+
+$testProjectList = Get-DotNetTestList $infoList | Get-Unique
+
+$testProjectList | % { Build-Project -project $_ }

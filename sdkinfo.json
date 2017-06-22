@@ -177,17 +177,25 @@
         "sources": [ "2016-06-01/swagger/logic.json" ]
     },
     {
-        "name": "arm-machinelearning",
+        "name": "arm-machinelearning/2017-01-01",
         "sources": [ 
-            "2017-01-01/swagger/webservices.json",
-            "2016-05-01-preview/swagger/commitmentPlans.json"
+            "swagger/webservices.json"
         ],
         "dotNet": {
-            "name": "MachineLearning",    
+            "name": "MachineLearning",
             "namespace": "Microsoft.Azure.Management.MachineLearning.WebServices",
             "output": "Management.MachineLearning/Generated/WebServices"
         }
     },
+    {
+        "name": "arm-machinelearning/2016-05-01-preview",
+        "sources": [ "swagger/commitmentPlans.json" ],
+        "dotNet": {
+            "name": "MachineLearning",
+            "namespace": "Microsoft.Azure.Management.MachineLearning.CommitmentPlans",
+            "output": "Management.MachineLearning/Generated/CommitmentPlans"
+        }
+    },    
     {
         "name": "arm-mediaservices",
         "sources": [ "2015-10-01/swagger/media.json" ],

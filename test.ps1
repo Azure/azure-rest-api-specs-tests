@@ -28,14 +28,16 @@ If ($env:TEST_CSM_ORGID_AUTHENTICATION)
     $env:AZURE_TEST_MODE = "None"
 }
 "Mode: $env:AZURE_TEST_MODE"
-$info = Read-SdkInfo
-$info
-$test = Get-DotNetTest -dotNet $info.dotNet
-$test
-# dotnet test --filter "(TestType!=InMemory)" -l trx $env:TEST_PROJECT_TEST 
-dotnet test -l trx $test 
-if (-Not $?)
-{
-    Write-Error "test errors"
-    exit $LASTEXITCODE
+$infoList = Read-SdkInfoList
+$testProjectList = Get-DotNetTestList -infoList $infoList
+
+$testProjectList | % {
+    "Testing $_"
+    # dotnet test --filter "(TestType!=InMemory)" -l trx $env:TEST_PROJECT_TEST 
+    dotnet test -l trx $_
+    if (-Not $?)
+    {
+        Write-Error "test errors"
+        exit $LASTEXITCODE
+    }    
 }

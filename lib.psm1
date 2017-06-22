@@ -128,6 +128,12 @@ function Get-DotNetTest {
     return Get-DotNetPath -dotNet $dotNet -folder $dotNet.test
 }
 
+function Get-DotNetTestList {
+    param([psobject] $infoList)
+
+    return $infoList | % { Get-DotNetTest $_.dotNet } | Get-Unique
+}
+
 Export-ModuleMember -Function Remove-All
 Export-ModuleMember -Function New-Dir
 Export-ModuleMember -Function Clear-Dir
@@ -137,3 +143,4 @@ Export-ModuleMember -Function Read-SdkInfo
 Export-ModuleMember -Function Get-SourcePath
 Export-ModuleMember -Function Get-DotNetPath
 Export-ModuleMember -Function Get-DotNetTest
+Export-ModuleMember -Function Get-DotNetTestList
