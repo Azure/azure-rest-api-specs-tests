@@ -264,8 +264,8 @@
         ],
         "dotNet": {
             "ft": 1,
-            "commit-": "933056da11d6c332da7ce05cd701848356d81010",
-            "name": "RecoveryServices.Backup"
+            "name": "RecoveryServices.Backup",
+            "client": "RecoveryServicesBackupClient"
         }
     },
     {

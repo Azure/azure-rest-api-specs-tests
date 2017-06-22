@@ -16,46 +16,64 @@ function Generate-Sdk {
         cd ..
     }
 
+    "Clear $output"
+    $output = Get-DotNetPath -dotNet $dotNet -folder $dotNet.output
+    Clear-Dir -path $output    
+
     "AutoRest: $($dotNet.autorest)"
     if ($dotNet.autorest) {
+        # get a specific version of AutoRest
         $index = $dotNet.autorest.IndexOf('.')
         $package = $dotNet.autorest.SubString(0, $index)
         $version = $dotNet.autorest.SubString($index + 1)
         $autoRestExe = ".\_\packages\$($dotNet.autorest)\tools\AutoRest.exe"
         & .\_\tools\nuget.exe install $package -Source "https://www.myget.org/F/autorest/api/v2" -Version $version -o "_\packages\"
+
+        # Run AutoRest for all sources.
+        $info.sources | % {
+            $input = Get-SourcePath -info $info -source $_
+            $r = @(
+                "-Modeler",
+                $info.modeler,
+                "-CodeGenerator",
+                $env:CODEGEN,
+                "-Namespace",
+                $dotNet.namespace,
+                "-outputDirectory",
+                $output,
+                "-Header",
+                "MICROSOFT_MIT",
+                "-ft",
+                $dotNet.ft,
+                "-Input",
+                $input
+            )
+            if ($dotNet.client) {
+                $r += "-name"
+                $r += $dotNet.client
+            }
+            $r
+            & $autoRestExe $r
+        }                     
     } else {
         $autoRestExe = "autorest"
+        $r = @(
+            "--csharp.azure-arm",
+            "--namespace=$($dotNet.namespace)",
+            "--output-folder=$output",
+            "--license-header=MICROSOFT_MIT",
+            "--payload-flattening-threshold=$($dotNet.ft)"
+        )
+        $info.sources | % {
+            $input = Get-SourcePath -info $info -source $_
+            $r += "--input-file=$input"
+        }
+        if ($dotNet.client) {
+            $r += "--override-info.title=$($dotNet.client)"
+        }
+        $r
+        & $autoRestExe $r
     }
-
-    $output = Get-DotNetPath -dotNet $dotNet -folder $dotNet.output
-    Clear-Dir -path $output
-
-    # Run AutoRest for all sources.    
-    $r = @(
-        "-Modeler",
-        $info.modeler,
-        "-CodeGenerator",
-        $env:CODEGEN,
-        "-Namespace",
-        $dotNet.namespace,
-        "-outputDirectory",
-        $output,
-        "-Header",
-        "MICROSOFT_MIT",
-        "-ft",
-        $dotNet.ft
-    )
-    $info.sources | % {
-        $input = Get-SourcePath -info $info -source $_
-        $r += "-Input"
-        $r += $input
-    }
-    if ($dotNet.client) {
-        $r += "-name"
-        $r += dotNet.client
-    }
-    $r
-    & $autoRestExe $r    
 
     If ($dotNet.commit)
     {
