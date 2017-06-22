@@ -7,6 +7,8 @@ function Generate-Sdk {
 
     $dotNet = $info.dotNet
 
+    $info
+
     "Generating SDK..."
 
     If ($dotNet.commit) {
@@ -28,7 +30,11 @@ function Generate-Sdk {
         $version = $dotNet.autorest.SubString($index + 1)
         $autoRestExe = ".\_\packages\$($dotNet.autorest)\tools\AutoRest.exe"
         & .\_\tools\nuget.exe install $package -Source "https://www.myget.org/F/autorest/api/v2" -Version $version -o "_\packages\"
+    } else {
+        $autoRestExe = "autorest"
+    }
 
+    if ($dotNet.autorest -or $info.isComposite) {
         # Run AutoRest for all sources.
         $info.sources | % {
             $input = Get-SourcePath -info $info -source $_

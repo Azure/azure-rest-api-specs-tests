@@ -34,9 +34,12 @@ function Update-SdkInfo {
     # isArm
     Set-Default -object $info -member isArm -value $info.name.StartsWith("arm-")
 
+    # isComposite
+    $isComposite = $info.sources | ? {$_.StartsWith("composite") }
+    Set-Default -object $info -member isComposite -value $isComposite
+
     # modeler
-    $composite = $info.sources | ? {$_.StartsWith("composite") }
-    $modeler = If ($composite) { "CompositeSwagger" } Else { "Swagger" }
+    $modeler = If ($info.isComposite) { "CompositeSwagger" } Else { "Swagger" }
     Set-Default -object $info -member modeler -value $modeler
 
     # dotNet
