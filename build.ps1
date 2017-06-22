@@ -34,7 +34,7 @@ function Generate-Sdk {
     $inputs = $info.sources
     $inputs | ForEach-Object {
         $input = Get-SourcePath -info $info -source $_
-        "$autoRestExe -Modeler $($info.modeler) -CodeGenerator $env:CODEGEN -Namespace $($dotNet.namespace) -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $($dotNet.ft) -name $dotNet.client"
+        "$autoRestExe -Modeler $($info.modeler) -CodeGenerator $env:CODEGEN -Namespace $($dotNet.namespace) -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $($dotNet.ft) -name $($dotNet.client)"
         & $autoRestExe -Modeler $info.modeler -CodeGenerator $env:CODEGEN -Namespace $dotNet.namespace -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $dotNet.ft -name $dotNet.client
     }
 
@@ -88,7 +88,7 @@ if (-Not $?)
 
 # Reading SDK Info
 
-$infoList = Read-SdkInfoList -prefix $env:TEST_PROJECT
+$infoList = Read-SdkInfoList -project $env:TEST_PROJECT
 
 $infoList | % { Generate-Sdk -info $_ }
 

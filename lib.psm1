@@ -70,15 +70,18 @@ function Update-SdkInfo {
 }
 
 function Read-SdkInfoList {
-    param([string] $prefix)
+    param([string] $project)
 
     $array = Get-Content 'sdkinfo.json' | Out-String | ConvertFrom-Json
 
-    $array = $array | ? { $_.name.StartsWith($prefix) }
+    Write-Host "project: $project"
+    $array = $array | ? { $_.name -like $project }
+
+    Write-Host "array: $array"
 
     if (-Not $array)
     {
-        Write-Error "unknown project $env:TEST_PROJECT"
+        Write-Error "unknown project $project"
         exit -1
     }
 
