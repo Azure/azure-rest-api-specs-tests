@@ -30,13 +30,32 @@ function Generate-Sdk {
     $output = Get-DotNetPath -dotNet $dotNet -folder $dotNet.output
     Clear-Dir -path $output
 
-    # Run AutoRest for all sources.
-    $inputs = $info.sources
-    $inputs | ForEach-Object {
+    # Run AutoRest for all sources.    
+    $r = @(
+        "-Modeler",
+        $info.modeler,
+        "-CodeGenerator",
+        $env:CODEGEN,
+        "-Namespace",
+        $dotNet.namespace,
+        "-outputDirectory",
+        $output,
+        "-Header",
+        "MICROSOFT_MIT",
+        "-ft",
+        $dotNet.ft
+    )
+    $info.sources | % {
         $input = Get-SourcePath -info $info -source $_
-        "$autoRestExe -Modeler $($info.modeler) -CodeGenerator $env:CODEGEN -Namespace $($dotNet.namespace) -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $($dotNet.ft) -name $($dotNet.client)"
-        & $autoRestExe -Modeler $info.modeler -CodeGenerator $env:CODEGEN -Namespace $dotNet.namespace -Input $input -outputDirectory $output -Header MICROSOFT_MIT -ft $dotNet.ft -name $dotNet.client
+        $r += "-Input"
+        $r += $input
     }
+    if ($dotNet.client) {
+        $r += "-name"
+        $r += dotNet.client
+    }
+    $r
+    & $autoRestExe $r    
 
     If ($dotNet.commit)
     {

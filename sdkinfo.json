@@ -258,8 +258,13 @@
     },
     {
         "name": "arm-recoveryservicesbackup",
-        "sources": [ "2016-12-01/swagger/backupManagement.json" ],
+        "sources": [
+            "2016-08-10/swagger/operations.json",
+            "2016-12-01/swagger/backupManagement.json"
+        ],
         "dotNet": {
+            "ft": 1,
+            "commit-": "933056da11d6c332da7ce05cd701848356d81010",
             "name": "RecoveryServices.Backup"
         }
     },
