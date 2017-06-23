@@ -5,6 +5,7 @@
         "dotNet": {
             "name": "Analysis",
             "folder": "AnalysisServices",
+            "commit": "4936e4e315ff32f6e53c62d17c065c2f38601169",
             "test": "AnalysisServices.Tests/AnalysisServices.Tests.csproj"
         }
     },
@@ -57,8 +58,7 @@
         "name": "arm-compute",        
         "sources": [ "compositeComputeClient.json" ],
         "dotNet":{
-            "ft": 1,            
-            "commit": "99b77b4ff1ecbfb41cf33fc2b8e1d6e957312214",
+            "ft": 1,
             "autorest": "AutoRest.1.0.0-Nightly20170126"   
         }
     },
@@ -90,6 +90,7 @@
             "job/2016-11-01/swagger/job.json",
             "catalog/2016-11-01/swagger/catalog.json"
         ],
+        "isLegacy": true,
         "dotNet": { 
             "name": "DataLake.Analytics",
             "test": "DataLakeAnalytics.Tests/DataLakeAnalytics.Tests.csproj"
@@ -101,6 +102,7 @@
             "account/2016-11-01/swagger/account.json",
             "filesystem/2016-11-01/swagger/filesystem.json"
         ],
+        "isLegacy": true,
         "dotNet": {
             "name": "DataLake.Store",
             "test": "DataLakeStore.Tests/DataLakeStore.Tests.csproj"
@@ -152,13 +154,6 @@
         }
     },
     {
-        "name": "arm-intune",
-        "sources": [ "2015-01-14-preview/swagger/intune.json" ],
-        "dotNet": {
-            "output": "Intune/Generated"
-        }
-    },
-    {
         "name": "arm-iothub",
         "sources": [ "2017-01-19/swagger/iothub.json" ],
         "dotNet": {
@@ -184,24 +179,31 @@
         "sources": [ "2016-06-01/swagger/logic.json" ]
     },
     {
-        "name": "arm-machinelearning",
+        "name": "arm-machinelearning/2017-01-01",
         "sources": [ 
-            "2017-01-01/swagger/webservices.json",
-            "2016-05-01-preview/swagger/commitmentPlans.json"
+            "swagger/webservices.json"
         ],
         "dotNet": {
-            "name": "MachineLearning",    
+            "name": "MachineLearning",
             "namespace": "Microsoft.Azure.Management.MachineLearning.WebServices",
             "output": "Management.MachineLearning/Generated/WebServices"
         }
     },
     {
+        "name": "arm-machinelearning/2016-05-01-preview",
+        "sources": [ "swagger/commitmentPlans.json" ],
+        "dotNet": {
+            "name": "MachineLearning",
+            "namespace": "Microsoft.Azure.Management.MachineLearning.CommitmentPlans",
+            "output": "Management.MachineLearning/Generated/CommitmentPlans"
+        }
+    },    
+    {
         "name": "arm-mediaservices",
         "sources": [ "2015-10-01/swagger/media.json" ],
         "dotNet": {
             "name": "Media",
-            "ft": 2,
-            "autorest": "autorest.0.16.0-Nightly20160413"
+            "commit": "3586e2989d502434c4f607dd38d40e46aabede5c"
         }
     },
     {
@@ -237,8 +239,8 @@
         "dotNet": {
             "name": "OperationalInsights",
             "test": "OperationalInsights.Test/OperationalInsights.Test.csproj",
+            "client": "OperationalInsightsManagementClient",
             "ft": 1,
-            "commit": "a2afb19c0d17535c1d0c3ebf05258e25375fc5a3",
             "autorest": "AutoRest.1.0.0-Nightly20170126"
         }
     },
@@ -258,9 +260,14 @@
     },
     {
         "name": "arm-recoveryservicesbackup",
-        "sources": [ "2016-12-01/swagger/backupManagement.json" ],
+        "sources": [
+            "2016-08-10/swagger/operations.json",
+            "2016-12-01/swagger/backupManagement.json"
+        ],
         "dotNet": {
-            "name": "RecoveryServices.Backup"
+            "ft": 1,
+            "name": "RecoveryServices.Backup",
+            "client": "RecoveryServicesBackupClient"
         }
     },
     {
@@ -270,7 +277,7 @@
             "name": "Redis",
             "folder": "RedisCache",
             "test": "RedisCache.Tests/RedisCache.Tests.csproj",
-            "autorest": "autorest.0.17.0-Nightly20161012"
+            "autorest": "AutoRest.0.17.3"
         }       
     },
     {
@@ -278,15 +285,16 @@
         "sources": [ "2016-07-01/swagger/relay.json" ]
     },
     {
-        "name": "arm-resources/resources",
+        "name": "arm-resources",
         "sources": [
-            "2017-05-10/swagger/resources.json",
-            "2016-09-01/swagger/locks.json",
-            "2015-12-01/swagger/features.json",
-            "2016-06-01/swagger/subscriptions.json",
-            "2016-04-01/swagger/policy.json",
-            "2016-09-01/swagger/links.json"
+            "resources/2017-05-10/swagger/resources.json",
+            "locks/2016-09-01/swagger/locks.json",
+            "features/2015-12-01/swagger/features.json",
+            "subscriptions/2016-06-01/swagger/subscriptions.json",
+            "policy/2016-04-01/swagger/policy.json",
+            "links/2016-09-01/swagger/links.json"
         ],
+        "isLegacy": true,
         "dotNet": {
             "name": "ResourceManager",
             "folder": "Resource",
@@ -347,17 +355,14 @@
         "name": "arm-sql",
         "sources": [ "compositeSql.json" ],
         "dotNet": {
-            "folder": "SqlManagement",
-            "commit": "b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe"
+            "folder": "SqlManagement"
         }
     },
     {
         "name": "arm-storage",
         "sources": [ "2017-06-01/swagger/storage.json" ],
         "dotNet":{
-            "ft": 2,
-            "commit": "65ffebd25af1fc66db69a2355c38bf87dcb2e3f3",            
-            "autorest": "AutoRest.1.0.0-Nightly20161212"
+            "ft": 2
         }
     },
     {
@@ -365,7 +370,8 @@
         "sources": [ "2017-05-01/swagger/trafficmanager.json" ],
         "dotNet": {
             "name": "TrafficManager",
-            "ft": 2
+            "ft": 1,
+            "commit": "9e35e9c1e14dc46fcb1837ad108bba185ccaf9a9"
         }
     },
     {
@@ -373,7 +379,7 @@
         "sources": [ "compositeWebAppClient.json" ],
         "dotNet": {
             "name": "WebSites",
-            "autorest": "AutoRest.1.0.0-Nightly20170124"
+            "commit": "e416af734666d658a04530df605f60480c01cc10"
         }
     }
 ]
