@@ -362,9 +362,7 @@
         "name": "arm-storage",
         "sources": [ "2017-06-01/swagger/storage.json" ],
         "dotNet":{
-            "ft": 2,
-            "commit": "65ffebd25af1fc66db69a2355c38bf87dcb2e3f3",            
-            "autorest": "AutoRest.1.0.0-Nightly20161212"
+            "ft": 2
         }
     },
     {
