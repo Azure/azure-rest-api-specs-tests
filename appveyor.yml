@@ -20,7 +20,6 @@ environment:
   - TEST_PROJECT: arm-eventhub
   - TEST_PROJECT: arm-graphrbac
   - TEST_PROJECT: arm-insights
-  - TEST_PROJECT: arm-intune
   - TEST_PROJECT: arm-iothub
   - TEST_PROJECT: arm-keyvault
   - TEST_PROJECT: arm-logic
