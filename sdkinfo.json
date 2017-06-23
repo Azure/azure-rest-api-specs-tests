@@ -277,7 +277,7 @@
             "name": "Redis",
             "folder": "RedisCache",
             "test": "RedisCache.Tests/RedisCache.Tests.csproj",
-            "autorest": "autorest.0.17.0-Nightly20161012"
+            "autorest": "AutoRest.0.17.3"
         }       
     },
     {
@@ -378,6 +378,7 @@
         "name": "arm-web",
         "sources": [ "compositeWebAppClient.json" ],
         "dotNet": {
+            "ft": 0,
             "name": "WebSites",
             "autorest": "AutoRest.1.0.0-Nightly20170124"
         }
