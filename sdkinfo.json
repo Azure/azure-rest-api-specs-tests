@@ -370,7 +370,8 @@
         "sources": [ "2017-05-01/swagger/trafficmanager.json" ],
         "dotNet": {
             "name": "TrafficManager",
-            "ft": 2
+            "ft": 1,
+            "commit": "9e35e9c1e14dc46fcb1837ad108bba185ccaf9a9"
         }
     },
     {

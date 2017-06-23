@@ -29,6 +29,7 @@ function Generate-Sdk {
         $package = $dotNet.autorest.SubString(0, $index)
         $version = $dotNet.autorest.SubString($index + 1)
         $autoRestExe = ".\_\packages\$($dotNet.autorest)\tools\AutoRest.exe"
+        ".\_\tools\nuget.exe install $package -Source ""https://www.myget.org/F/autorest/api/v2"" -Version $version -o ""_\packages\"""
         & .\_\tools\nuget.exe install $package -Source "https://www.myget.org/F/autorest/api/v2" -Version $version -o "_\packages\"
     } else {
         $autoRestExe = "autorest"
