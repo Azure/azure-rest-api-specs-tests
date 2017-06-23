@@ -34,6 +34,8 @@ function Generate-Sdk {
         $autoRestExe = "autorest"
     }
 
+    $langInfo = Get-LangInfo -lang $env:TEST_LANG
+
     if ($dotNet.autorest -or $info.isComposite -or $info.isLegacy) {
         # Run AutoRest for all sources.
         $info.sources | % {
@@ -43,7 +45,7 @@ function Generate-Sdk {
                 "-Modeler",
                 $modeler,
                 "-CodeGenerator",
-                $env:CODEGEN,
+                $langInfo.legacyCodeGen,
                 "-Namespace",
                 $dotNet.namespace,
                 "-outputDirectory",
@@ -69,7 +71,7 @@ function Generate-Sdk {
     } else {
         $autoRestExe = "autorest"
         $r = @(
-            "--csharp.azure-arm",
+            $langInfo.lang,
             "--namespace=$($dotNet.namespace)",
             "--output-folder=$output",
             "--license-header=MICROSOFT_MIT",

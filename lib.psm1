@@ -136,6 +136,24 @@ function Get-DotNetTestList {
     return $infoList | % { Get-DotNetTest $_.dotNet } | Get-Unique
 }
 
+function Get-LangInfo {
+    param([psobject] $lang)
+
+    if (-Not $lang) {
+        [PSCustomObject] @{ 
+            legacyCodeGen = "Azure.CSharp"
+            lang = "--csharp.azure-arm"
+            script = $false
+        }
+    } else {
+        [PSCustomObject] @{
+            legacyCodeGen = "Azure.JsonRpcClient"
+            lang = "--jsonrpcclient"            
+            script = $lang -ne "jsonrpc"
+        }
+    }    
+}
+
 Export-ModuleMember -Function Remove-All
 Export-ModuleMember -Function New-Dir
 Export-ModuleMember -Function Clear-Dir
@@ -146,3 +164,4 @@ Export-ModuleMember -Function Get-SourcePath
 Export-ModuleMember -Function Get-DotNetPath
 Export-ModuleMember -Function Get-DotNetTest
 Export-ModuleMember -Function Get-DotNetTestList
+Export-ModuleMember -Function Get-LangInfo

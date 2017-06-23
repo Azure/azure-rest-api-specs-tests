@@ -24,7 +24,7 @@ environment:
   - TEST_PROJECT: arm-iothub
   - TEST_PROJECT: arm-keyvault
   - TEST_PROJECT: arm-logic
-  - TEST_PROJECT: arm-machinelearning
+  - TEST_PROJECT: arm-machinelearning*
   - TEST_PROJECT: arm-mediaservices
   - TEST_PROJECT: arm-monitor
   - TEST_PROJECT: arm-network
