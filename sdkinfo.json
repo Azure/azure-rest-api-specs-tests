@@ -356,7 +356,31 @@
         "sources": [ "compositeSql.json" ],
         "dotNet": {
             "folder": "SqlManagement",
-            "commit": "b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe"
+            "commit24": "03ff383aac77901093d96c049e248d2c7a3cf4ff",
+            "commit23": "80f208092fabcbb9a8901dff5d534e048492fe3f",
+            "commit22-2errorsonly": "76ef41d93fe3370a69922ea5ab938743598e6013",
+            "commit21": "c1ccd7a71b3c3f5b9ffbb9d3f4fec06c9ef7008b",
+            "commit20": "a42372d2578f67c60080c3d9875480149c2bd404",
+            "commit19-good": "b1c64e75e3e0e3e9c3546d4466c7ebd0d5948cfe",
+            "commit18": "af2c591b759dd7f00d1795f2539bf2383675c8e9",
+            "commit17-less-errors": "58028696838fa03935e0a8c07745534525fbfefe",
+            "commit16": "7d9b6c018d9de2b7de189ea8658963ef8d3bc41b",
+            "commit15": "c6b1c4b4bde7221a2cd7feeef875b519c6b244d3",
+            "commit14": "1c88c9eeba945956c25125b4e7b6d4edd3062dd3",
+            "commit13": "ed328c8a70bdd5fe3130fdc02818cac0d5ac43f8",
+            "commit12-broken": "3499df820d3e7d51d864db02825bb33ecdac546b",
+            "commit11": "8cd7ff3686c1dc02ad033752e8160e7f8ad8dbc3",
+            "commit10": "2b74082531f49fef667a86983ed2d3d30635ac55",
+            "commit9": "49178297d233540fe414d3e1f3e30d39e48721fc",
+            "commit8": "9339074e0c98717a2b0585d65e09e15ed7ffc5ba",
+            "commit7": "d3775f4247c26ce9fa15db8c0784bc1e3b0f141c",
+            "commit6": "e89c47d1c9be44011b4e300d9663ddc1eb2e9b0c",
+            "commit5": "3b5b4e6d836ebdf8082fe8ca78a23699aaaf7340",
+            "commit4": "7e6eebe207bdf4b1c49c129ac92a9fb0d4a79619",
+            "commit3": "590e8151d448040113892c0a2985fc50479948ef",
+            "commit2": "8dcb3190d40207b847cec381ee62a71b6b752017",
+            "commit1": "3f083b115c3536d7df9732f442a40326fd5691e9",
+            "commit0": "76cf63e2104d676f7a28d0be0f6044aa7d8405c5"
         }
     },
     {
