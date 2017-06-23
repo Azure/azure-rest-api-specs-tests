@@ -380,7 +380,15 @@
         "dotNet": {
             "ft": 0,
             "name": "WebSites",
-            "autorest": "AutoRest.1.0.0-Nightly20170124"
+            "commit0-6errors": "a694070c259400689ad25a8e398d58cdd77dec2d",
+            "commit1": "f2aa005f29e98c226cbeaf27c82b42491e6a0ab1",
+            "commit2-broken": "956bc0da56440f488db5a0af2cf90e9573da4484",
+            "commit3-broken": "764daaf05af4a11380a6b2525a992b1a2f478731",
+            "commit4-7errors": "97046c766a81f605e65eb4e99016dbaebdcb4303",
+            "commit5": "073789f31002f4c1513e5638cefe6a09130bfd77",
+            "commit": "e416af734666d658a04530df605f60480c01cc10",
+            "commit7-1error": "2843040a2d787d73725b8f21a369c2ef198554aa",
+            "autorest-": "AutoRest.1.0.0-Nightly20170124"
         }
     }
 ]
