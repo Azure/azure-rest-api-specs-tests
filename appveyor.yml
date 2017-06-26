@@ -1,6 +1,7 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 environment:
+  TEST_LANG: json-rpc
   matrix:
   - TEST_PROJECT: arm-analysisservices
   - TEST_PROJECT: arm-authorization
@@ -45,8 +46,8 @@ environment:
   - TEST_PROJECT: arm-trafficmanager
   - TEST_PROJECT: arm-web
 install:
-- ps: .\install.ps1
+- ps: .\install.ps1 -TEST_LANG $env:TEST_LANG
 build_script:
-- ps: .\build.ps1
+- ps: .\build.ps1 -TEST_LANG $env:TEST_LANG
 test_script:
-- ps: .\Test.ps1
+- ps: .\Test.ps1 -TEST_LANG $env:TEST_LANG
