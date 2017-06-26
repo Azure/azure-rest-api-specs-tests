@@ -11,16 +11,16 @@ function Generate-Sdk {
 
     "Generating SDK..."
 
-    If ($dotNet.commit) {
-        "Commit: $($dotNet.commit)"
-        cd azure-rest-api-specs
-        git checkout $dotNet.commit    
-        cd ..
-    }
-
     "Clear $output"
     $output = Get-DotNetPath -dotNet $dotNet -folder $dotNet.output
-    Clear-Dir -path $output    
+    Clear-Dir -path $output
+
+    $commit = if ($dotNet.commit) { $dotNet.commit } else { "master" }
+
+    "Commit: $($dotNet.commit)"
+    cd azure-rest-api-specs
+    git checkout $dotNet.commit
+    cd ..
 
     "AutoRest: $($dotNet.autorest)"
     if ($dotNet.autorest) {
@@ -52,9 +52,13 @@ function Generate-Sdk {
         $autoRestExe = "autorest"
     }
 
-    $langInfo = Get-LangInfo -lang $env:TEST_LANG
+    $langInfo = Get-LangInfo -lang $TEST_LANG
 
-    if ($dotNet.autorest -or $info.isComposite -or $info.isLegacy) {
+    if ($dotNet.autorest -or $info.isLegacy) {
+        if ($langInfo.jsonRpc) {
+            Write-Error "JSON RPC is not supported for $($info.name)"
+            exit -1
+        }
         # Run AutoRest for all sources.
         $info.sources | % {
             $modeler = If ($info.isComposite) { "CompositeSwagger" } Else { "Swagger" }
@@ -63,7 +67,7 @@ function Generate-Sdk {
                 "-Modeler",
                 $modeler,
                 "-CodeGenerator",
-                $langInfo.legacyCodeGen,
+                "Azure.CSharp",
                 "-Namespace",
                 $dotNet.namespace,
                 "-outputDirectory",
@@ -89,18 +93,37 @@ function Generate-Sdk {
     } else {
         $autoRestExe = "autorest"
         $r = @(
-            $langInfo.lang,
+            "--csharp.azure-arm",
             "--namespace=$($dotNet.namespace)",
             "--output-folder=$output",
             "--license-header=MICROSOFT_MIT",
             "--payload-flattening-threshold=$($dotNet.ft)"
         )
-        $info.sources | % {
-            $input = Get-SourcePath -info $info -source $_
-            $r += "--input-file=$input"
+        if ($langInfo.jsonRpc) {
+            $r += "--json-rpc"
         }
-        if ($dotNet.client) {
-            $r += "--override-info.title=$($dotNet.client)"
+        $title = $dotNet.client
+        if ($info.isComposite) {
+            $info.sources | % {
+                $compositeInput = Get-SourcePath -info $info -source $_
+                $compositeDir = Split-Path -Path $compositeInput -Parent
+                $composite = Get-Content $compositeInput | Out-String | ConvertFrom-Json
+                $composite.documents | % {
+                    $input = Join-Path $compositeDir $_
+                    $r += "--input-file=$input"
+                }
+                if(-Not $title) {
+                    $title = $composite.info.title
+                }
+            }            
+        } else {
+            $info.sources | % {
+                $input = Get-SourcePath -info $info -source $_
+                $r += "--input-file=$input"
+            }            
+        }        
+        if ($title) {
+            $r += "--override-info.title=$title"
         }
         $r
         & $autoRestExe $r
@@ -110,13 +133,13 @@ function Generate-Sdk {
         }        
     }
 
-    If ($dotNet.commit)
-    {
-        "Revert Commit"
-        cd azure-rest-api-specs
-        git checkout master    
-        cd ..
-    }    
+    # If ($dotNet.commit)
+    # {
+    #     "Revert Commit"
+    #     cd azure-rest-api-specs
+    #     git checkout master    
+    #     cd ..
+    # }    
 }
 
 function Build-Project {
@@ -140,10 +163,10 @@ $current = (pwd)
 
 "Building..."
 
-if ($TEST_LANG)
-{
-    $env:TEST_LANG = $TEST_LANG
-}
+# if ($TEST_LANG)
+# {
+#    $env:TEST_LANG = $TEST_LANG
+# }
 
 if ($TEST_PROJECT) 
 {
@@ -156,7 +179,7 @@ if (-Not $?)
     exit $LASTEXITCODE
 }
 
-.\lang.ps1 -script "build"
+.\lang.ps1 -script "build" -lang $TEST_LANG
 
 # Reading SDK Info
 

@@ -1,3 +1,5 @@
+param ([string] $TEST_LANG)
+
 Import-Module ".\lib.psm1"
 
 "Installing..."
@@ -26,9 +28,9 @@ $LASTEXITCODE = 0
 # .\lib\remove.ps1 -path $dnOutput
 # .\lib\download-and-unzip.ps1 -url $dnUrl -zip "dotnet.zip" -dest $dnOutput
 
-"Language = $env:TEST_LANG"
+"Language = $lang"
 "Project = $env:TEST_PROJECT"
 
-.\lang.ps1 -script "install"
+.\lang.ps1 -script "install" -lang $TEST_LANG
 
 .\init.ps1

@@ -1,11 +1,11 @@
-param([string]$script)
+param([string]$script, [string] $lang)
 
 Import-Module ".\lib.psm1"
 
-$langInfo = Get-LangInfo -lang $env:TEST_LANG
+$langInfo = Get-LangInfo -lang $lang
 
 if ($langInfo.script) {
-    $scriptFile = ".\" + $env:TEST_LANG + "\" + $script + ".ps1"
+    $scriptFile = ".\" + $lang + "\" + $script + ".ps1"
     "Running $scriptFile..."
     & $scriptFile
 }

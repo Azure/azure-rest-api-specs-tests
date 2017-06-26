@@ -2,11 +2,6 @@ param([string]$TEST_PROJECT, [string]$TEST_LANG, [string]$TEST_CSM_ORGID_AUTHENT
 
 Import-Module ".\lib.psm1"
 
-if ($TEST_LANG)
-{
-    $env:TEST_LANG = $TEST_LANG
-}
-
 if ($TEST_PROJECT) 
 {
     $env:TEST_PROJECT = $TEST_PROJECT
@@ -14,7 +9,7 @@ if ($TEST_PROJECT)
 
 .\common.ps1
 
-.\lang.ps1 -script "test"
+.\lang.ps1 -script "test" -lang $TEST_LANG
 
 "Testing SDK..."
 

@@ -141,15 +141,13 @@ function Get-LangInfo {
 
     if (-Not $lang) {
         [PSCustomObject] @{ 
-            legacyCodeGen = "Azure.CSharp"
-            lang = "--csharp.azure-arm"
+            jsonRpc = $false
             script = $false
         }
     } else {
         [PSCustomObject] @{
-            legacyCodeGen = "Azure.JsonRpcClient"
-            lang = "--jsonrpcclient"            
-            script = $lang -ne "jsonrpc"
+            jsonRpc = $true            
+            script = $lang -ne "json-rpc"
         }
     }    
 }
@@ -158,6 +156,7 @@ Export-ModuleMember -Function Remove-All
 Export-ModuleMember -Function New-Dir
 Export-ModuleMember -Function Clear-Dir
 
+Export-ModuleMember -Function Set-Default
 Export-ModuleMember -Function Read-SdkInfoList
 Export-ModuleMember -Function Read-SdkInfo
 Export-ModuleMember -Function Get-SourcePath
