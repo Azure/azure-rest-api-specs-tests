@@ -17,9 +17,9 @@ function Generate-Sdk {
 
     $commit = if ($dotNet.commit) { $dotNet.commit } else { "master" }
 
-    "Commit: $($dotNet.commit)"
+    "Commit: $commits"
     cd azure-rest-api-specs
-    git checkout $dotNet.commit
+    git checkout $commit
     cd ..
 
     "AutoRest: $($dotNet.autorest)"
