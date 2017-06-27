@@ -31,9 +31,9 @@ For example
     "params": {
         "__reserved": {
             "credentials": {
-                "tenantId": "...",
-                "clientId": "...",
-                "secret": "..."
+                "tenantId": "...active directory tenant id...",
+                "clientId": "...application id...",
+                "secret": "...application secret key..."
             },
             "httpResponse": true
         },
