@@ -145,7 +145,7 @@ function Generate-Sdk {
 function Build-Project {
     param([string] $project)
 
-    $p = Join-Path (pwd) "common.targets"
+    $p = Join-Path (Get-Location) "common.targets"
 
     "Restoring test project NuGet packages..."
     dotnet restore $project
