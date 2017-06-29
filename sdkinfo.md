@@ -16,7 +16,7 @@ For example
 [
     {
         "name": "arm-authorization",
-        "source": "2015-07-01/swagger/authorization.json"
+        "sources": [ "2015-07-01/swagger/authorization.json" ]
     }
 ]
 ```
@@ -26,7 +26,7 @@ The object may also have several optional fields. For example
 ```json
 {
     "name": "arm-batch",
-    "source": "2017-05-01/swagger/BatchManagement.json",
+    "sources": [ "2017-05-01/swagger/BatchManagement.json" ],
     "dotNet": {
         "name": "Batch",
         "folder": "Batch/Management",
