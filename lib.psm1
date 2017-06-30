@@ -22,7 +22,7 @@ function Clear-Dir {
 function Get-LangInfo {
     param([psobject] $lang)
 
-    if (-Not $lang) {
+    if ((-Not $lang) -or ($lang -eq "dotnet")) {
         [PSCustomObject] @{
             jsonRpc = $false
             script = $false
