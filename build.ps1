@@ -1,4 +1,4 @@
-param([string]$TEST_PROJECT, [string]$TEST_LANG)
+param([string] $project = "*", [string]$lang)
 
 Import-Module ".\lib.psm1"
 Import-Module ".\_\tools\autogenForSwaggers\lib.psm1"
@@ -7,28 +7,13 @@ $current = (Get-Location)
 
 "Building..."
 
-if ($TEST_PROJECT)
-{
-    $env:TEST_PROJECT = $TEST_PROJECT
-}
-
 .\common.ps1
 if (-Not $?)
 {
     exit $LASTEXITCODE
 }
 
-.\lang.ps1 -script "build" -lang $TEST_LANG
+.\lang.ps1 -script "build" -lang $lang
 
 $specs = Join-Path $current "azure-rest-api-specs"
-GenerateAndBuild -project $env:TEST_PROJECT -specs $specs -sdkDir "_"
-
-# Reading SDK Info
-
-# $infoList = Read-SdkInfoList -project $env:TEST_PROJECT
-
-# $infoList | ForEach-Object { Generate-Sdk -info $_ }
-
-# $testProjectList = Get-DotNetTestList $infoList
-
-# $testProjectList | ForEach-Object { Build-Project -project $_ }
+GenerateAndBuild -project $project -specs $specs -sdkDir "_"

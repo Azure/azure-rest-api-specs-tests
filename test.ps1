@@ -1,15 +1,10 @@
-param([string]$TEST_PROJECT, [string]$TEST_LANG, [string]$TEST_CSM_ORGID_AUTHENTICATION)
+param([string] $project = "*", [string] $lang, [string] $TEST_CSM_ORGID_AUTHENTICATION)
 
 Import-Module ".\_\tools\autogenForSwaggers\lib.psm1"
 
-if ($TEST_PROJECT)
-{
-    $env:TEST_PROJECT = $TEST_PROJECT
-}
-
 .\common.ps1
 
-.\lang.ps1 -script "test" -lang $TEST_LANG
+.\lang.ps1 -script "test" -lang $lang
 
 "Testing SDK..."
 
@@ -23,15 +18,5 @@ If ($env:TEST_CSM_ORGID_AUTHENTICATION)
     $env:AZURE_TEST_MODE = "None"
 }
 "Mode: $env:AZURE_TEST_MODE"
-$infoList = Read-SdkInfoList -project $env:TEST_PROJECT
-$testProjectList = Get-DotNetTestList -infoList $infoList
 
-$testProjectList | % {
-    "Testing $_"
-    dotnet test -l trx $_
-    if (-Not $?)
-    {
-        Write-Error "test errors"
-        exit $LASTEXITCODE
-    }
-}
+TestSdk -project $project -sdkDir "_"

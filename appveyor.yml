@@ -45,8 +45,8 @@ environment:
   - TEST_PROJECT: arm-trafficmanager
   - TEST_PROJECT: arm-web
 install:
-- ps: .\install.ps1 -TEST_LANG $env:TEST_LANG
+- ps: .\install.ps1 -lang $env:TEST_LANG
 build_script:
-- ps: .\build.ps1 -TEST_LANG $env:TEST_LANG
+- ps: .\build.ps1 -project $env:TEST_PROJECT -lang $env:TEST_LANG
 test_script:
-- ps: .\Test.ps1 -TEST_LANG $env:TEST_LANG
+- ps: .\Test.ps1 -project $env:TEST_PROJECT -lang $env:TEST_LANG

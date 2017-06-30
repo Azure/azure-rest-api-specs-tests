@@ -1,22 +1,24 @@
-$oldCurrent = pwd
+param([string] $project, [string] $lang)
+
+$oldCurrent = Get-Location
 subst t: /D
 subst t: $oldCurrent
-cd t:\
+Set-Location t:\
 
-.\install.ps1
-.\build.ps1
+.\install.ps1 -lang $lang
+.\build.ps1 -project $project -lang $lang
 if (-Not $?)
 {
     Write-Error "build errors"
     exit $LASTEXITCODE
 }
 
-.\test.ps1
+.\test.ps1 -project $project -lang $lang
 if (-Not $?)
 {
     Write-Error "test errors"
     exit $LASTEXITCODE
 }
 
-cd $oldCurrent
+Set-Location $oldCurrent
 subst t: /D
