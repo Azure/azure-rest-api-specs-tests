@@ -1,4 +1,5 @@
-param([string] $project, [string] $lang)
+$project = $env:TEST_PROJECT
+$lang = $env:TEST_LANG
 
 $oldCurrent = Get-Location
 subst t: /D
