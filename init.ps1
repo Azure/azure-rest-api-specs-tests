@@ -47,4 +47,3 @@ $sdkRep = "https://github.com/$env:TEST_DOTNETSDK_FORK/azure-sdk-for-net"
 "Azure SDK for .Net repository: $sdkRep"
 "Azure SDK for .Net branch: $env:TEST_DOTNETSDK_BRANCH"
 git clone -q --branch=$env:TEST_DOTNETSDK_BRANCH $sdkRep _
-
