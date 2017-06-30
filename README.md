@@ -47,9 +47,9 @@ See also [Creating JSON-RPC server](json-rpc-server.md).
 ### Running Locally
 
 1. Run [.\init.ps1](init.ps1) to clone the recent [Azure REST API specifications] and [Azure SDK for .Net]
-1. Run [.\built.ps1 {service name}](build.ps1) to build a service project. For example, `.\build.ps1 arm-redis`.
-1. Run [.\test.ps1 {service name}](build.ps1) to test a service project. For example, `.\test.ps1 arm-redis`.
-1. Run [.\main.ps1 {service name}](build.ps1) to build and test a service project. For example, `.\main.ps1 arm-redis`.
+1. Run [.\built.ps1 {service name}](build.ps1) to build a service project. For example, `.\build.ps1 -project arm-redis`.
+1. Run [.\test.ps1 {service name}](test.ps1) to test a service project. For example, `.\test.ps1 -project arm-redis`.
+arm-redis`.
 
 See also
 - [SDK Mapping Documentation](sdkinfo.md).
