@@ -15,5 +15,7 @@ if (-Not $?)
 
 .\lang.ps1 -script "build" -lang $lang
 
+$langInfo = Get-LangInfo -lang $lang
+
 $specs = Join-Path $current "azure-rest-api-specs"
-GenerateAndBuild -project $project -specs $specs -sdkDir "_"
+GenerateAndBuild -project $project -specs $specs -sdkDir "_" -jsonRpc $langInfo.jsonRpc
