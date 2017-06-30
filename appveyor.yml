@@ -1,9 +1,7 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 environment:
-  TEST_FORK: Azure
-  TEST_BRANCH: master
-  TEST_LANG: json-rpc
+  TEST_LANG: dotnet
   matrix:
   - TEST_PROJECT: arm-analysisservices
   - TEST_PROJECT: arm-authorization
