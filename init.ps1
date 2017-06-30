@@ -1,5 +1,8 @@
 param([string] $fork = "Azure", [string] $branch = "master")
 
+$fork = if ($fork) { $fork } else { "Azure" }
+$branch = if ($branch) { $branch } else { "master" }
+
 Import-Module ".\lib.psm1"
 
 "Cloning azure-rest-api-specs..."
