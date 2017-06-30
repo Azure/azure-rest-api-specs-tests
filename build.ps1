@@ -13,6 +13,8 @@ if (-Not $?)
     exit $LASTEXITCODE
 }
 
+UpdateSdkInfo -specs $specs -sdkDir "_"
+
 .\lang.ps1 -script "build" -lang $lang
 
 $langInfo = Get-LangInfo -lang $lang
