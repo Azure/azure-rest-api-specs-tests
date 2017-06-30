@@ -1,4 +1,4 @@
-param([string] $project = "*", [string]$lang)
+param([string] $project = $env:TEST_PROJECT, [string]$lang = $env:TEST_LANG)
 
 Import-Module ".\lib.psm1"
 Import-Module ".\_\tools\autogenForSwaggers\lib.psm1"

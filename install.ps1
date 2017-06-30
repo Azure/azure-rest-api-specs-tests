@@ -1,4 +1,7 @@
-param ([string] $lang)
+param (
+    [string] $lang = $env:TEST_LANG,
+    [string] $fork = $env:TEST_FORK,
+    [string] $branch = $env:TEST_BRANCH)
 
 Import-Module ".\lib.psm1"
 
@@ -33,4 +36,4 @@ $LASTEXITCODE = 0
 
 .\lang.ps1 -script "install" -lang $lang
 
-.\init.ps1
+.\init.ps1 -fork $fork -branch $branch

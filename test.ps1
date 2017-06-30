@@ -1,4 +1,7 @@
-param([string] $project = "*", [string] $lang, [string] $TEST_CSM_ORGID_AUTHENTICATION)
+param(
+    [string] $project = $env:TEST_PROJECT,
+    [string] $lang = $env:TEST_LANG,
+    [string] $TEST_CSM_ORGID_AUTHENTICATION = $env:TEST_CSM_ORGID_AUTHENTICATION)
 
 Import-Module ".\_\tools\autogenForSwaggers\lib.psm1"
 
