@@ -52,5 +52,4 @@ See also [Creating JSON-RPC server](json-rpc-server.md).
 arm-redis`.
 
 See also
-- [SDK Mapping Documentation](sdkinfo.md).
 - [Creating an Azure Active Directory application and service principal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal).
