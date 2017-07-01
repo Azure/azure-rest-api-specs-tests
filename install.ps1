@@ -1,4 +1,7 @@
-param ([string] $TEST_LANG)
+param (
+    [string] $lang = $env:TEST_LANG,
+    [string] $fork = $env:TEST_FORK,
+    [string] $branch = $env:TEST_BRANCH)
 
 Import-Module ".\lib.psm1"
 
@@ -30,8 +33,7 @@ $LASTEXITCODE = 0
 # .\lib\download-and-unzip.ps1 -url $dnUrl -zip "dotnet.zip" -dest $dnOutput
 
 "Language = $lang"
-"Project = $env:TEST_PROJECT"
 
-.\lang.ps1 -script "install" -lang $TEST_LANG
+.\lang.ps1 -script "install" -lang $lang
 
-.\init.ps1
+.\init.ps1 -fork $fork -branch $branch

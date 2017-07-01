@@ -1,7 +1,7 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 environment:
-  TEST_LANG: json-rpc
+  TEST_LANG: dotnet
   matrix:
   - TEST_PROJECT: arm-analysisservices
   - TEST_PROJECT: arm-authorization
@@ -28,7 +28,7 @@ environment:
   - TEST_PROJECT: arm-mediaservices
   - TEST_PROJECT: arm-monitor
   - TEST_PROJECT: arm-network
-  - TEST_PROJECT: arm-notificationhubs  
+  - TEST_PROJECT: arm-notificationhubs
   - TEST_PROJECT: arm-operationalinsights
   - TEST_PROJECT: arm-powerbiembedded
   - TEST_PROJECT: arm-recoveryservices
@@ -46,8 +46,8 @@ environment:
   - TEST_PROJECT: arm-trafficmanager
   - TEST_PROJECT: arm-web
 install:
-- ps: .\install.ps1 -TEST_LANG $env:TEST_LANG
+- ps: .\install.ps1
 build_script:
-- ps: .\build.ps1 -TEST_LANG $env:TEST_LANG
+- ps: .\build.ps1
 test_script:
-- ps: .\Test.ps1 -TEST_LANG $env:TEST_LANG
+- ps: .\test.ps1
