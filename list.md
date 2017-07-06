@@ -11,7 +11,7 @@
 |compute               |67/0          |_old AutoRest_  |             |             |             |
 |conumption            |10/1          |11/0            |             |             |3/6
 |containerregistry     |9/0           |_old AutoRest_  |             |             |1/2
-|customer-insights     |27/0          |27/0            |0/27         |             |             |
+|customer-insights     |27/0          |27/0            |0/27         |0/27         |             |
 |datalake-analytics    |7/0           |7/0             |             |             |0/18
 |datalake-store        |64/0          |39/25           |             |             |14/0
 |devtestlabs           |1/0           |1/0             |0/1          |             |0/5
