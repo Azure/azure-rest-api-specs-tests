@@ -30,7 +30,7 @@
 |operationalinsights   |14/0         |_old AutoRest_   |             |             |1/12         |
 |powerbiembedded       |9/0          |9/0              |9/0          |             |8/0          |
 |recoveryservices      |4/0          |3/1              |             |             |0/1          |
-|recoveryservicesbackup|4/0          |                 |             |             |0/25         |
+|recoveryservicesbackup|4/0          |4/0              |             |             |0/25         |
 |redis                 |             |                 |             |             |9/3          |
 |relay                 |             |                 |             |             |1/5          |
 |resources             |             |                 |             |             |59/80        |
