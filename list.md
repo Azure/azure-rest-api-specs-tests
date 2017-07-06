@@ -15,7 +15,7 @@
 |datalake-analytics    |7/0           |7/0                    |             |0/18
 |datalake-store        |64/0          |39/25                  |             |14/0
 |devtestlabs           |1/0           |1/0                    |0/1          |0/5
-|dns                   |25/0          |0/25                   |23/1         |1/42
+|dns                   |25/0          |0/25                   |24/1         |1/42
 |eventhub              |5/0           |5/0                    |             |1/4
 |graphbac              |20/0          |14/6                   |             |
 |insights              |17/0          |17/0                   |             |32/34
