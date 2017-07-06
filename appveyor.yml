@@ -48,6 +48,6 @@ environment:
 install:
 - ps: .\install.ps1
 build_script:
-- ps: .\build.ps1
+- ps: .\build.ps1 -project $env:TEST_PROJECT
 test_script:
-- ps: .\test.ps1
+- ps: .\test.ps1 -project $env:TEST_PROJECT
