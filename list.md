@@ -1,45 +1,45 @@
 |ARM name              |Playback Tests|Playback JSON RPC Tests|Live Tests   |PS Live Tests|
 |----------------------|--------------|-----------------------|-------------|-------------|
 |                      |passed/failed |passed/failed          |passed/failed|passed/failed|
-|analysisservices      |14/14         |14/14                  |          |
-|authorization         |17/17         |17/17                  |          |
-|automation            |0/5           |0/5                    |0/5       |
-|batch                 |43/43         |old AutoRest           |          |
-|billing               |10/10         |10/10                  |          |
-|cdn                   |21/21         |old AutoRest           |21/21     |1/19
-|cognitiveservices     |19/19         |19/19                  |19/19     |1/12
-|compute               |67/67         |old AutoRest           |          |
-|conumption            |10/11         |11/11                  |          |3/9
-|containerregistry     |9/9           |old AutoRest           |          |1/3
-|customer-insights     |27/27         |27/27                  |0/27      |
-|datalake-analytics    |7/7           |7/7                    |          |0/18
-|datalake-store        |64/64         |39/64                  |          |14/14
-|devtestlabs           |1/1           |1/1                    |0/1       |0/5
-|dns                   |25/25         |0/5-25                 |23/24     |1/43
-|eventhub              |5/5           |5/5                    |          |1/5
-|graphbac              |20/20         |14/20                  |          |
-|insights              |17/17         |17/17                  |          |32/66
-|iothub                |2/2           |2/2                    |0/2       |0/1
-|keyvault              |5/5           |3/5                    |          |17/27
-|logic                 |203/214       |116/214                |          |45/63
-|machinelearning       |8/8           |                       |          |0/8
-|mediaservices         |              |                       |          |1/2
-|monitor               |              |                       |          |
-|network               |              |                       |          |1/63
-|notificationhubs      |              |                       |          |1/4
-|operationalinsights   |              |                       |          |1/13
-|powerbiembedded       |              |                       |9/9       |8/8
-|recoveryservices      |              |                       |          |0/1
-|recoveryservicesbackup|              |                       |          |0/25
-|redis                 |              |                       |          |9/12
-|relay                 |              |                       |          |1/6
-|resources             |              |                       |          |59/139
-|scheduler             |              |                       |          |8/8
-|search                |              |                       |          |
-|servermanagement      |              |                       |          |0/3
-|servicebus            |              |                       |          |1/7
-|servicefabric         |              |                       |          |0/10
-|sql                   |              |                       |          |45/189
-|storage               |              |                       |          |9/12
-|trafficmanager        |              |                       |          |4/45
-|web                   |              |                       |          |0/40
+|analysisservices      |14/0          |14/0                   |             |
+|authorization         |17/0          |17/0                   |             |
+|automation            |0/5           |0/5                    |0/5          |
+|batch                 |43/0          |_old AutoRest_         |             |
+|billing               |10/0          |10/0                   |             |
+|cdn                   |21/0          |_old AutoRest_         |21/0         |1/18
+|cognitiveservices     |19/0          |19/0                   |19/0         |1/11
+|compute               |67/0          |_old AutoRest_         |             |
+|conumption            |10/1          |11/0                   |             |3/6
+|containerregistry     |9/0           |_old AutoRest_         |             |1/2
+|customer-insights     |27/0          |27/0                   |0/27         |
+|datalake-analytics    |7/0           |7/0                    |             |0/18
+|datalake-store        |64/0          |39/25                  |             |14/0
+|devtestlabs           |1/0           |1/0                    |0/1          |0/5
+|dns                   |25/0          |0/25                   |23/1         |1/42
+|eventhub              |5/0           |5/0                    |             |1/4
+|graphbac              |20/0          |14/6                   |             |
+|insights              |17/0          |17/0                   |             |32/34
+|iothub                |2/0           |2/0                    |0/2          |0/1
+|keyvault              |5/0           |3/2                    |             |17/10
+|logic                 |203/11        |116/98                 |             |45/19
+|machinelearning       |8/0           |                       |             |0/8
+|mediaservices         |              |                       |             |1/1
+|monitor               |              |                       |             |
+|network               |              |                       |             |1/62
+|notificationhubs      |              |                       |             |1/3
+|operationalinsights   |              |                       |             |1/12
+|powerbiembedded       |              |                       |9/0          |8/0
+|recoveryservices      |              |                       |             |0/1
+|recoveryservicesbackup|              |                       |             |0/25
+|redis                 |              |                       |             |9/3
+|relay                 |              |                       |             |1/5
+|resources             |              |                       |             |59/80
+|scheduler             |              |                       |             |8/0
+|search                |              |                       |             |
+|servermanagement      |              |                       |             |0/3
+|servicebus            |              |                       |             |1/6
+|servicefabric         |              |                       |             |0/10
+|sql                   |              |                       |             |45/144
+|storage               |              |                       |             |9/3
+|trafficmanager        |              |                       |             |4/41
+|web                   |              |                       |             |0/40
