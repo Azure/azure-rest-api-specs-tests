@@ -1,5 +1,6 @@
-|ARM name              |Playback Tests|Playback JSON RPC Tests|Live Tests|PS Live Tests|
-|----------------------|--------------|-----------------------|----------|-------------|
+|ARM name              |Playback Tests|Playback JSON RPC Tests|Live Tests   |PS Live Tests|
+|----------------------|--------------|-----------------------|-------------|-------------|
+|                      |passed/failed |passed/failed          |passed/failed|passed/failed|
 |analysisservices      |14/14         |14/14                  |          |
 |authorization         |17/17         |17/17                  |          |
 |automation            |0/5           |0/5                    |0/5       |
@@ -19,9 +20,9 @@
 |graphbac              |20/20         |14/20                  |          |
 |insights              |17/17         |17/17                  |          |32/66
 |iothub                |2/2           |2/2                    |0/2       |0/1
-|keyvault              |              |                       |          |17/27
-|logic                 |              |                       |          |45/63
-|machinelearning       |              |                       |          |0/8
+|keyvault              |5/5           |3/5                    |          |17/27
+|logic                 |203/214       |116/214                |          |45/63
+|machinelearning       |8/8           |                       |          |0/8
 |mediaservices         |              |                       |          |1/2
 |monitor               |              |                       |          |
 |network               |              |                       |          |1/63
