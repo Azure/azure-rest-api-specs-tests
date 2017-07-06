@@ -1,9 +1,9 @@
 |ARM name              |Playback Tests|Playback JSON RPC Tests|Live Tests   |PS Live Tests|
 |----------------------|--------------|-----------------------|-------------|-------------|
 |                      |passed/failed |passed/failed          |passed/failed|passed/failed|
-|analysisservices      |14/0          |14/0                   |             |
-|authorization         |17/0          |17/0                   |             |
-|automation            |0/5           |0/5                    |0/5          |
+|analysisservices      |14/0          |14/0                   |             |4/4          |
+|authorization         |17/0          |17/0                   |             |             |
+|automation            |0/5           |0/5                    |0/5          |62/3         |
 |batch                 |43/0          |_old AutoRest_         |             |
 |billing               |10/0          |10/0                   |             |
 |cdn                   |21/0          |_old AutoRest_         |21/0         |1/18
@@ -22,10 +22,10 @@
 |iothub                |2/0           |2/0                    |0/2          |0/1
 |keyvault              |5/0           |3/2                    |             |17/10
 |logic                 |203/11        |116/98                 |             |45/19
-|machinelearning       |8/0           |                       |             |0/8
-|mediaservices         |              |                       |             |1/1
-|monitor               |              |                       |             |
-|network               |              |                       |             |1/62
+|machinelearning       |8/0           |8/0                    |             |0/8
+|mediaservices         |8/0           |8/0                    |             |1/1
+|monitor               |17/0          |17/0                   |             |
+|network               |64/0          |                       |             |1/62
 |notificationhubs      |              |                       |             |1/3
 |operationalinsights   |              |                       |             |1/12
 |powerbiembedded       |              |                       |9/0          |8/0
