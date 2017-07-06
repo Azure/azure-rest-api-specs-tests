@@ -11,6 +11,7 @@ git clone -q --branch=master https://github.com/sergey-shandar/azure-sdk-for-go 
 cd $azureSdkPath
 $glide = Join-Path $env:GOPATH "bin\glide"
 & $glide install
+go get gopkg.in/godo.v2
 cd $current
 
 $gen = Join-Path $azureSdkPath "gododir\gen.go"
