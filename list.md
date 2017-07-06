@@ -4,7 +4,7 @@
 |analysisservices      |14/0         |14/0             |             |             |4/4          |
 |authorization         |17/0          |17/0            |             |3/12         |             |
 |automation            |0/5           |0/5             |0/5          |             |62/3         |
-|batch                 |43/0          |_old AutoRest_  |             |             |             |
+|batch                 |43/0          |_old AutoRest_  |             |             |150/32       |
 |billing               |10/0          |10/0            |             |             |             |
 |cdn                   |21/0          |_old AutoRest_  |21/0         |             |1/18
 |cognitiveservices     |19/0          |19/0            |19/0         |             |1/11
