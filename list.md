@@ -32,8 +32,8 @@
 |recoveryservices      |4/0          |3/1              |             |             |0/1          |
 |recoveryservicesbackup|4/0          |4/0              |             |             |0/25         |
 |redis                 |29/1         |_old AutoRest_   |             |             |9/3          |
-|relay                 |             |                 |             |             |1/5          |
-|resources             |             |                 |             |             |59/80        |
+|relay                 |8/0          |8/0              |             |             |1/5          |
+|resources             |102/1        |_old AutoRest_   |             |             |59/80        |
 |scheduler             |             |                 |             |             |8/0          |
 |search                |             |                 |             |             |             |
 |servermanagement      |             |                 |             |             |0/3
