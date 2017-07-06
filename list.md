@@ -25,7 +25,7 @@
 |machinelearning       |8/0           |8/0                    |             |0/8
 |mediaservices         |8/0           |8/0                    |             |1/1
 |monitor               |17/0          |17/0                   |             |
-|network               |64/0          |                       |             |1/62
+|network               |64/0          |60/4                   |             |1/62
 |notificationhubs      |              |                       |             |1/3
 |operationalinsights   |              |                       |             |1/12
 |powerbiembedded       |              |                       |9/0          |8/0
