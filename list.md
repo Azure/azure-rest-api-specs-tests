@@ -7,7 +7,7 @@
 |batch                 |43/0         |_old AutoRest_   |             |              |150/32       |
 |billing               |10/0         |10/0             |             |              |0/10         |
 |cdn                   |21/0         |_old AutoRest_   |21/0         |              |1/18         |
-|cognitiveservices     |19/0         |19/0             |19/0         |              |1/11         |
+|cognitiveservices     |19/0         |19/0             |18/1         |              |1/11         |
 |compute               |67/0         |_old AutoRest_   |             |              |             |
 |conumption            |1/10         |1/10             |             |              |3/6          |
 |containerregistry     |9/0          |_old AutoRest_   |             |              |1/2          |
