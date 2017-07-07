@@ -13,7 +13,7 @@
 |containerregistry     |9/0          |_old AutoRest_   |             |              |1/2          |
 |customer-insights     |27/0         |27/0             |0/27         |0/27          |             |
 |datalake-analytics    |7/0          |7/0              |             |              |0/18         |
-|datalake-store        |63/0         |38/25            |             |32/31         |14/0         |
+|datalake-store        |63/0         |40/23            |             |32/31         |14/0         |
 |devtestlabs           |1/0          |1/0              |0/1          |              |0/5          |
 |dns                   |25/0         |0/25             |24/1         |              |1/42         |
 |eventhub              |5/0          |5/0              |             |              |1/4          |
