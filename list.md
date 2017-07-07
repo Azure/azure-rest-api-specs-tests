@@ -5,7 +5,7 @@
 |authorization         |17/0         |17/0             |3/12         |3/12          |             |
 |automation            |0/5          |0/5              |0/5          |              |62/3         |
 |batch                 |43/0         |_old AutoRest_   |42/1         |              |150/32       |
-|billing               |10/0         |10/0             |1/9          |              |0/10                    
+|billing               |10/0         |10/0             |1/9          |              |0/10         |
 |cdn                   |21/0         |_old AutoRest_   |19/2         |              |1/18         |
 |cognitiveservices     |19/0         |19/0             |19/0         |              |1/11         |
 |compute               |64/0/3       |_old AutoRest_   |21/43/3      |_old AutoRest_|             |
