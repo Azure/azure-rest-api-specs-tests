@@ -6,24 +6,24 @@
 |automation            |0/5          |0/5              |0/5          |              |62/3         |
 |batch                 |43/0         |_old AutoRest_   |             |              |150/32       |
 |billing               |10/0         |10/0             |             |              |0/10         |
-|cdn                   |21/0         |_old AutoRest_   |21/0         |              |1/18
-|cognitiveservices     |19/0         |19/0             |19/0         |              |1/11
-|compute               |67/0         |_old AutoRest_   |             |              |             |
-|conumption            |10/1         |11/0             |             |              |3/6
-|containerregistry     |9/0          |_old AutoRest_   |             |              |1/2
+|cdn                   |21/0         |_old AutoRest_   |19/2         |              |1/18         |
+|cognitiveservices     |19/0         |19/0             |19/0         |              |1/11         |
+|compute               |67/0         |_old AutoRest_   |             |_old AutoRest_|             |
+|conumption            |10/1         |10/1             |10/1         |              |3/6          |
+|containerregistry     |9/0          |_old AutoRest_   |             |_old AutoRest_|1/2          |
 |customer-insights     |27/0         |27/0             |0/27         |0/27          |             |
-|datalake-analytics    |7/0          |7/0              |             |              |0/18
-|datalake-store        |64/0         |40/23            |             |              |14/0
-|devtestlabs           |1/0          |1/0              |0/1          |              |0/5
-|dns                   |25/0         |0/25             |24/1         |              |1/42
-|eventhub              |5/0          |5/0              |             |              |1/4
-|graphbac              |20/0         |15/5             |             |              |             |
-|insights              |17/0         |17/0             |             |              |32/34
-|iothub                |2/0          |2/0              |0/2          |              |0/1
-|keyvault              |5/0          |4/1              |             |              |17/10
-|logic                 |203/11       |116/98           |             |              |45/19
-|machinelearning       |8/0          |8/0              |             |              |0/8
-|mediaservices         |8/0          |8/0              |             |_old commit_  |1/1
+|datalake-analytics    |7/0          |7/0              |             |              |0/18         |
+|datalake-store        |64/0         |40/23            |             |32/31         |14/0         |
+|devtestlabs           |1/0          |1/0              |0/1          |              |0/5          |
+|dns                   |25/0         |0/25             |24/1         |              |1/42         |
+|eventhub              |5/0          |5/0              |             |0/5           |1/4          |
+|graphbac              |18/0/2       |13/5/2           |             |0/18/2        |             |
+|insights              |17/0         |17/0             |             |              |32/34        |
+|iothub                |2/0          |2/0              |0/2          |0/2           |0/1          |
+|keyvault              |5/0          |4/1              |             |              |17/10        |
+|logic                 |203/11       |116/98           |             |14/152/48     |45/19        |
+|machinelearning       |8/0          |8/0              |             |              |0/8          |
+|mediaservices         |8/0          |8/0              |             |_old commit_  |1/1          |
 |monitor               |17/0         |17/0             |             |              |             |
 |network               |64/0         |60/4             |             |              |1/62         |
 |notificationhubs      |6/0          |6/0              |             |              |1/3          |
@@ -34,9 +34,9 @@
 |redis                 |29/1         |_old AutoRest_   |             |_old AutoRest_|9/3          |
 |relay                 |8/0          |8/0              |             |              |1/5          |
 |resources             |102/1        |_old AutoRest_   |             |              |59/80        |
-|scheduler             |22/1         |22/22            |             |              |8/0          |
+|scheduler             |31/13        |22/22            |             |              |8/0          |
 |search                |37/0         |17/20            |             |              |             |
-|servermanagement      |5/0          |1/5              |             |              |0/3          |
+|servermanagement      |5/0          |1/4              |             |              |0/3          |
 |servicebus            |8/0          |8/0              |             |              |1/6          |
 |servicefabric         |7/0          |7/0              |             |              |0/10         |
 |sql                   |45/2         |45/2             |             |0/46          |45/144       |
