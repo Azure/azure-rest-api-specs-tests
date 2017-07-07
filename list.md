@@ -39,7 +39,7 @@
 |servermanagement      |5/0          |1/5              |             |              |0/3          |
 |servicebus            |8/0          |8/0              |             |              |1/6          |
 |servicefabric         |7/0          |7/0              |             |              |0/10         |
-|sql                   |             |                 |             |0/46          |45/144       |
-|storage               |             |                 |             |              |9/3
+|sql                   |45/2         |45/2             |             |0/46          |45/144       |
+|storage               |30/0         |                 |             |              |9/3
 |trafficmanager        |             |                 |             |              |4/41
 |web                   |             |                 |             |              |0/40
