@@ -1,6 +1,8 @@
 $project = $env:TEST_PROJECT
 $lang = $env:TEST_LANG
 
+$project = $project.Repace("_", "*")
+
 $oldCurrent = Get-Location
 subst t: /D
 subst t: $oldCurrent
