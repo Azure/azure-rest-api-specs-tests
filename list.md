@@ -17,10 +17,10 @@
 |devtestlabs           |1/0          |1/0              |0/1          |              |0/5
 |dns                   |25/0         |0/25             |24/1         |              |1/42
 |eventhub              |5/0          |5/0              |             |              |1/4
-|graphbac              |20/0         |14/6             |             |              |             |
+|graphbac              |20/0         |15/5             |             |              |             |
 |insights              |17/0         |17/0             |             |              |32/34
 |iothub                |2/0          |2/0              |0/2          |              |0/1
-|keyvault              |5/0          |3/2              |             |              |17/10
+|keyvault              |5/0          |4/1              |             |              |17/10
 |logic                 |203/11       |116/98           |             |              |45/19
 |machinelearning       |8/0          |8/0              |             |              |0/8
 |mediaservices         |8/0          |8/0              |             |_old commit_  |1/1
