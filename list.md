@@ -34,7 +34,7 @@
 |redis                 |29/1         |_old AutoRest_   |             |             |9/3          |
 |relay                 |8/0          |8/0              |             |             |1/5          |
 |resources             |102/1        |_old AutoRest_   |             |             |59/80        |
-|scheduler             |             |                 |             |             |8/0          |
+|scheduler             |22/1         |                 |             |             |8/0          |
 |search                |             |                 |             |             |             |
 |servermanagement      |             |                 |             |             |0/3
 |servicebus            |             |                 |             |             |1/6
