@@ -6,24 +6,24 @@
 |automation            |0/5          |0/5              |0/5          |              |62/3         |
 |batch                 |43/0         |_old AutoRest_   |             |              |150/32       |
 |billing               |10/0         |10/0             |             |              |0/10         |
-|cdn                   |21/0         |_old AutoRest_   |21/0         |              |1/18
-|cognitiveservices     |19/0         |19/0             |19/0         |              |1/11
+|cdn                   |21/0         |_old AutoRest_   |21/0         |              |1/18         |
+|cognitiveservices     |19/0         |19/0             |19/0         |              |1/11         |
 |compute               |67/0         |_old AutoRest_   |             |              |             |
-|conumption            |10/1         |11/0             |             |              |3/6
-|containerregistry     |9/0          |_old AutoRest_   |             |              |1/2
+|conumption            |1/10         |1/10             |             |              |3/6          |
+|containerregistry     |9/0          |_old AutoRest_   |             |              |1/2          |
 |customer-insights     |27/0         |27/0             |0/27         |0/27          |             |
-|datalake-analytics    |7/0          |7/0              |             |              |0/18
-|datalake-store        |64/0         |39/25            |             |              |14/0
-|devtestlabs           |1/0          |1/0              |0/1          |              |0/5
-|dns                   |25/0         |0/25             |24/1         |              |1/42
-|eventhub              |5/0          |5/0              |             |              |1/4
+|datalake-analytics    |7/0          |7/0              |             |              |0/18         |
+|datalake-store        |64/0         |39/25            |             |              |14/0         |
+|devtestlabs           |1/0          |1/0              |0/1          |              |0/5          |
+|dns                   |25/0         |0/25             |24/1         |              |1/42         |
+|eventhub              |5/0          |5/0              |             |              |1/4          |
 |graphbac              |20/0         |14/6             |             |              |             |
-|insights              |17/0         |17/0             |             |              |32/34
-|iothub                |2/0          |2/0              |0/2          |              |0/1
-|keyvault              |5/0          |3/2              |             |              |17/10
-|logic                 |203/11       |116/98           |             |              |45/19
-|machinelearning       |8/0          |8/0              |             |              |0/8
-|mediaservices         |8/0          |8/0              |             |_old commit_  |1/1
+|insights              |17/0         |17/0             |             |              |32/34        |
+|iothub                |2/0          |2/0              |0/2          |              |0/1          |
+|keyvault              |5/0          |3/2              |             |              |17/10        |
+|logic                 |203/11       |116/98           |             |              |45/19        |
+|machinelearning       |8/0          |8/0              |             |              |0/8          |
+|mediaservices         |8/0          |8/0              |             |_old commit_  |1/1          |
 |monitor               |17/0         |17/0             |             |              |             |
 |network               |64/0         |60/4             |             |              |1/62         |
 |notificationhubs      |6/0          |6/0              |             |              |1/3          |
