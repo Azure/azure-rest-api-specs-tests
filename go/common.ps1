@@ -1,3 +1,5 @@
+.\common.ps1
+
 $env:GOROOT = Join-Path $env:TEST_COMMON "go"
 $env:GOPATH = Join-Path $env:TEST_COMMON "gosrc"
 $env:Path = (Join-Path $env:GOROOT "bin") + ";" + $env:Path
